@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
           <header className="flex items-center justify-around m-2 p-2 border-b-2 border-black">
             <Image src={logoLassalleNew} alt="lassale-saint-creac logo" width={150} height={150} loading="lazy" />
             {/* Navigation principale */}
-            <NavigationMenu className="font-poiret">
+            <NavigationMenu>
               <NavigationMenuList>
                 {/* Boucle pour les sections principales */}
                 {menuItems.map((item) => (

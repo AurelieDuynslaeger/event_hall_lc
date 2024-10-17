@@ -58,7 +58,7 @@ const config = {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			fontFamily: {
-				poiret: ['"Poiret One"', 'sans-serif'],
+				bebn: ['"Bebas Neue"', 'sans-serif'],
 			}
 		},
 	},
