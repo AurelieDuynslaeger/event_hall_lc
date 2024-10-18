@@ -2,16 +2,14 @@
 import React from 'react'
 import { useParams } from "next/navigation";
 import Image from 'next/image';
-import orangerie from "@/app/assets/orangerie/orangerie_1_vue.jpg"
-import orangerie1 from "@/app/assets/orangerie/orangerie_2_presta.jpg"
-import orangerie2 from "@/app/assets/orangerie/orangerie_3_presta.jpg"
+import { poiret } from '@/app/font';
 
 const roomData = {
     receptions: {
         orangerie: {
             title: "L'Orangerie",
             description: "Une surface totale de 360 m² dont 235m² exclusivement réservés à la salle de réception, avec une capacité d'accueil de 200 personnes debout et 190 assises. Les terrasses suspendues de plus de 300m², vous offre vue panoramique sur le Manoir,la vallée et l'étang, à couper le souffle! Face au coucher de soleil sur l'étang.90 places de parking végétalisé (possibilité de places supplémentaires dans la prairie) Equipements: Tables, chaises, rétroprojecteur, écran et sonorisation. Espace traiteur de plus de 50m² avec parking privé, sanitaires et douche séparés",
-            images: [orangerie, orangerie1, orangerie2],
+            images: ["/orangerie/orangerie_1_vue.jpg", "/orangerie/orangerie_2_presta.jpg", "/orangerie/orangerie_2_presta.jpg"],
         },
         saintloup: {
             title: "Salle Saint Loup",
@@ -53,9 +51,9 @@ export default function RoomPage() {
     }
 
     return (
-        <div className='container m-auto py-8'>
-            <h1 className='text-9xl font-bebn'>{roomDetails.title}</h1>
-            <p >{roomDetails.description}</p>
+        <div className='container m-auto py-8 mt-20'>
+            <h1 className={`${poiret.className} text-9xl font-bold text-center m-10`}>{roomDetails.title}</h1>
+            <p className=''>{roomDetails.description}</p>
             {/* Afficher les images et autres informations */}
             {/* Afficher les images si elles sont présentes */}
             {roomDetails.images && roomDetails.images.length > 0 && (

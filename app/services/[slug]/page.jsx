@@ -34,7 +34,7 @@ const ServicePage = () => {
     }
 
     return (
-        <div>
+        <div className='mt-40'>
             <h1>{service.title}</h1>
             <p>{service.description}</p>
             {/* Tu peux ajouter ici d'autres infos comme des images, etc. */}

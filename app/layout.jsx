@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import logoLassalleNew from "@/app/assets/LogoLasalleSvg.png";
-import Footer from "@/components/Footer/Footer"
 import { Button } from "@/components/ui/button"
+import { poppins, poiret } from "./font"
 import "./globals.css";
 import {
   NavigationMenu,
@@ -16,14 +16,7 @@ import Link from "next/link";
 import { PiCalendarDotsThin, PiMapPinLight  } from "react-icons/pi";
 import { cn } from "@/lib/utils";
 
-const menuItems = [
-  { title: "Accueil", href: "/" },
-  {
-    title: "Le Domaine",
-    subItems: [
-      { title: "Visite Guidée", href: "/domaine" },
-    ],
-  },
+const menuItems = [  
   {
     title: "Nos Hébergements",
     subItems: [
@@ -43,9 +36,9 @@ const menuItems = [
   {
     title: "À propos",
     subItems: [
-      { title: "Histoire de l'Établissement", href: "/about/histoire" },
-      { title: "Qui Sommes-nous", href: "/about/equipe" },
-      { title: "Où nous Trouver", href: "/about/localisation", icon: <PiMapPinLight /> },
+      { title: "Remerciements", href: "/apropos/remerciements" },
+      { title: "Ils sont venus", href: "/apropos/avis" },
+      { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
     ],
   },
   { title: "Contact", href: "/contact" },
@@ -54,20 +47,30 @@ const menuItems = [
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body>
+      <body className={`${poppins.className} bg-slate-50`}>
         <div>
-          <header className="flex items-center justify-around m-2 p-2 border-b-2 border-black">
-            <Image src={logoLassalleNew} alt="lassale-saint-creac logo" width={150} height={150} loading="lazy" />
+          <header className="flex items-center justify-around p-2 fixed left-0 right-0 top-0 z-50">
+          <Link href="/" legacyBehavior>
+              <a>
+                <Image
+                  src={logoLassalleNew}
+                  alt="lassale-saint-creac logo"
+                  width={150}
+                  height={150}
+                  loading="lazy"
+                />
+              </a>
+            </Link>
             {/* Navigation principale */}
-            <NavigationMenu>
+            <NavigationMenu className={`${poiret.className} text-2xl font-bold`}>
               <NavigationMenuList>
                 {/* Boucle pour les sections principales */}
                 {menuItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
                     {item.subItems ? (
                       <>
-                        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                        <NavigationMenuContent>
+                        <NavigationMenuTrigger className="text-2xl font-bold">{item.title}</NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-transparent">
                           <ul className="grid w-[450px] gap-3 p-4 md:w-[600px] md:grid-cols-3 lg:w-[700px]">
                             {item.subItems.map((subItem) => (
                               <ListItem key={subItem.title} href={subItem.href} title={subItem.title}>
@@ -90,10 +93,10 @@ export default function RootLayout({ children }) {
                 ))}
 
                 {/* CTA Réserver avec icône de calendrier */}
-                <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
+                <NavigationMenuItem >
+                  <NavigationMenuLink asChild >
                     <Link href="/reservation" legacyBehavior passHref>
-                    <Button>
+                    <Button className="text-2xl font-bold p-6">
                       <PiCalendarDotsThin className="mr-2 h-4 w-4"/> Réserver
                     </Button>
                     </Link>
@@ -104,8 +107,7 @@ export default function RootLayout({ children }) {
           </header>
 
           {/* Contenu de la page */}
-          <main>{children}</main>
-          <Footer/>
+          <main  className="bg-slate-50">{children}</main>
         </div>
       </body>
     </html>
