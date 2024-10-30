@@ -58,8 +58,8 @@ return (
         backgroundSize,
         opacity,
         backgroundImage:
-        "url(/domaine/manoir_3.jpg)",
-        backgroundPosition: "center",
+        "url(/domaine/entree_0.jpg)",
+        backgroundPosition: "cover",
         backgroundRepeat: "no-repeat",
     }}
     />

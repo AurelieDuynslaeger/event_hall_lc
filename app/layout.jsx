@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import logoLassalleNew from "@/app/assets/LogoLasalleSvg.png";
-import { Button } from "@/components/ui/button"
 import { poppins, poiret } from "./font"
 import "./globals.css";
 import {
@@ -13,18 +12,11 @@ import {
   NavigationMenuLink
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { PiCalendarDotsThin, PiMapPinLight  } from "react-icons/pi";
+import { PiMapPinLight  } from "react-icons/pi";
 import { cn } from "@/lib/utils";
 
 const menuItems = [  
-  {
-    title: "Nos Hébergements",
-    subItems: [
-      { title: "Le Dortoir", href: "/hebergements/dortoir" },
-      { title: "Le Manoir", href: "/hebergements/manoir" },
-      { title: "L'Étable", href: "/hebergements/etable" }
-    ],
-  },
+  {title: "Nos Hébergements", href:"/hebergements"},
   {
     title: "Nos Services",
     subItems: [
@@ -66,7 +58,7 @@ export default function RootLayout({ children }) {
               <NavigationMenuList>
                 {/* Boucle pour les sections principales */}
                 {menuItems.map((item) => (
-                  <NavigationMenuItem key={item.title}>
+                  <NavigationMenuItem key={item.title} className="cursor-pointer">
                     {item.subItems ? (
                       <>
                         <NavigationMenuTrigger className="text-2xl font-bold">{item.title}</NavigationMenuTrigger>
@@ -91,17 +83,6 @@ export default function RootLayout({ children }) {
                     )}
                   </NavigationMenuItem>
                 ))}
-
-                {/* CTA Réserver avec icône de calendrier */}
-                <NavigationMenuItem >
-                  <NavigationMenuLink asChild >
-                    <Link href="/reservation" legacyBehavior passHref>
-                    <Button className="text-2xl font-bold p-6">
-                      <PiCalendarDotsThin className="mr-2 h-4 w-4"/> Réserver
-                    </Button>
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </header>

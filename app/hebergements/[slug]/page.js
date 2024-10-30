@@ -30,7 +30,7 @@ const HebergementPage = () => {
     }
 
     return (
-        <div>
+        <div className='mt-48'>
             <h1>{hebergement.title}</h1>
             <p>{hebergement.description}</p>
             {/* Tu peux ajouter ici d'autres infos comme des images, etc. */}
