@@ -1,10 +1,11 @@
 "use client"
 import React from 'react'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useParams } from "next/navigation";
 import { poiret } from '@/app/font';
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
+import Image from 'next/image';
 
 const hebergementData = {
     manoir: {
@@ -73,6 +74,8 @@ const HebergementPage = () => {
     const params = useParams();
     const { slug } = params;
     const [modal, setModal] = useState({active: false, index: 0})
+    const [selectedRoom, setSelectedRoom] = useState(null);
+    const detailsRef = useRef(null); 
 
     // Récupère les données en fonction du slug
     const hebergement = hebergementData[slug];
@@ -80,6 +83,12 @@ const HebergementPage = () => {
     if (!hebergement) {
         return <div>Hébergement non trouvé</div>;
     }
+
+    const handleRoomClick = (room) => {
+        setSelectedRoom(room);
+        // Scroller vers le div des détails
+        detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <div className='container m-auto py-8 mt-48'>
@@ -90,14 +99,22 @@ const HebergementPage = () => {
                     index={index} 
                     title={room.roomName} 
                     setModal={setModal} 
+                    onClick={() => handleRoomClick(room)}
                 />
             ))}
             <Modal modal={modal} projects={hebergement.rooms}/>
             {/* Tu peux ajouter ici d'autres infos comme des images, etc. */}
 
             {/* div qui serait visible que si l'user a clické sur la chambre en question à voir en détail : il survole les links, clik sur la chambre qu'il veut voir et la page défilerait vers cette div qui détaillerait la chambre */}
-            <div>
-
+            <div ref={detailsRef} className="mt-10">
+                {selectedRoom && (
+                    <div className="p-5 border border-gray-300 rounded-lg">
+                        <h2 className="text-3xl font-bold">{selectedRoom.roomName}</h2>
+                        <Image src={selectedRoom.src} alt={selectedRoom.roomName} className="w-full h-auto rounded-md mt-2" width={250} height={150}/>
+                        <p className="mt-4">{selectedRoom.desc}</p>
+                        {/* Ajoute ici d'autres détails comme les tarifs, prestations, etc. */}
+                    </div>
+                )}
             </div>
         </div>
     )
