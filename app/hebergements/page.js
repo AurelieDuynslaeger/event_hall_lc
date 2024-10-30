@@ -2,11 +2,13 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 const hebergements = [
     {
         id: 1,
         img: "/domaine/manoir_3.jpg",
+        slug: "manoir",
         heading: "Le Manoir",
         subheading: "Charme et Authenticité",
         appeal: "Poutres centenaires, murs en pierre et cheminée XVIième siècle classée, découvrez votre prochain cocon pour une escapade dans le Gers : nos suites et chambres d'exception, offrant vue sur la vallée, terrasse privative, pour un week-end hors du temps !",
@@ -16,22 +18,21 @@ const hebergements = [
     {
         id: 2,
         img: "/domaine/dortoir_6.jpg",
+        slug: "dortoir",
         heading: "Le Dortoir",
         subheading: "Lieu magique et vue panoramique",
-        description: "Le Dortoir offre un cadre confortable...",
-        desc: "Description du Dortoir",
-        appeal: "Un hébergement pratique et abordable",
-        plus: "Parfait pour les groupes"
+        appeal: "Parquet et charpente sous volige, vous profiterez d'une vue panoramique depuis sa terrasse privative de plus de 20 m², totalement indépendant vous y accèderez exclusivement par l'escalier de la Tour.",
+        desc: "Idéal pour les groupes et les randonneurs",
+        plus: ""
     },
     {
         id: 3,
         img: "/domaine/etable_7.jpeg",
+        slug: "etable",
         heading: "L'Étable",
         subheading: "Charpente centenaire et volige en peuplier",
-        description: "L'Étable est un hébergement rustique...",
-        desc: "Description de l'Étable",
-        appeal: "Pour une expérience authentique",
-        plus: "Idéal pour les amoureux de la nature",
+        appeal: "Occupant tout le premier étage de l’ancienne étable sur près de 250m², vous y accédez par la cour et son escalier en pierre. Sous sa charpente centenaire et sa volige en peuplier, ce sont 15 couchages qui sont à votre disposition ! (4 chambres dont 2 en mezzanine sur la pièce de vie)",
+        desc: "Pour une expérience en famille ou entre amis",
     }
 ];
 
@@ -49,6 +50,7 @@ const HebergementsPage = () => {
                         desc={hebergement.desc}
                         appeal={hebergement.appeal}
                         plus={hebergement.plus}
+                        slug={hebergement.slug}
                     />
                 </TextParallaxContent>
             ))}
@@ -138,21 +140,32 @@ const OverlayCopy = ({ subheading, heading }) => {
     );
 };
 
-const ExampleContent = ({ desc, appeal, plus }) => (
-    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-        <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-            {desc}
-        </h2>
-        <div className="col-span-1 md:col-span-8">
-            <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
-                {appeal}
-            </p>
-            <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
-                {plus}
-            </p>
-            <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit">
-                Découvrir <FiArrowUpRight className="inline" />
-            </button>
+const ExampleContent = ({ desc, appeal, plus, slug }) => {
+
+    const router = useRouter();
+
+    const handleNavigate = () => {
+        router.push(`/hebergements/${slug}`);
+    };
+
+    return (
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
+            <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+                {desc}
+            </h2>
+            <div className="col-span-1 md:col-span-8">
+                <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+                    {appeal}
+                </p>
+                <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+                    {plus}
+                </p>
+                <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
+                    onClick={handleNavigate}
+                >
+                    Découvrir <FiArrowUpRight className="inline" />
+                </button>
+            </div>
         </div>
-    </div>
-);
+    )
+};
