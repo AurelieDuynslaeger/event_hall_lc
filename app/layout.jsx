@@ -12,8 +12,9 @@ import {
   NavigationMenuLink
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { PiMapPinLight  } from "react-icons/pi";
+import { PiCalendarDotsThin, PiMapPinLight  } from "react-icons/pi";
 import { cn } from "@/lib/utils";
+import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
 
 const menuItems = [  
   {title: "Nos Hébergements", href:"/hebergements"},
@@ -41,7 +42,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${poppins.className} bg-slate-50`}>
         <div>
-          <header className="flex items-center justify-around p-2 fixed left-0 right-0 top-0 z-50">
+          <header className="flex items-center justify-evenly p-2 fixed left-0 right-0 top-0 z-50">
           <Link href="/" legacyBehavior>
               <a>
                 <Image
@@ -58,7 +59,7 @@ export default function RootLayout({ children }) {
               <NavigationMenuList>
                 {/* Boucle pour les sections principales */}
                 {menuItems.map((item) => (
-                  <NavigationMenuItem key={item.title} className="cursor-pointer">
+                  <NavigationMenuItem key={item.title} className="cursor-pointer font-bold">
                     {item.subItems ? (
                       <>
                         <NavigationMenuTrigger className="text-2xl font-bold">{item.title}</NavigationMenuTrigger>
@@ -85,6 +86,10 @@ export default function RootLayout({ children }) {
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
+            <DrawOutlineButton href="/reservation"> 
+            <PiCalendarDotsThin className="mr-2 h-4 w-4"/>
+            <p>Réserver</p>
+          </DrawOutlineButton>
           </header>
 
           {/* Contenu de la page */}

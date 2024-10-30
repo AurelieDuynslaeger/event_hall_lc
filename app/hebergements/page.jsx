@@ -160,7 +160,7 @@ const ExampleContent = ({ desc, appeal, plus, slug }) => {
                 <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
                     {plus}
                 </p>
-                <button className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
+                <button className="w-full rounded bg-[#d6815d] px-9 py-4 text-xl text-black transition-colors hover:bg-[#efc4b2] md:w-fit"
                     onClick={handleNavigate}
                 >
                     Découvrir <FiArrowUpRight className="inline" />

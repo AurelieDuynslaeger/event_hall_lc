@@ -2,8 +2,6 @@
 import { ReactLenis } from "lenis/dist/lenis-react"
 import Hero from "@/components/Hero/Hero"
 import PrezDom from "@/components/PrezDom/PrezDom"
-import { PiCalendarDotsThin } from "react-icons/pi";
-import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton"
 
 export default function Home() {
   return (
@@ -18,10 +16,6 @@ export default function Home() {
       >
         <Hero />
         <PrezDom/>
-          <DrawOutlineButton href="/reservation"> 
-            <PiCalendarDotsThin className="mr-2 h-6 w-6"/>
-            <p>Réserver</p>
-          </DrawOutlineButton>
       </ReactLenis>
     </div>
   );

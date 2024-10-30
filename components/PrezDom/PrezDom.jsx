@@ -2,11 +2,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { poiret } from '@/app/font'
+import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton'
+import { PiHeartStraightThin } from 'react-icons/pi'
 
 const PrezDom = () => {
   return (
     <section
-      className="mx-auto max-w-5xl px-4 pt-80 pb-8 text-black"
+      className="mx-auto max-w-5xl px-4 pt-80 pb-24 text-black"
     >
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
@@ -40,6 +42,10 @@ const PrezDom = () => {
         className='text-2xl my-6'>
         Un site idyllique pour vos cérémonies, Mariage, réunion de famille ou séminaire professionnel.
       </motion.p>
+      <DrawOutlineButton href="/hebergements" className="w-1/5 m-auto"> 
+            <PiHeartStraightThin className="mr-2 h-6 w-6"/>
+            <p>Découvrir</p>
+          </DrawOutlineButton>
 
     </section>
   )
