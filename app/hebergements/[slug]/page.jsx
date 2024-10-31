@@ -93,6 +93,74 @@ const hebergementData = {
                 src:"/manoir_suiteclar/view_2.jpg",
                 color: "#e39c7e",
                 desc: "",
+                pay: "Tarif TTC la nuitée pour 2 personnes, taxe de séjour en sus",
+                off: "Remise de 15% à partir de 3 nuités",
+                tarifs: [
+                    {
+                        juinaout24: "165.00€",
+                        avrmaiseptoct24: "145.00€",
+                        novtomars: "125.00€"
+                    }
+                ],
+                prestationsIcons: 
+                    {
+                        surface: {icon: <PiResizeThin />, desc: "50m²",},
+                        max: {icon: <PiPersonLight />, desc: "1 à 4 pers. maximum",},
+                        facilities: [
+                            {
+                                icon: <PiCigaretteSlashThin className="h-6 w-6 text-[#87482d]"/>, desc: "Non fumeur"
+                            },
+                            {
+                                icon: <PiWheelchairThin className="h-6 w-6 text-[#87482d]"/>, desc: "Non PMR"
+                            },
+                            {
+                                icon: <PiWifiHighThin className="h-6 w-6 text-[#87482d]"/>, desc: "Wifi Inlcus"
+                            },
+                            {
+                                icon: <TbAirConditioning className="h-6 w-6 text-[#87482d]"/>, desc: "Climatisation réversible"
+                            },
+                            {
+                                icon: <PiBathtubThin className="h-6 w-6 text-[#87482d]"/>, desc: "Baignoire balnéothérapie"
+                            },
+                            {
+                                icon: <PiBedThin className="h-6 w-6 text-[#87482d]"/>, desc: "Literie de haute qualité 180*200"
+                            },
+                            {
+                                icon: <PiTowelThin className="h-6 w-6 text-[#87482d]"/>, desc: "Linge de lit et de toilette inclus"
+                            },
+                            {
+                                icon:<PiHairDryerThin className="h-6 w-6 text-[#87482d]"/>, desc: "Sèche cheveux"
+                            },
+                            {
+                                icon:<PiCoffeeThin className="h-6 w-6 text-[#87482d]"/>, desc: "Petit déjeuner continental inclus"
+                            },
+                            {
+                                icon:<PiSwimmingPoolThin className="h-6 w-6 text-[#87482d]"/>, desc: "Accès piscine et spa"
+                            },
+                            {
+                                icon:<PiThermometerHotThin className="h-6 w-6 text-[#87482d]"/>, desc: "Accès Hamman et sauna sur réservation"
+                            }
+                        ]
+                    },
+                plus:[
+                    {
+                        addNight: "30.00€ TTC/pers",
+                        englshB: "5.00€",
+                        hamam: "7.50€ les 30min de sauna/hammam",
+                        navette: "Service Vip Aéroport"
+                    }
+                ],
+                gallery:[
+                    "/manoir_suiteclar/overview_sinatclar_suite.jpg",
+                    "/manoir_suiteclar/view_3.jpg",
+                    "/manoir_suiteclar/view_4.jpg",
+                    "/manoir_suiteclar/view_7.jpg",
+                    "/manoir_suiteclar/view_1.jpg",
+                    "/manoir_suiteclar/view_8.jpg",
+                    "/manoir_suiteclar/view_5.jpg",
+                    "/manoir_suiteclar/view_2.jpg",
+                    "/manoir_suiteclar/view_6.jpg",
+                ]
             },
             {
                 roomName: "La Chambre Saint-Loup",
