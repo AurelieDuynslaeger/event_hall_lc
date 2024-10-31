@@ -15,7 +15,7 @@ const hebergementData = {
         rooms: [
             {
                 roomName: "La Suite Saint-Créac",
-                src:"/manoir_suitecreac/overview_saint_creac_suite.jpg",
+                src:"/manoir_suitecreac/view_4.jpg",
                 color: "#e39c7e",
                 desc: "Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale! Charme et authenticité sont au rendez-vous, avec sa cheminée du XVième siècle classée, ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande), d'une vaste salle d'eau (double vasques, baignoire balnéothérapie, WC privatif), d'un espace salon avec vue sur la vallée (canapé convertible, literie pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire)",
                 pay: "Tarif TTC la nuitée pour 2 personnes, taxe de séjour en sus",
@@ -76,18 +76,20 @@ const hebergementData = {
                     }
                 ],
                 gallery:[
-                    "/manoir_suitecreac/view_1.jpg",
-                    "/manoir_suitecreac/view_2.jpg",
+                    "/manoir_suitecreac/overview_saint_creac_suite.jpg",
                     "/manoir_suitecreac/view_3.jpg",
                     "/manoir_suitecreac/view_4.jpg",
+                    "/manoir_suitecreac/view_7.jpg",
+                    "/manoir_suitecreac/view_1.jpg",
+                    "/manoir_suitecreac/view_8.jpg",
                     "/manoir_suitecreac/view_5.jpg",
+                    "/manoir_suitecreac/view_2.jpg",
                     "/manoir_suitecreac/view_6.jpg",
-                    "/manoir_suitecreac/view_7.jpg"
                 ]
             },
             {
                 roomName: "La Suite Saint-Clarc",
-                src:"/manoir_suiteclar/overview_sinatclar_suite.jpg",
+                src:"/manoir_suiteclar/view_2.jpg",
                 color: "#e39c7e",
                 desc: "",
             },
@@ -137,7 +139,7 @@ const HebergementPage = () => {
     };
 
     return (
-        <div className='container m-auto py-8 mt-48'>
+        <div className='container m-auto py-20 mt-42'>
             <h1 className={`${poiret.className} text-9xl font-bold text-center m-10`}>{hebergement.title}</h1>
             {hebergement.rooms?.map((room, index) => (
                 <HebergementsLink 
@@ -150,24 +152,23 @@ const HebergementPage = () => {
             ))}
             <Modal modal={modal} projects={hebergement.rooms}/>
   
-            <div ref={detailsRef} className="mt-10">
+            <div ref={detailsRef} className="mt-48">
                 {selectedRoom && (
-                    <div className="bg-[#faece6] rounded-xl">
                     <div className="mx-auto max-w-7xl grid grid-cols-1 gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32">
                       
                    {/* Section de la galerie d'images */}
-                    <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+                    <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-1 lg:gap-x-8 lg:px-8">
                    
                     {/* Deux images en colonne au centre */}
-                    <div className="hidden lg:grid lg:grid-cols-4 lg:gap-y-8">
+                    <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 w-full">
                         {selectedRoom.gallery.map((image, index) => (
                         <div key={index} className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
                             <Image
                             src={image}
                             alt={`Image ${index + 2} de ${selectedRoom.roomName}`}
-                            className="h-full w-full object-cover object-center"
+                            className="h-auto w-full object-cover object-center"
                             width={300}
-                            height={200}
+                            height={0}
                             />
                         </div>
                         ))}
@@ -175,8 +176,8 @@ const HebergementPage = () => {
                     </div>
                       {/* Section des informations principales */}
                       <div>
-                        <h2 className={`${poiret.className} text-3xl font-bold`}>{selectedRoom.roomName}</h2>
-                        <p className="mt-4 leading-6">{selectedRoom.desc}</p>
+                        <h2 className={`${poiret.className} text-6xl font-bold text-center mb-10`}>{selectedRoom.roomName}</h2>
+                        <p className="mt-4 leading-10 w-2/3 m-auto text-xl">{selectedRoom.desc}</p>
                 
                         {/* Section des prestations avec icônes */}
                         <div className="mt-6">
@@ -185,7 +186,7 @@ const HebergementPage = () => {
                           <div className="grid grid-cols-4 gap-4">
                             <div className="flex items-center space-x-2">
                               {selectedRoom.prestationsIcons.surface.icon}
-                              <span>{selectedRoom.prestationsIcons.surface.desc}</span>
+                              <span className='text-sm'>{selectedRoom.prestationsIcons.surface.desc}</span>
                             </div>
                             <div className="flex items-center space-x-2">
                               {selectedRoom.prestationsIcons.max.icon}
@@ -225,7 +226,7 @@ const HebergementPage = () => {
                       </div>
                   
                     </div>
-                  </div>
+                 
                   
                 )}
             </div>

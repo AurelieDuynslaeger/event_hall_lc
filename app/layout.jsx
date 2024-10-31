@@ -42,14 +42,14 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${poppins.className} bg-slate-50`}>
         <div>
-          <header className="flex items-center justify-evenly p-2 fixed left-0 right-0 top-0 z-50">
+          <header className="flex items-center justify-evenly p-2 fixed left-0 right-0 top-0 z-50 backdrop-blur-md">
           <Link href="/" legacyBehavior>
               <a>
                 <Image
                   src={logoLassalleNew}
                   alt="lassale-saint-creac logo"
-                  width={150}
-                  height={150}
+                  width={120}
+                  height={120}
                   loading="lazy"
                 />
               </a>
