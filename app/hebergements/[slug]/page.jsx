@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { PiBathtubThin, PiBedThin, PiCalendarStarThin, PiCigaretteSlashThin, PiCoffeeThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
 import { TbAirConditioning } from 'react-icons/tb';
 import DrawOutlineButton from '@/components/DrawOutlineButton/DrawOutlineButton';
+import RoomDetails from "@/components/RoomDetails/RoomDetails"
 
 const hebergementData = {
     manoir: {
@@ -18,7 +19,7 @@ const hebergementData = {
                 roomName: "La Suite Saint-Créac",
                 src:"/manoir_suitecreac/view_4.jpg",
                 color: "#e39c7e",
-                desc: "Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale! Charme et authenticité sont au rendez-vous, avec sa cheminée du XVième siècle classée, ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande), d'une vaste salle d'eau (double vasques, baignoire balnéothérapie, WC privatif), d'un espace salon avec vue sur la vallée (canapé convertible, literie pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire)",
+                desc: ["Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale!", "Charme et authenticité sont au rendez-vous, avec sa cheminée du XVième siècle classée, ses murs en pierre, ses portes en chêne et ses poutres centenaires.","Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande), d'une vaste salle d'eau (double vasques, baignoire balnéothérapie, WC privatif)", "d'un espace salon avec vue sur la vallée (canapé convertible, literie pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire)"],
                 pay: "Tarif TTC la nuitée pour 2 personnes, taxe de séjour en sus",
                 off: "Remise de 15% à partir de 3 nuités",
                 tarifs: [
@@ -305,6 +306,9 @@ const HebergementPage = () => {
                         </DrawOutlineButton>
                   
             </div>
+            {selectedRoom && (
+            <RoomDetails mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
+            )}
         </div>
     )
 }
