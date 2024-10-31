@@ -1,15 +1,14 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState, useRef } from 'react';
 import { useParams } from "next/navigation";
 import { poiret } from '@/app/font';
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
-import Image from 'next/image';
-import { PiBathtubThin, PiBedThin, PiCalendarStarThin, PiCigaretteSlashThin, PiCoffeeThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
+import { PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
 import { TbAirConditioning } from 'react-icons/tb';
-import DrawOutlineButton from '@/components/DrawOutlineButton/DrawOutlineButton';
 import RoomDetails from "@/components/RoomDetails/RoomDetails"
+
 
 const hebergementData = {
     manoir: {
@@ -198,15 +197,19 @@ const HebergementPage = () => {
     // Récupère les données en fonction du slug
     const hebergement = hebergementData[slug];
 
-    if (!hebergement) {
-        return <div>Hébergement non trouvé</div>;
-    }
+    useEffect(() => {
+        if (selectedRoom && detailsRef.current) {
+            detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [selectedRoom]);
 
     const handleRoomClick = (room) => {
         setSelectedRoom(room);
-        // Scroller vers le div des détails
-        detailsRef.current.scrollIntoView({ behavior: 'smooth' });
     };
+
+    if (!hebergement) {
+        return <div>Hébergement non trouvé</div>;
+    }
 
     return (
         <div className='container m-auto py-20 mt-42'>
@@ -222,94 +225,13 @@ const HebergementPage = () => {
             ))}
             <Modal modal={modal} projects={hebergement.rooms}/>
   
-            <div ref={detailsRef} className="mt-48">
-                {selectedRoom && (
-                    <div className="mx-auto max-w-7xl grid grid-cols-1 gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32">
-                      
-                   {/* Section de la galerie d'images */}
-                    <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-1 lg:gap-x-8 lg:px-8">
-                   
-                    {/* Deux images en colonne au centre */}
-                    <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 w-full">
-                        {selectedRoom.gallery.map((image, index) => (
-                        <div key={index} className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-                            <Image
-                            src={image}
-                            alt={`Image ${index + 2} de ${selectedRoom.roomName}`}
-                            className="h-auto w-full object-cover object-center"
-                            width={300}
-                            height={0}
-                            />
-                        </div>
-                        ))}
-                    </div>
-                    </div>
-                      {/* Section des informations principales */}
-                      <div>
-                        <h2 className={`${poiret.className} text-6xl font-bold text-center mb-10`}>{selectedRoom.roomName}</h2>
-                        <p className="mt-4 leading-10 w-2/3 m-auto text-xl">{selectedRoom.desc}</p>
-                
-                        {/* Section des prestations avec icônes */}
-                        <div className="mt-6">
-                          <h3 className="text-xl font-semibold mb-4 sr-only">Prestations</h3>
-                          <hr className='border-1 border-[#d6815d] mb-4' />
-                          <div className="grid grid-cols-4 gap-4">
-                            <div className="flex items-center space-x-2">
-                              {selectedRoom.prestationsIcons.surface.icon}
-                              <span className='text-sm'>{selectedRoom.prestationsIcons.surface.desc}</span>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              {selectedRoom.prestationsIcons.max.icon}
-                              <span>{selectedRoom.prestationsIcons.max.desc}</span>
-                            </div>
-                            {selectedRoom.prestationsIcons.facilities.map((facility, index) => (
-                              <div key={index} className="flex items-center space-x-2">
-                                {facility.icon}
-                                <span>{facility.desc}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        
-                        {/* Section des informations supplémentaires */}
-                        <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-4 sr-only">Tarifs</h3>
-                        <hr className='border-1 border-[#d6815d] mb-4' />
-                          <p className="font-semibold">{selectedRoom.pay}</p>
-                          <p>{selectedRoom.off}</p>
-
-                          
-                          
-                          <h3 className="text-lg font-semibold mt-4">Tarifs</h3>
-                          <ul className="list-disc list-inside">
-                            {selectedRoom.tarifs.map((tarif, index) => (
-                              <li key={index}>Juin-Août: {tarif.juinaout24} / Avril-Mai, Sept-Oct: {tarif.avrmaiseptoct24} / Nov-Mars: {tarif.novtomars}</li>
-                            ))}
-                          </ul>
-                          <h3 className="text-lg font-semibold mt-4">Options supplémentaires</h3>
-                          <ul className="list-disc list-inside">
-                            {selectedRoom.plus.map((option, index) => (
-                              <li key={index}>Nuit supplémentaire: {option.addNight}, Petit-déjeuner anglais: {option.englshB}, Hamam: {option.hamam}, Navette: {option.navette}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                  
-                    </div>
-                 
-                  
-                )}
-                <DrawOutlineButton href="/reservation" className='w-1/4 m-auto text-xs'>
-                            <PiCalendarStarThin className="mr-2 h-6 w-6"/>
-                                Voir les disponibilités
-                        </DrawOutlineButton>
-                  
-            </div>
+           
             {selectedRoom && (
-            <RoomDetails mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
+            <RoomDetails ref={detailsRef} mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
             )}
+
         </div>
+            
     )
 }
 

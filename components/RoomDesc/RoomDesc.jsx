@@ -9,7 +9,7 @@ import gsap from 'gsap';
 //pass roomDesc as a prop
 const RoomDesc = ({roomDescArray}) => {
   return (
-    <div className="relative text-black text-[3vw] mt-[30vw] ml-[10vw]" >
+    <div className="relative text-gray-800 font-bold text-[2vw] mt-[20vw] ml-[10vw]" >
         {
             roomDescArray.map( (phrase, index) => {
                 return <AnimatedText key={index}>{phrase}</AnimatedText>
@@ -23,14 +23,16 @@ export default RoomDesc
 
 function AnimatedText({children}) {
   const text = useRef(null);
+
   useLayoutEffect( () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.from(text.current, {
           scrollTrigger: {
               trigger: text.current,
-              scrub: true,
-              start: "0px bottom",
-              end: "bottom+=400px bottom",
+              scrub: 0.5,
+              start: "bottom bottom",
+              end: "top top+=100",
+              toggleActions: "play none none reverse",
           },
           opacity: 0,
           left: "-200px",
