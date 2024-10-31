@@ -6,8 +6,9 @@ import { poiret } from '@/app/font';
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
 import Image from 'next/image';
-import { PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
+import { PiBathtubThin, PiBedThin, PiCalendarStarThin, PiCigaretteSlashThin, PiCoffeeThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
 import { TbAirConditioning } from 'react-icons/tb';
+import DrawOutlineButton from '@/components/DrawOutlineButton/DrawOutlineButton';
 
 const hebergementData = {
     manoir: {
@@ -200,7 +201,8 @@ const HebergementPage = () => {
                             ))}
                           </div>
                         </div>
-                  
+
+                        
                         {/* Section des informations supplémentaires */}
                         <div className="mt-6">
                         <h3 className="text-xl font-semibold mb-4 sr-only">Tarifs</h3>
@@ -229,6 +231,11 @@ const HebergementPage = () => {
                  
                   
                 )}
+                <DrawOutlineButton href="/reservation" className='w-1/4 m-auto text-xs'>
+                            <PiCalendarStarThin className="mr-2 h-6 w-6"/>
+                                Voir les disponibilités
+                        </DrawOutlineButton>
+                  
             </div>
         </div>
     )
