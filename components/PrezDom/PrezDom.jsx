@@ -40,7 +40,7 @@ const PrezDom = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className='text-2xl my-6'>
-        Un site idyllique pour vos cérémonies, Mariage, réunion de famille ou séminaire professionnel.
+        Un site idyllique pour vos cérémonies, Mariage, réunion de famille, séminaire professionnel ou un week-end dans la région !
       </motion.p>
       <DrawOutlineButton href="/hebergements" className="w-1/5 m-auto"> 
             <PiHeartStraightThin className="mr-2 h-6 w-6"/>

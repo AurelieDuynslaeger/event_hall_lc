@@ -12,7 +12,7 @@ import {
   NavigationMenuLink
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { PiCalendarDotsThin, PiMapPinLight  } from "react-icons/pi";
+import { PiArrowRightThin, PiMapPinLight} from "react-icons/pi";
 import { cn } from "@/lib/utils";
 import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
 
@@ -87,8 +87,9 @@ export default function RootLayout({ children }) {
               </NavigationMenuList>
             </NavigationMenu>
             <DrawOutlineButton href="/reservation"> 
-            <PiCalendarDotsThin className="mr-2 h-4 w-4"/>
-            <p>Réserver</p>
+            
+            <p className="text-base">Une demande particulière </p>
+            <PiArrowRightThin className="ml-2 h-4 w-4"/>
           </DrawOutlineButton>
           </header>
 

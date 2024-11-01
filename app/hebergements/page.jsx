@@ -61,7 +61,7 @@ const HebergementsPage = () => {
 export default HebergementsPage
 
 
-const IMG_PADDING = 12;
+const IMG_PADDING = 20;
 
 const TextParallaxContent = ({ imgUrl, subheading, heading, children }) => {
     return (
@@ -96,7 +96,7 @@ const StickyImage = ({ imgUrl }) => {
                 backgroundImage: `url(${imgUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height: `calc(100vh - ${IMG_PADDING * 2}px)`,
+                height: `calc(80vh - ${IMG_PADDING * 2}px)`,
                 top: IMG_PADDING,
                 scale,
             }}

@@ -42,7 +42,7 @@ const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip
 const backgroundSize = useTransform(
     scrollY,
     [0, SECTION_HEIGHT + 500],
-    ["160%", "100%"]
+    ["125%", "100%"]
 );
 const opacity = useTransform(
     scrollY,

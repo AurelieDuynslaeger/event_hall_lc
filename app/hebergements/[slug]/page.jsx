@@ -1,6 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
-import { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react'
 import { useParams } from "next/navigation";
 import { poiret } from '@/app/font';
 import Modal from '@/components/Modal/Modal';
@@ -29,46 +28,6 @@ const hebergementData = {
                         novtomars: "125.00€"
                     }
                 ],
-                prestationsIcons: 
-                    {
-                        surface: {icon: <PiResizeThin />, desc: "50m²",},
-                        max: {icon: <PiPersonLight />, desc: "1 à 4 pers. maximum",},
-                        facilities: [
-                            {
-                                icon: <PiCigaretteSlashThin className="h-6 w-6 text-[#87482d]"/>, desc: "Non fumeur"
-                            },
-                            {
-                                icon: <PiWheelchairThin className="h-6 w-6 text-[#87482d]"/>, desc: "Non PMR"
-                            },
-                            {
-                                icon: <PiWifiHighThin className="h-6 w-6 text-[#87482d]"/>, desc: "Wifi Inlcus"
-                            },
-                            {
-                                icon: <TbAirConditioning className="h-6 w-6 text-[#87482d]"/>, desc: "Climatisation réversible"
-                            },
-                            {
-                                icon: <PiBathtubThin className="h-6 w-6 text-[#87482d]"/>, desc: "Baignoire balnéothérapie"
-                            },
-                            {
-                                icon: <PiBedThin className="h-6 w-6 text-[#87482d]"/>, desc: "Literie de haute qualité 180*200"
-                            },
-                            {
-                                icon: <PiTowelThin className="h-6 w-6 text-[#87482d]"/>, desc: "Linge de lit et de toilette inclus"
-                            },
-                            {
-                                icon:<PiHairDryerThin className="h-6 w-6 text-[#87482d]"/>, desc: "Sèche cheveux"
-                            },
-                            {
-                                icon:<PiCoffeeThin className="h-6 w-6 text-[#87482d]"/>, desc: "Petit déjeuner continental inclus"
-                            },
-                            {
-                                icon:<PiSwimmingPoolThin className="h-6 w-6 text-[#87482d]"/>, desc: "Accès piscine et spa"
-                            },
-                            {
-                                icon:<PiThermometerHotThin className="h-6 w-6 text-[#87482d]"/>, desc: "Accès Hamman et sauna sur réservation"
-                            }
-                        ]
-                    },
                 plus:[
                     {
                         addNight: "30.00€ TTC/pers",
@@ -77,17 +36,6 @@ const hebergementData = {
                         navette: "Service Vip Aéroport"
                     }
                 ],
-                gallery:[
-                    "/manoir_suitecreac/overview_saint_creac_suite.jpg",
-                    "/manoir_suitecreac/view_3.jpg",
-                    "/manoir_suitecreac/view_4.jpg",
-                    "/manoir_suitecreac/view_7.jpg",
-                    "/manoir_suitecreac/view_1.jpg",
-                    "/manoir_suitecreac/view_8.jpg",
-                    "/manoir_suitecreac/view_5.jpg",
-                    "/manoir_suitecreac/view_2.jpg",
-                    "/manoir_suitecreac/view_6.jpg",
-                ]
             },
             {
                 roomName: "La Suite Saint-Clarc",
