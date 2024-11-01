@@ -14,7 +14,7 @@ const IntroRoomDetail = ({ mainImg, roomName }) => {
                 initial={{ clipPath: 'inset(25%)' }}
                 animate={isInView ? { clipPath: 'inset(0%)' } : {}}
                 transition={{ duration: 1, ease: 'easeOut' }}
-                className="w-[80%] h-[100vh] absolute brightness-60"
+                className="w-[80%] h-[80vh] absolute brightness-60"
             >
                 <Image
                     src={mainImg}
