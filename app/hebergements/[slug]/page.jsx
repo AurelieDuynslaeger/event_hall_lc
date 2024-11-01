@@ -16,6 +16,7 @@ const hebergementData = {
         rooms: [
             {
                 roomName: "La Suite Saint-Créac",
+                key: "saint_creac",
                 src:"/manoir_suitecreac/view_4.jpg",
                 color: "#e39c7e",
                 desc: ["Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale!", "Charme et authenticité sont au rendez-vous, avec sa cheminée du XVième siècle classée, ses murs en pierre, ses portes en chêne et ses poutres centenaires.","Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande), d'une vaste salle d'eau (double vasques, baignoire balnéothérapie, WC privatif)", "Un superbe espace salon avec vue sur la vallée (canapé convertible, literie pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire)"],
@@ -90,6 +91,7 @@ const hebergementData = {
             },
             {
                 roomName: "La Suite Saint-Clarc",
+                key: "saint_clarc",
                 src:"/manoir_suiteclar/view_2.jpg",
                 color: "#e39c7e",
                 desc: "",
@@ -164,12 +166,14 @@ const hebergementData = {
             },
             {
                 roomName: "La Chambre Saint-Loup",
+                key: "saint_loup",
                 src:"/manoir_chsaintloup/overwiew_saintloup.jpg",
                 color: "#e39c7e",
                 desc: "",
             },
             {
                 roomName: "La Chambre Mansaut",
+                key: "mansaut",
                 src:"/manoir_chmansaut/overview_mansaut.jpg",
                 color: "#e39c7e",
                 desc: "",
@@ -233,7 +237,7 @@ const HebergementPage = () => {
            
             {selectedRoom && (
             <div ref={detailsRef}>
-                <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
+                <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName} selectedRoom={selectedRoom.key}/>  
             </div>
             )}
 
