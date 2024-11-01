@@ -14,13 +14,11 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle}) => {
    useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Créez un effet de défilement ici
     const trigger = ScrollTrigger.create({
       trigger: roomDescRef.current,
-      start: 'top bottom', // Déclenche quand le haut de l'élément touche le bas de la fenêtre
-      end: 'bottom top',   // Se termine quand le bas de l'élément touche le haut de la fenêtre
+      start: 'top bottom',
+      end: 'bottom top',  
       onEnter: () => {
-        // Ajoutez l'animation ici
         gsap.from(roomDescRef.current, {
           opacity: 0,
           y: 50,
@@ -28,7 +26,6 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle}) => {
         });
       },
       onLeaveBack: () => {
-        // Ajoutez l'animation inverse si nécessaire
         gsap.to(roomDescRef.current, {
           opacity: 0,
           y: -50,

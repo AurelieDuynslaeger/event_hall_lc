@@ -199,12 +199,17 @@ const HebergementPage = () => {
 
     useEffect(() => {
         if (selectedRoom && detailsRef.current) {
-            detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+            detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }, [selectedRoom]);
 
     const handleRoomClick = (room) => {
         setSelectedRoom(room);
+        setTimeout(() => {
+            if (detailsRef.current) {
+                detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100); // Ajustez le délai si nécessaire
     };
 
     if (!hebergement) {
@@ -227,7 +232,9 @@ const HebergementPage = () => {
   
            
             {selectedRoom && (
-            <RoomDetails ref={detailsRef} mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
+            <div ref={detailsRef}>
+                <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName}/>  
+            </div>
             )}
 
         </div>
