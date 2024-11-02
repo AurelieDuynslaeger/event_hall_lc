@@ -17,16 +17,6 @@ const hebergements = [
     },
     {
         id: 2,
-        img: "/domaine/dortoir_6.jpg",
-        slug: "dortoir",
-        heading: "Le Dortoir",
-        subheading: "Lieu magique et vue panoramique",
-        appeal: "Parquet et charpente sous volige, vous profiterez d'une vue panoramique depuis sa terrasse privative de plus de 20 m², totalement indépendant vous y accèderez exclusivement par l'escalier de la Tour.",
-        desc: "Idéal pour les groupes et les randonneurs",
-        plus: ""
-    },
-    {
-        id: 3,
         img: "/domaine/etable_7.jpeg",
         slug: "etable",
         heading: "L'Étable",
@@ -135,7 +125,7 @@ const OverlayCopy = ({ subheading, heading }) => {
             <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
                 {subheading}
             </p>
-            <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+            <p className="text-center text-4xl font-bold md:text-9xl">{heading}</p>
         </motion.div>
     );
 };

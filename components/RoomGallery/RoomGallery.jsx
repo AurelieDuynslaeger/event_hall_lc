@@ -9,18 +9,18 @@ const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
     const [selectedView, setSelectedView] = useState(0);
     const imageContainer = useRef(null);
     const ref = useRef(null);
-  const inView = useInView(ref, { once: false });
+    const inView = useInView(ref, { once: false });
 
      if (!selectedRoomViews || selectedRoomViews.length === 0) {
-        return <div>Aucune vue disponible pour cette chambre.</div>; // Message d'erreur ou retour alternatif
+        return <div>Aucune vue disponible pour cette chambre.</div>; 
     }
 
     return (
         <div className="relative text-black mt-[10vh] p-[10%]">
-            <div className="flex h-[800px] justify-between gap-[5%]">
+            <div className="flex h-[80vh] justify-between gap-[5%]">
                 <motion.div 
                 ref={imageContainer} 
-                className="relative h-full w-[40%]"
+                className="relative h-full w-[60%]"
                 initial={{ y: -100 }} 
                 animate={{ y: 0 }} 
                 transition={{ duration: 1, ease: "easeInOut" }}
@@ -63,13 +63,13 @@ const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
                                     onMouseOver={() => setSelectedView(index)} 
                                     className="ml-auto mr-0 w-full text-black uppercase text-[1vw] border-b border-[#a25433] flex justify-end"
                                 >
-                                    <h2 className='m-0 mt-6 mb-5 cursor-default'>{view.title}</h2>
+                                    <h2 className='m-0 mt-4 mb-5 cursor-default text-base'>{view.title}</h2>
                                 </div>
                             ))
                         }
                     </div>
                    
-                    <DrawOutlineButton href="/reservation" className="w-1/2 ml-auto mt-8"> 
+                    <DrawOutlineButton href="" className="w-1/2 ml-auto mt-8" onClick={() => setDrawerOpen(true)}> 
                         <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
                         <p>Je réserve !</p>
                     </DrawOutlineButton>

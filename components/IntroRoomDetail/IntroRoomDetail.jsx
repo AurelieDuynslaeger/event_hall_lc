@@ -30,7 +30,8 @@ const IntroRoomDetail = ({ mainImg, roomName }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-                    className='text-white text-8xl font-bold z-3 text-center whitespace-nowrap'
+                    className='text-[#efc4b2] text-8xl font-bold z-3 text-center whitespace-nowrap'
+                    style={{ WebkitTextStroke : "1px black"}}
                 >
                     {roomName}
                 </motion.h1>
