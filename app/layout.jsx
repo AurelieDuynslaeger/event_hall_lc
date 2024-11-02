@@ -34,6 +34,7 @@ const menuItems = [
       { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
     ],
   },
+  {title: "Gallerie", href:"/gallerie"},
   { title: "Contact", href: "/contact" },
 ];
 
