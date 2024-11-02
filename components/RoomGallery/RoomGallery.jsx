@@ -1,8 +1,7 @@
 import React, { useState, useRef } from 'react'
 import Image from 'next/image';
-import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
-import { PiArrowUpRightThin } from 'react-icons/pi';
 import { motion, useInView } from 'framer-motion';
+
 
 
 const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
@@ -11,13 +10,16 @@ const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: false });
 
+
+
+
      if (!selectedRoomViews || selectedRoomViews.length === 0) {
         return <div>Aucune vue disponible pour cette chambre.</div>; 
     }
 
     return (
         <div className="relative text-black mt-[10vh] p-[10%]">
-            <div className="flex h-[80vh] justify-between gap-[5%]">
+            <div className="flex h-[70vh] justify-between gap-[5%]">
                 <motion.div 
                 ref={imageContainer} 
                 className="relative h-full w-[60%]"
@@ -69,10 +71,7 @@ const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
                         }
                     </div>
                    
-                    <DrawOutlineButton href="" className="w-1/2 ml-auto mt-8" onClick={() => setDrawerOpen(true)}> 
-                        <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
-                        <p>Je réserve !</p>
-                    </DrawOutlineButton>
+                    
                 </div>
             </div>
             

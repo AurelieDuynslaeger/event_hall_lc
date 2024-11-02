@@ -6,12 +6,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import IntroRoomDetail from '../IntroRoomDetail/IntroRoomDetail';
 import RoomDesc from '../RoomDesc/RoomDesc';
 import RoomGallery from '../RoomGallery/RoomGallery';
-import { PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiCookingPotThin, PiFarmThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
+import { PiArrowUpRightThin, PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiCookingPotThin, PiFarmThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
 import { TbAirConditioning} from 'react-icons/tb';
 import { GiVacuumCleaner } from 'react-icons/gi';
 import { CiParking1 } from 'react-icons/ci';
 import { MdOutlineElectricCar } from 'react-icons/md';
-
+import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
+import Link from 'next/link';
 
 const roomViews = {
     saint_creac: {
@@ -408,7 +409,6 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle, selectedRoom })
     const roomDescRef = useRef(null);
     const selectedRoomData = roomViews[selectedRoom];
 
-
    useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -447,6 +447,12 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle, selectedRoom })
             <RoomDesc roomDescArray={roomDescription}/>
         </div>
         <RoomGallery selectedRoomViews={selectedRoomData.views} prestationsIcons={selectedRoomData.prestationIcons}/>
+
+    
+        <DrawOutlineButton  href={`/reservation?room=${selectedRoom}`}  className="w-1/4 m-auto -mt-24"> 
+            <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
+            <p>Je réserve !</p>
+        </DrawOutlineButton>
     </div>
   )
 }
