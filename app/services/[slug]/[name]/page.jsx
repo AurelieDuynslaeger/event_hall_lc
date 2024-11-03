@@ -3,6 +3,7 @@ import React from 'react'
 import { useParams } from "next/navigation";
 import Image from 'next/image';
 import { poiret } from '@/app/font';
+import ServiceLanding from "@/components/ServiceLanding/ServiceLanding"
 
 const roomData = {
     receptions: {
@@ -72,6 +73,8 @@ export default function RoomPage() {
                 </div>
             )}
             {/* CTA pour demander un devis */}
+
+            <ServiceLanding />
         </div>
     );
 }
