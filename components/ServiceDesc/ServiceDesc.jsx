@@ -6,7 +6,7 @@ const ServiceDesc = ({paragraph}) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
       target: container,
-      offset: ["start 0.9", "start 0.25"]
+      offset: ["start 0.8", "start 0.10"]
     })
 
     const words = paragraph.split(" ")
