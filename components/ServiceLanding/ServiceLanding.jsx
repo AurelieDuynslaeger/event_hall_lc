@@ -1,75 +1,123 @@
 import Image from 'next/image';
-import { useScroll, useTransform, motion} from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import {motion} from "framer-motion"
 
-
-
-
-
-const ServiceLanding = () => {
-
-    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-    const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-    const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-    const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+const ServiceLanding = ( {scaleValues, roomName}) => {
 
     const serviceImages = {
         orangerie : {
             img : [
                 {
                     src: "/orangerie/orangerie_1_vue.jpg",
-                    scale: scale4
+                    scale: scaleValues[0]
                 },
                 {
                     src: "/orangerie/orangerie_3_presta.jpg",
-                    scale: scale5
+                    scale: scaleValues[1]
                 },
                 {
                     src: "/orangerie/orangerie_4_terrasse.jpg",
-                    scale: scale6
+                    scale: scaleValues[2]
                 },
                 {
                     src: "/orangerie/orangerie_11_traiteur.jpg",
-                    scale: scale8
+                    scale: scaleValues[4]
                 },
                 {
                     src: "/orangerie/orangerie_12_open.jpg",
-                    scale: scale9
+                    scale: scaleValues[0]
+                },
+            ]
+        
+        },
+        saintloup : {
+            img : [
+                {
+                    src: "/saintloup/parvisbis.jpg",
+                    scale: scaleValues[0]
+                },
+                {
+                    src: "/saintloup/config20p.jpg",
+                    scale: scaleValues[1]
+                },
+                {
+                    src: "/saintloup/config20pbis.jpg",
+                    scale: scaleValues[2]
+                },
+                {
+                    src: "/saintloup/salle50m.jpg",
+                    scale: scaleValues[4]
                 },
             ]
         
         }
     }
 
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ['start start', 'end end']
-    })
-
-
-    useEffect(()=> {
-        const lenis = new Lenis()
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
+    const getImageContainerStyle = (index) => {
+        switch (index) {
+          case 1:
+            return {
+              top: "-30vh",
+              left: "5vw",
+              width: "35vw",
+              height: "30vh",
+            };
+          case 2:
+            return {
+              top: "-10vh",
+              left: "-25vw",
+              width: "20vw",
+              height: "45vh",
+            };
+          case 3:
+            return {
+              left: "27.5vw",
+              width: "25vw",
+              height: "25vh",
+            };
+          case 4:
+            return {
+              top: "27.5vh",
+              left: "5vw",
+              width: "20vw",
+              height: "25vh",
+            };
+          case 5:
+            return {
+              top: "27.5vh",
+              left: "-22.5vw",
+              width: "30vw",
+              height: "25vh",
+            };
+          case 6:
+            return {
+              top: "22.5vh",
+              left: "25vw",
+              width: "15vw",
+              height: "15vh",
+            };
+          default:
+            return {
+              width: "25vw",
+              height: "25vh",
+            };
         }
-        requestAnimationFrame(raf)
-    },[])
+      };
+
+      const images = serviceImages[roomName]?.img || [];
 
   return (
-    <div ref={container} className="h-[300vh] relative">
+    <>
             <div className="sticky overflow-hidden top-0 h-screen">
             {
-                serviceImages.orangerie.img.map( ({src, scale}, index) => {
-                    return <motion.div key={index} style={{scale}} className="w-full h-full top-0 absolute flex items-center justify-center">
-                        <div className="relative w-[25vw] h-[25vh]">
+                images.map( ({src, scale}, index) => {
+                    return <motion.div key={index} style={{scale}} className="w-full h-full top-0 absolute flex items-center justify-center ">
+                        <div className="relative"
+                        style={getImageContainerStyle(index)}>
                             <Image
                                 src={src}
                                 fill
                                 alt="image"
-                                placeholder='blur'
+                                // placeholder='blur'
                                 className='object-cover'
                             />
                         </div>
@@ -88,7 +136,7 @@ const ServiceLanding = () => {
                     </div>
                 </motion.div> */}
             </div>
-        </div>
+        </>
   )
 }
 

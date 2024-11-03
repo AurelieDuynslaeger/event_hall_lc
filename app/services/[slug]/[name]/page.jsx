@@ -1,9 +1,10 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useParams } from "next/navigation";
-import Image from 'next/image';
-import { poiret } from '@/app/font';
 import ServiceLanding from "@/components/ServiceLanding/ServiceLanding"
+import ServiceDesc from "@/components/ServiceDesc/ServiceDesc"
+import Lenis from 'lenis';
+import { useScroll, useTransform } from 'framer-motion';
 
 const roomData = {
     receptions: {
@@ -41,40 +42,47 @@ const roomData = {
 };
 
 export default function RoomPage() {
+    const container = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: container,
+        offset: ['start start', 'end end']
+    })
+
+    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+    const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
+    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
+    const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
+    const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+
+    const scaleValues = [scale4, scale5, scale6, scale8, scale9];
+
     const params = useParams();
     const { slug, name } = params;
 
     // Récupère les données pour la salle en fonction du slug et du name
     const roomDetails = roomData[slug]?.[name];
 
+    useEffect(()=> {
+        const lenis = new Lenis()
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    },[])
+
+
     if (!roomDetails) {
         return <h1>Room not found</h1>; // Gérer les erreurs si nécessaire
     }
 
     return (
-        <div className='container m-auto py-8 mt-20'>
-            <h1 className={`${poiret.className} text-9xl font-bold text-center m-10`}>{roomDetails.title}</h1>
-            <p className=''>{roomDetails.description}</p>
-            {/* Afficher les images et autres informations */}
-            {/* Afficher les images si elles sont présentes */}
-            {roomDetails.images && roomDetails.images.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-4">
-                    {roomDetails.images.map((image, index) => (
-                        <Image
-                            key={index}
-                            src={image}
-                            alt={`${roomDetails.title} image ${index + 1}`}
-                            layout="responsive"
-                            width={800} // Augmenter la largeur pour une meilleure résolution
-                            height={500}
-                            className="w-full h-auto object-cover rounded-lg shadow-md"
-                        />
-                    ))}
-                </div>
-            )}
-            {/* CTA pour demander un devis */}
-
-            <ServiceLanding />
+        <div className='container m-auto py-8 mt-20 h-[400vh]'>
+            <div className='h-[300vh] relative ' ref={container}>
+                <ServiceLanding scaleValues={scaleValues} roomName={name}/>
+            </div>
+            <ServiceDesc paragraph={roomDetails.description} />
         </div>
     );
 }
