@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logoLassalleNew from "@/app/assets/LogoLasalleSvg.png";
+import logoLassalle from "@/app/assets/LogoLassalleOrigin.svg";
 import { poppins, poiret } from "./font"
 import "./globals.css";
 import {
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
           <Link href="/" legacyBehavior>
               <a>
                 <Image
-                  src={logoLassalleNew}
+                  src={logoLassalle}
                   alt="lassale-saint-creac logo"
                   width={120}
                   height={120}

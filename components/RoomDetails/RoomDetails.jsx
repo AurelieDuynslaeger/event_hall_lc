@@ -12,7 +12,6 @@ import { GiVacuumCleaner } from 'react-icons/gi';
 import { CiParking1 } from 'react-icons/ci';
 import { MdOutlineElectricCar } from 'react-icons/md';
 import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
-import Link from 'next/link';
 
 const roomViews = {
     saint_creac: {
@@ -304,7 +303,7 @@ const roomViews = {
                 },
                 {
                     title: "Suite Pollen : configuration 2 couchages",
-                    src: "/gite_etable/iew_2_pollennext.jpg"
+                    src: "/gite_etable/view_3_pollennext.jpg"
                 },
                 {
                     title: "Suite Pollen : coin salon",
@@ -449,7 +448,7 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle, selectedRoom })
         <RoomGallery selectedRoomViews={selectedRoomData.views} prestationsIcons={selectedRoomData.prestationIcons}/>
 
     
-        <DrawOutlineButton  href={`/reservation?room=${selectedRoom}`}  className="w-1/4 m-auto -mt-24"> 
+        <DrawOutlineButton  href={`/reservation?subject=${selectedRoom}`}  className="w-1/4 m-auto -mt-20"> 
             <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
             <p>Je réserve !</p>
         </DrawOutlineButton>

@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { poiret } from '@/app/font';
 
 const IntroRoomDetail = ({ mainImg, roomName }) => {
     const background = useRef(null);
@@ -25,12 +26,12 @@ const IntroRoomDetail = ({ mainImg, roomName }) => {
                 />
             </motion.div>
 
-            <div className="flex justify-center relative mt-[35vh]">
+            <div className="flex justify-center relative mt-[35vh] ">
                 <motion.h1
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-                    className='text-[#efc4b2] text-8xl font-bold z-3 text-center whitespace-nowrap'
+                    className={`${poiret.className} text-black text-8xl font-bold z-3 text-center whitespace-nowrap backdrop-blur-lg p-4 rounded-xl`}
                     style={{ WebkitTextStroke : "1px black"}}
                 >
                     {roomName}

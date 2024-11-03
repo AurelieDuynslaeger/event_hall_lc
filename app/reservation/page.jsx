@@ -1,11 +1,11 @@
 "use client"
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams} from 'next/navigation'
 import React, { useState } from 'react'
 
 const BookingPage = () => {
-    const router = useRouter()
+
     const searchParams = useSearchParams()
-    const room = searchParams.get('room')
+    const room = searchParams.get('subject')
 
     const [formData, setFormData] = useState({
         name: '',

@@ -1,12 +1,9 @@
 "use client"
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { useParams } from "next/navigation";
 import { poiret } from '@/app/font';
-import {motion} from "framer-motion"
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
-import RoomDetails from "@/components/RoomDetails/RoomDetails"
-import { PiArrowUpThin } from 'react-icons/pi';
 
 
 const hebergementData = {
@@ -183,33 +180,10 @@ const HebergementPage = () => {
     const params = useParams();
     const { slug } = params;
     const [modal, setModal] = useState({active: false, index: 0})
-    const [selectedRoom, setSelectedRoom] = useState(null);
-    const detailsRef = useRef(null); 
     const roomsRef = useRef(null);
 
     // Récupère les données en fonction du slug
     const hebergement = hebergementData[slug];
-
-    useEffect(() => {
-        if (selectedRoom && detailsRef.current) {
-            detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, [selectedRoom]);
-
-    const handleRoomClick = (room) => {
-        setSelectedRoom(room);
-        setTimeout(() => {
-            if (detailsRef.current) {
-                detailsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 100); // Ajustez le délai si nécessaire
-    };
-
-    const scrollToRooms = () => {
-        if (roomsRef.current) {
-            roomsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
 
     if (!hebergement) {
         return <div>Hébergement non trouvé</div>;
@@ -224,30 +198,11 @@ const HebergementPage = () => {
                     index={index} 
                     title={room.roomName} 
                     setModal={setModal} 
-                    onClick={() => handleRoomClick(room)}
+                    roomDetailUrl={`/hebergements/${slug}/${room.key}`}
                 />
             ))}
             <Modal modal={modal} projects={hebergement.rooms}/>
-           
-            {selectedRoom && (
-            <div ref={detailsRef} className='pt-44'>
-                <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName} selectedRoom={selectedRoom.key}/>  
-                {/* Bouton retour aux chambres */}
-            <motion.button 
-                onClick={scrollToRooms} 
-                className="flex gap-1 text-xs items-center" 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                exit={{ opacity: 0 }} 
-                transition={{ duration: 0.5 }}
-                style={{ position: 'fixed', bottom: '20px', left: '20px' }}
-            >
-                <PiArrowUpThin className="h-6 w-6 text-[#87482d]"/> Retour aux chambres
-            </motion.button>
-            </div>
-            )}
         </div>
-            
     )
 }
 
