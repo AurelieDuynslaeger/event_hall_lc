@@ -6,16 +6,16 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
     const serviceImages = {
         orangerie : {
             img : [
+              {
+                  src: "/orangerie/orangerie_4_terrasse.jpg",
+                  scale: scaleValues[0]
+              },
+              {
+                  src: "/orangerie/orangerie_3_presta.jpg",
+                  scale: scaleValues[2]
+              },
                 {
                     src: "/orangerie/orangerie_1_vue.jpg",
-                    scale: scaleValues[0]
-                },
-                {
-                    src: "/orangerie/orangerie_3_presta.jpg",
-                    scale: scaleValues[1]
-                },
-                {
-                    src: "/orangerie/orangerie_4_terrasse.jpg",
                     scale: scaleValues[2]
                 },
                 {

@@ -52,7 +52,7 @@ const opacity = useTransform(
 
 return (
     <motion.div
-    className="sticky top-0 h-screen w-full"
+    className="sticky top-0 h-screen w-full rounded-xl"
     style={{
         clipPath,
         backgroundSize,
@@ -125,7 +125,7 @@ return (
     alt={alt}
     className={className}
     ref={ref}
-    style={{ transform, opacity }}
+    style={{ transform, opacity, borderRadius: "25px" }}
     />
 );
 };

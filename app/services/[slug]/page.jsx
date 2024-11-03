@@ -1,14 +1,16 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 const serviceData = {
     receptions: {
-        title: "Nos réceptions",
-        description: "Séminaire, Réunion de famille, Mariage : un lieu d'exception pour magnifier cette célébration! Vous pourrez apprécier l' Orangerie et ses terrasses avec vue panoramique sur la vallée et le Domaine. Une salle de réception de 235m² (190 personnes assises, 200 debout), entièrement vitrée, plus de 30 mètres d'ouvertures accordéon ouvrant sur les terrasses de plus de 300m², c'est plus de 500m² d'espace de réception dans un cadre exceptionnel! Entièrement normée PMR, espaces sanitaires de qualité de plus de 50m², cuisine et office traiteur de 50m² avec parking privatif - Parking pour 90 véhicules. Le Domaine vous propose aussi une solution hébergements pouvant aller jusqu'à 44 couchages. Possibilité de louer l'Orangerie à la journée en semaine du lundi au jeudi. Vous pourrez aussi apprécier la salle Saint-Loup (petit espace réception de 50m², 30 personnes assises)",
+        title: "Nos salles de réceptions",
+        description: "Séminaire, Réunion de famille, Mariage : un lieu d'exception pour magnifier cette célébration! Vous pourrez apprécier l'Orangerie et ses terrasses avec vue panoramique sur la vallée et le Domaine,ou la salle Saint-Loup (petit espace réception de 50m², 30 personnes assises).",
+        // description: "Séminaire, Réunion de famille, Mariage : un lieu d'exception pour magnifier cette célébration! Vous pourrez apprécier l' Orangerie et ses terrasses avec vue panoramique sur la vallée et le Domaine. Une salle de réception de 235m² (190 personnes assises, 200 debout), entièrement vitrée, plus de 30 mètres d'ouvertures accordéon ouvrant sur les terrasses de plus de 300m², c'est plus de 500m² d'espace de réception dans un cadre exceptionnel! Entièrement normée PMR, espaces sanitaires de qualité de plus de 50m², cuisine et office traiteur de 50m² avec parking privatif - Parking pour 90 véhicules. Le Domaine vous propose aussi une solution hébergements pouvant aller jusqu'à 44 couchages. Possibilité de louer l'Orangerie à la journée en semaine du lundi au jeudi. Vous pourrez aussi apprécier la salle Saint-Loup (petit espace réception de 50m², 30 personnes assises)",
         links: [
             { name: "L'Orangerie", href: "/services/receptions/orangerie" },
-            { name: "Salle Saint Loup", href: "/services/receptions/saintloup" },
+            { name: "La salle Saint-Loup", href: "/services/receptions/saintloup" },
         ],
         // Ajoute d'autres données nécessaires ici (images, etc.)
     },
@@ -22,8 +24,107 @@ const serviceData = {
     },
 };
 
+const shuffle = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
+  
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+  
+    return array;
+  };
+
+  const squareData = [
+    {
+      id: 1,
+      src: "/orangerie/orangerie_1_vue.jpg",
+    },
+    {
+      id: 2,
+      src: "/orangerie/orangerie_3_presta.jpg",
+    },
+    {
+      id: 3,
+      src: "/saintloup/parvisbis.jpg",
+    },
+    {
+      id: 4,
+      src: "/saintloup/config20p.jpg",
+    },
+    {
+      id: 5,
+      src: "/orangerie/orangerie_4_terrasse.jpg",
+    },
+    {
+      id: 6,
+      src: "/orangerie/orangerie_11_traiteur.jpg",
+    },
+    {
+      id: 7,
+      src: "/saintloup/config20pbis.jpg",
+    },
+    {
+      id: 8,
+      src: "/saintloup/salle50m.jpg",
+    },
+    {
+      id: 9,
+      src: "/orangerie/orangerie_12_open.jpg",
+    },
+    {
+      id: 10,
+      src: "/orangerie/orangerie_7_empty.jpg",
+    },
+    {
+      id: 11,
+      src: "/orangerie/orangerie_14_table.jpg",
+    },
+    {
+      id: 12,
+      src: "/orangerie/orangerie_8_office.jpg",
+    },
+    {
+      id: 13,
+      src: "/orangerie/orangerie_6_terrasse.jpg",
+    },
+    {
+      id: 14,
+      src: "/orangerie/orangerie_13_coucher.jpg",
+    },
+    {
+      id: 15,
+      src: "/orangerie/orangerie_9_cuisine.jpg",
+    },
+    {
+      id: 16,
+      src: "/orangerie/orangerie_5_terrasse.jpg",
+    },
+  ];
+  
+  const generateSquares = () => {
+    return shuffle(squareData).map((sq) => (
+      <motion.div
+        key={sq.id}
+        layout
+        transition={{ duration: 1.5, type: "spring" }}
+        className="w-full h-full"
+        style={{
+          backgroundImage: `url(${sq.src})`,
+          backgroundSize: "cover",
+        }}
+      ></motion.div>
+    ));
+  };
+
 const ServicePage = () => {
-    const router = useRouter(); // Utilise le hook useRouter
+    const router = useRouter();
     const { slug } = useParams();
 
     // Récupère les données en fonction du slug
@@ -34,23 +135,48 @@ const ServicePage = () => {
     }
 
     return (
-        <div className='mt-40'>
-            <h1>{service.title}</h1>
-            <p>{service.description}</p>
-            {/* Tu peux ajouter ici d'autres infos comme des images, etc. */}
-            {service.links && service.links.length > 0 && (
-                <ul>
-                    {service.links.map((link) => (
-                        <li key={link.name}>
-                            <button onClick={() => router.push(link.href)}>
-                                {link.name}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
+         <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto mt-44">
+         <div>
+           <h1 className="text-4xl md:text-6xl font-semibold">
+           {service.title}
+           </h1>
+           <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+           {service.description}
+           </p>
+           <div className="flex justify-evenly">
+            {service.links && service.links.length > 0 && service.links.map((link) => (
+                <button key={link.name} className="bg-[#d6815d] text-black font-medium py-2 px-4 rounded transition-all hover:bg-[#a25433] hover:text-white active:scale-95" onClick={() => router.push(link.href)}>
+                    {link.name}
+                </button>
+           ))}
+           </div>
+         </div>
+         <ShuffleGrid />
+       </section>
     )
 }
 
 export default ServicePage
+
+const ShuffleGrid = () => {
+    const timeoutRef = useRef(null);
+    const [squares, setSquares] = useState(generateSquares());
+  
+    useEffect(() => {
+      shuffleSquares();
+  
+      return () => clearTimeout(timeoutRef.current);
+    }, []);
+  
+    const shuffleSquares = () => {
+      setSquares(generateSquares());
+  
+      timeoutRef.current = setTimeout(shuffleSquares, 3000);
+    };
+  
+    return (
+      <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+        {squares.map((sq) => sq)}
+      </div>
+    );
+  };
