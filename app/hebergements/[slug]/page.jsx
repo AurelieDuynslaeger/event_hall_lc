@@ -191,7 +191,7 @@ const HebergementPage = () => {
 
     return (
         <div ref={roomsRef} className='container m-auto py-20 mt-40'>
-            <h1  className={`${poiret.className} text-9xl font-bold text-center m-10`}>{hebergement.title}</h1>
+            <h1  className={`${poiret.className} text-9xl font-bold text-left m-10`}>{hebergement.title}</h1>
             {hebergement.rooms?.map((room, index) => (
                 <HebergementsLink 
                     key={index} 
