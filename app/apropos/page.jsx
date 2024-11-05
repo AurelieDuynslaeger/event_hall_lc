@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import BounceCard from "@/components/BounceCard/BounceCard"
 import CardTitle from "@/components/CardTitle/CardTitle"
 
-import { PiFacebookLogoThin, PiInstagramLogoThin, PiLinkedinLogoThin } from "react-icons/pi";
+import { PiFacebookLogoThin, PiInstagramLogoThin, PiLinkedinLogoThin} from "react-icons/pi";
 import Link from "next/link";
 
 const AboutPage = () => {
@@ -45,11 +45,15 @@ const AboutPage = () => {
       <div className="grid grid-cols-12 gap-4">
         <BounceCard className="col-span-12 md:col-span-8">
           <CardTitle>Nous Trouver</CardTitle>
-          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-[#a25433] to-[#d6815d] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-            <span className="block text-center font-semibold text-emerald-50">
-              FEATURE DEMO HERE
+          {/* bg-gradient-to-br from-[#a25433] to-[#d6815d] */}
+          <Link href="https://www.google.com/maps/place/Domaine+Lassalle+Saint-Créac/@43.9173699,0.7821338,14z" target="_blank" rel="noopener noreferrer">
+          <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-[url('/domaine/lassallemap.jpg')] bg-cover bg-center bg-no-repeat p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+          <span className="block text-center font-semibold text-black backdrop-blur-md p-2">
+          Domaine Lassalle Saint-Créac, 500 chemin d&apos;en Mansaut, 32380 Saint-Créac, France
             </span>
           </div>
+          </Link>
+          
         </BounceCard>
         <BounceCard className="col-span-12 md:col-span-4">
           <CardTitle>Nous Suivre</CardTitle>
