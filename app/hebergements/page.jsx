@@ -28,7 +28,7 @@ const hebergements = [
 
 const HebergementsPage = () => {
     return (
-        <div className="mt-48 container m-auto">
+        <div className="mt-40 container m-auto">
             {hebergements.map((hebergement) => (
                 <TextParallaxContent
                     key={hebergement.id}

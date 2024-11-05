@@ -15,7 +15,6 @@ const serviceData = {
             { name: "L'Orangerie", href: "/services/receptions/orangerie" },
             { name: "La salle Saint-Loup", href: "/services/receptions/saintloup" },
         ],
-        // Ajoute d'autres données nécessaires ici (images, etc.)
     },
     tablehote: {
         title: "Table d'hôte",
@@ -177,7 +176,7 @@ const ServicePage = () => {
     return (
       <>
         {slug === "receptions" ? (
-            <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto mt-44">
+            <section className="w-full h-[90vh] p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl mx-auto my-auto">
                 <div>
                     <h1 className="text-4xl md:text-6xl font-semibold">
                         {service.title}
@@ -234,7 +233,7 @@ const ShuffleGrid = () => {
     };
   
     return (
-      <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+      <div className="grid grid-cols-4 grid-rows-4 h-[650px] gap-1">
         {squares.map((sq) => sq)}
       </div>
     );
