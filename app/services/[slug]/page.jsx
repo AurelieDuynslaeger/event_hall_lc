@@ -201,7 +201,7 @@ const ServicePage = () => {
             </section>
         ) : (slug === "tablehote" || slug === "spabienetre") ? (
             // <SliderServices images={service.img}/>
-            <section onMouseMove={mouseMove} className="container m-auto mt-28">
+            <section onMouseMove={mouseMove} className="w-4/5 m-auto mt-28">
             {service.img.map(({ handle }, i) => (
               <>
                 <ServicesGallery mousePosition={mousePosition} handle={handle} slug={slug} key={i}/>

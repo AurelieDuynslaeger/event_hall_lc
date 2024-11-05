@@ -8,7 +8,7 @@ const ServiceDescription = ({mousePosition, services, slug}) => {
     const {x, y} = mousePosition;
 
   return (
-     <div className="h-[90vh] clip-custom">
+     <div className="h-[100vh] clip-custom">
         <div className="absolute inset-0 flex items-center justify-center flex-col z-10">
             {
                 services.map( ({name}, i) => {
@@ -19,7 +19,7 @@ const ServiceDescription = ({mousePosition, services, slug}) => {
             }
         </div>
          <motion.div
-         className="fixed top-0 overflow-hidden h-1/3 w-1/4 rounded-xl"
+         className="fixed top-0 overflow-hidden h-1/2 w-1/4 rounded-xl"
          style={{x, y}}
          >
           <Image 
