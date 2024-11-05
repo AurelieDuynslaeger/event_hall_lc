@@ -7,7 +7,7 @@ import "./globals.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${poppins.className} bg-slate-50`}>
+      <body className={`${poppins.className} bg-slate-50 scrollbar-custom`}>
         <NextUIProvider>
           <CustomNav/>
           {/* Contenu de la page */}

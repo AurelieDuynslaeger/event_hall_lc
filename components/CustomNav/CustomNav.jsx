@@ -28,14 +28,15 @@ const menuItems = [
       { title: "Spa - Bien-Être", href: "/services/spabienetre" }
     ],
   },
-  {
-    title: "À propos",
-    subItems: [
-      { title: "Remerciements", href: "/apropos/remerciements" },
-      { title: "Ils sont venus", href: "/apropos/avis" },
-      { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
-    ],
-  },
+  { title: "A Propos", href: "/apropos" },
+  // {
+  //   title: "À propos",
+  //   subItems: [
+  //     { title: "Remerciements", href: "/apropos/remerciements" },
+  //     { title: "Ils sont venus", href: "/apropos/avis" },
+  //     { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
+  //   ],
+  // },
   { title: "Gallerie", href: "/gallerie" },
   { title: "Contact", href: "/contact" },
 ];

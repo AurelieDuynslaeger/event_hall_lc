@@ -97,3 +97,16 @@ body {
 .clip-custom {
   clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
 }
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 14px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: white;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #e39c7e;
+  border-radius: 10px;
+}
