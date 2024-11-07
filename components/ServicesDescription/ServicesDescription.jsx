@@ -2,16 +2,22 @@ import { useState } from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const ServiceDescription = ({mousePosition, services, slug}) => {
+const ServicesDescription = ({mousePosition, service, slug }) => {
 
     const [index, setIndex] = useState(0);
     const {x, y} = mousePosition;
 
+    console.log(service);
+    console.log(slug);
+    
+
   return (
-     <div className="h-[100vh] clip-custom">
-        <div className="absolute inset-0 flex items-center justify-center flex-col z-10">
+     <div className="h-[90vh] clip-custom">
+        <div className="absolute w-2/3 h-full m-auto flex items-start justify-center flex-col gap-4 z-10">
             {
-                services.map( ({name}, i) => {
+                service.map( ({ name }, i) => {
+                  console.log(i);
+                  
                     return <p onMouseOver={() => {setIndex(i)}} key={`p${i}`} className='text-5xl cursor-default m-0 uppercase text-black'>
                         {name}
                     </p>
@@ -23,14 +29,14 @@ const ServiceDescription = ({mousePosition, services, slug}) => {
          style={{x, y}}
          >
           <Image 
-            src={`/${slug}/${services[index].handle}/background.jpg`}
+            src={`/${slug}/${service[index].handle}/1.jpg`}
             alt="image"
             fill
-            className='w-full object-cover'
+            className='w-full object-cover opacity-70'
           />
         </motion.div>
     </div>
   )
 }
 
-export default ServiceDescription
+export default ServicesDescription

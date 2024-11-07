@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react'
+import { motion} from 'framer-motion';
 
-const ServicesGallery = ({slug, handle, mousePosition}) => {
+const ServicesGallery = ({name, slug, handle, mousePosition, activeIndex}) => {
     const { x, y } = mousePosition;
+
+
   return (
-    <div className="h-[100vh] clip-custom">
+    <div className="h-[90vh] clip-custom">
         <div className="w-full m-auto relative">
             <Image 
                 src={`/${slug}/${handle}/background.jpg`}
@@ -14,6 +16,7 @@ const ServicesGallery = ({slug, handle, mousePosition}) => {
                 width={800}
                 height={0}
             />
+            
         </div>
         <motion.div className="fixed top-0 overflow-hidden h-1/2 w-1/4 rounded-xl"
         style={{x, y}}>
@@ -23,8 +26,18 @@ const ServicesGallery = ({slug, handle, mousePosition}) => {
             fill
              className='w-full object-cover'
           />
+         
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}  // Initialisation : invisible et légèrement en bas
+              animate={{
+                opacity: 1, // Déclencher l'animation quand 'trigger' est true
+                y: 0,  // Déclencher l'animation vers le haut
+              }}
+              className='absolute bottom-1 right-1 text-white bg-black/50 p-1 rounded-lg'
+            >
+              {name}
+            </motion.p>
         </motion.div>
-
     </div>
   )
 }
