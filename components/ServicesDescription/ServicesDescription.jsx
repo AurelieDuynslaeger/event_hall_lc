@@ -6,11 +6,7 @@ const ServicesDescription = ({mousePosition, service, slug }) => {
 
     const [index, setIndex] = useState(0);
     const {x, y} = mousePosition;
-
-    console.log(service);
-    console.log(slug);
     
-
   return (
      <div className="h-[90vh] clip-custom">
         <div className="absolute w-2/3 h-full m-auto flex items-start justify-center flex-col gap-4 z-10">

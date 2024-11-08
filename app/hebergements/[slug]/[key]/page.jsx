@@ -187,7 +187,7 @@ const RoomDetailsPage = () => {
   }
 
   return (
-    <div className='mt-44'>
+    <div className='mt-28'>
       <RoomDetails  mainImg={room.src} roomDescription={room.desc} roomTitle={room.roomName} selectedRoom={room.key}/>
 
       {/* Bouton retour aux chambres */}
