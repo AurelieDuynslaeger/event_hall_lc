@@ -8,17 +8,17 @@ import Image from 'next/image';
 const data = [
   {
       title: "Nous trouver",
-      description: "Domaine Lassalle Saint-Créac, 500 chemin d'en Mansaut, 32380 Saint-Créac, France. Le Domaine est référencé sur tous les sites Google Map, Plan Apple, GPS. Accessible sans difficulté à pied, à vélo ou moto, en véhicules de tourismes, en bus etc.",
+      description: "Domaine Lassalle Saint-Créac, 500 chemin d'en Mansaut, 32380 Saint-Créac, France",
       speed: 0.6
   },
   {
-      title: "une visite?",
-      description: "N'hésitez pas à revenir vers nous pour toute demande complémentaire, nous pouvons aussi vous faire visiter le domaine, sans engagement.",
+      title: "VISITER",
+      description: "N'hésitez pas à revenir vers nous pour toute demande complémentaire, nous pouvons aussi vous faire visiter le domaine, sans engagement. Le Domaine est référencé sur tous les sites Google Map, Plan Apple, GPS. Accessible sans difficulté à pied, à vélo ou moto, en véhicules de tourismes, en bus etc.",
       speed: 0.6
   },
   {
       title: "Navette VIP",
-      description: "Nous mettons à votre disposition un service navette VIP 7 personnes. Prise en charge à Lectoure (chemin de Compostelle, pointage à la cathédrale), la gare d’Agen ou l’aéroport Toulouse-Blagnac",
+      description: "Nous mettons à votre disposition un service navette VIP 7 personnes. Prise en charge à Lectoure (chemin de Compostelle, pointage à la cathédrale), la gare d’Agen ou l’aéroport Toulouse-Blagnac.",
       speed: 0.77
   },
   {
@@ -27,7 +27,7 @@ const data = [
       speed: 0.9
   },
   {
-      title: "Nous suivre",
+      title: "NETWORKS",
       description: "Nous sommes présents sur Linkedin, Instagram et Facebook, pour nous suivre c'est par ici",
       speed: 0.9
   },
