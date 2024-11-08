@@ -37,8 +37,8 @@ const menuItems = [
   //     { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
   //   ],
   // },
-  { title: "Gallerie", href: "/gallerie" },
   { title: "Contact", href: "/contact" },
+  { title: "Gallerie", href: "/gallerie" },
 ];
 
 const CustomNav = () => {

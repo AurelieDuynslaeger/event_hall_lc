@@ -188,16 +188,12 @@ const roomViews = {
             ],
         views : [
             {
-                title: "Vue d'ensemble",
-                src: "/manoir_chmansaut/overview_mansaut.jpg"
+                title: "Inspiration XVème sicèle",
+                src: "/manoir_chmansaut/view_2.jpg"
             },
             {
                 title: "Suite Vue d'ensemble",
                 src: "/manoir_chmansaut/view_1.jpg"
-            },
-            {
-                title: "Inspiration XVème sicèle",
-                src: "/manoir_chmansaut/view_2.jpg"
             },
             {
                 title: "Détails",

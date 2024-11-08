@@ -11,8 +11,8 @@ const hebergements = [
         slug: "manoir",
         heading: "Le Manoir",
         subheading: "Charme et Authenticité",
-        appeal: "Poutres centenaires, murs en pierre et cheminée XVIième siècle classée, découvrez votre prochain cocon pour une escapade dans le Gers : nos suites et chambres d'exception, offrant vue sur la vallée, terrasse privative, pour un week-end hors du temps !",
-        desc: "Un lieu prestigieux et acceuillant",
+        appeal: "Poutres centenaires, murs en pierre et cheminée XVIème siècle classée, découvrez votre prochain cocon pour une escapade dans le Gers : nos suites et chambres d'exception, offrant vue sur la vallée, terrasse privative, pour un week-end hors du temps !",
+        desc: "Un lieu prestigieux et accueillant",
         plus: ""
     },
     {

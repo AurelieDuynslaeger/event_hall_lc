@@ -6,6 +6,7 @@ import {
     useTransform,
   } from "framer-motion";
   import { useRef } from "react";
+import { PiArrowDownThin } from "react-icons/pi";
 
 // import parallax1 from "app/assets/domaine/manoir_3.jpg"
 // import parallax2 from "app/assets/domaine/parvis_2.jpg"
@@ -47,7 +48,7 @@ const backgroundSize = useTransform(
 const opacity = useTransform(
     scrollY,
     [SECTION_HEIGHT, SECTION_HEIGHT + 500],
-    [1, 0]
+    [0.8, 0]
 );
 
 return (
@@ -62,7 +63,23 @@ return (
         backgroundPosition: "cover",
         backgroundRepeat: "no-repeat",
     }}
-    />
+    >
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
+        className="w-1/4 flex flex-col items-center justify-center gap-2 absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2"
+        >
+            <p
+                    className="text-white text-2xl"
+                >
+                    Scrollez et Entrez...
+
+                </p>
+            <PiArrowDownThin className="text-white w-14 h-14"/>
+        </motion.div>
+
+    </motion.div>
 );
 };
   

@@ -26,6 +26,14 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
                     src: "/orangerie/orangerie_12_open.jpg",
                     scale: scaleValues[0]
                 },
+                {
+                  src: "/orangerie/orangerie_3_presta.jpg",
+                  scale: scaleValues[1]
+              },
+              {
+                src: "/orangerie/orangerie_4_terrasse.jpg",
+                scale: scaleValues[4]
+            },
             ]
         
         },
@@ -95,6 +103,13 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
               width: "15vw",
               height: "15vh",
             };
+            case 7:
+              return {
+                top: "12.5vh",
+                left: "15vw",
+                width: "20vw",
+                height: "25vh",
+              };
           default:
             return {
               width: "25vw",
