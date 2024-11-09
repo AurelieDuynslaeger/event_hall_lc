@@ -6,12 +6,11 @@ import SocialsBlock from "@/components/ContactPage/SocialsBlock"
 import ContactFormBlock from "@/components/ContactPage/ContactFormBlock"
 import LocationBlock from "@/components/ContactPage/LocationBlock"
 import ThankYouBlock from "@/components/ContactPage/ThankYouBlock"
-import Footer from "@/components/ContactPage/Footer"
 
 const ContactPage = () => {
 
     return (
-        <div className="min-h-screen px-4 py-12 text-zinc-50">
+        <div className="min-h-screen px-4 text-zinc-50 mt-8">
            
             <motion.div
                 initial="initial"
@@ -19,15 +18,14 @@ const ContactPage = () => {
                 transition={{
                     staggerChildren: 0.05,
                 }}
-                className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
+                className="mx-auto grid max-w-5xl grid-flow-dense grid-cols-12 gap-3"
             >
-                 <Header />
+                <Header />
                 <SocialsBlock />
                 <ContactFormBlock />
                 <LocationBlock />
                 <ThankYouBlock />
             </motion.div>
-            <Footer />
         </div>
     );
 };

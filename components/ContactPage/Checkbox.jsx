@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {motion} from "framer-motion"
 
 const Checkbox = ({ label }) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const handleClick = () => {
+    setIsChecked(!isChecked);
+  };
   return (
-    <label className="flex items-center gap-2">
-        <input type="checkbox" className="rounded bg-zinc-800 border-zinc-700" />
-        <span>{label}</span>
-    </label>
-  )
-}
+    <motion.label
+    whileHover={{
+      rotate: "2.5deg",
+      scale: 1.1,
+    }}
+      onClick={handleClick}
+      className={`cursor-pointer inline-block text-center mb-2 rounded-full px-4 py-2 border transition-colors duration-200 text-[10px] ${
+        isChecked
+          ? "bg-red-600 text-white border-red-600"
+          : "bg-gray-200 text-gray-700 border-gray-300"
+      }`}
+    >
+      {label}
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={() => {}}
+        className="hidden"
+      />
+    </motion.label>
+  );
+};
+
 
 export default Checkbox

@@ -6,18 +6,23 @@ import Block from './Block'
 
 const ContactFormBlock = () => {
   return (
-    <Block className="col-span-12 text-3xl leading-snug">
-        <form className="space-y-4">
-            <p className="mb-2 text-lg">Cochez au moins une case *</p>
+    <Block className="col-span-12 text-xl leading-snug">
+        <form className="space-y-2">
+          <div className='flex'>
             <Checkbox label="Demande de disponibilité" />
             <Checkbox label="Réserver une suite ou une chambre" />
             <Checkbox label="Réserver un Gîte (l'étable ou le studio)" />
             <Checkbox label="Réserver l'Orangerie / salle Saint-Loup" />
             <Checkbox label="Autre demande d'information" />
 
+          </div>
+
+            <div className='flex justify-around'>
             <Input label="Nom & Prénom *" type="text" />
             <Input label="E-mail *" type="email" />
             <Input label="Téléphone *" type="tel" />
+              
+            </div>
             <Input label="Message *" type="textarea" rows="5" />
 
             <button
