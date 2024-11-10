@@ -5,18 +5,18 @@ import ServiceLanding from "@/components/ServiceLanding/ServiceLanding"
 import ServiceDesc from "@/components/ServiceDesc/ServiceDesc"
 import Lenis from 'lenis';
 import { useScroll, useTransform } from 'framer-motion';
+import { ReactLenis } from "lenis/dist/lenis-react"
 
 const roomData = {
     receptions: {
         orangerie: {
             title: "L'Orangerie",
-            description: "Une surface totale de 360 m² dont 235m² exclusivement réservés à la salle de réception, avec une capacité d'accueil de 200 personnes debout et 190 assises. Les terrasses suspendues de plus de 300m², vous offre vue panoramique sur le Manoir,la vallée et l'étang, à couper le souffle! Face au coucher de soleil sur l'étang.90 places de parking végétalisé (possibilité de places supplémentaires dans la prairie) Equipements: Tables, chaises, rétroprojecteur, écran et sonorisation. Espace traiteur de plus de 50m² avec parking privé, sanitaires et douche séparés",
-            images: ["/orangerie/orangerie_1_vue.jpg", "/orangerie/orangerie_2_presta.jpg", "/orangerie/orangerie_2_presta.jpg"],
+            description: "Une surface totale de 360 m² dont 235m² exclusivement réservés à la salle de réception, avec une capacité d'accueil de 200 personnes debout et 190 assises. Les terrasses suspendues de plus de 300m², vous offre vue panoramique sur le Manoir, la vallée et l'étang, face au coucher de soleil à couper le souffle ! L'Orangerie dispose également de 90 places de parking végétalisé (possibilité de places supplémentaires dans la prairie). La salle bénéficie d'un espace traiteur de plus de 50m² avec parking privé, sanitaires et douches séparés.",
+            
         },
         saintloup: {
             title: "Salle Saint Loup",
-            description: "Exclusivement réservée pour les petits séminaires ou réunions de travail (maximum de 25 personnes) la salle Saint-Loup vous offre 50m² d'intimité au rez-de-chaussée de l'Etable, en toute autonomie. Avec son accès de plein pied donnant sur le parvis de la cour centrale, vous bénéficiez d'un espace que vous pouvez configurer à votre convenance, avec la possibilité de l'ouvrir totalement sur l'extérieur grâce à sa baie vitrée de 5 mètres en accordéon. En complément, nous proposons le service restauration sur place, pause collations, diner, uniquement sur réservation",
-            images: [/* liste d'images de la Salle Saint Loup */],
+            description: "Exclusivement réservée pour les petits séminaires ou réunions de travail (maximum de 25 personnes) la salle Saint-Loup vous offre 50m² d'intimité au rez-de-chaussée de l'Etable, en toute autonomie. Avec son accès de plein pied donnant sur le parvis de la cour centrale, vous bénéficiez d'un espace que vous pouvez configurer à votre convenance, avec la possibilité de l'ouvrir totalement sur l'extérieur grâce à sa baie vitrée de 5 mètres en accordéon. En complément, nous proposons le service restauration sur place, pause collations, diner, uniquement sur réservation.",
         },
     },
     tablehote: {
@@ -78,11 +78,20 @@ export default function RoomPage() {
     }
 
     return (
+        <ReactLenis
+        root
+        options={{
+          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
+          lerp: 0.05,
+          syncTouch: true,
+        }}
+      >
         <div className=' py-8 mt-20 h-[400vh]'>
             <div className='h-[300vh] relative ' ref={container}>
                 <ServiceLanding scaleValues={scaleValues} roomName={name}/>
             </div>
             <ServiceDesc paragraph={roomDetails.description} />
         </div>
+        </ReactLenis>
     );
 }

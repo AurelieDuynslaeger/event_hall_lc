@@ -27,7 +27,7 @@ const ContactFormBlock = () => {
 
             <button
                 type="submit"
-                className="w-full mt-4 flex items-center justify-center gap-2 rounded bg-red-600 px-3 py-2 text-lg font-medium text-white hover:bg-red-700"
+                className="w-1/2 m-auto mt-4 flex items-center justify-center gap-2 rounded bg-red-600 px-3 py-2 text-lg font-medium text-white hover:bg-red-700"
             >
                 Envoyer
             </button>

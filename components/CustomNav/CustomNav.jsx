@@ -28,6 +28,7 @@ const menuItems = [
       { title: "Spa - Bien-Être", href: "/services/spabienetre" }
     ],
   },
+  { title: "Exclusivité", href: "/privatisation" },
   { title: "A Propos", href: "/apropos" },
   // {
   //   title: "À propos",

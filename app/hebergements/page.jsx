@@ -3,6 +3,9 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
+import { ReactLenis } from "lenis/dist/lenis-react"
+
+
 
 const hebergements = [
     {
@@ -28,6 +31,14 @@ const hebergements = [
 
 const HebergementsPage = () => {
     return (
+        <ReactLenis
+        root
+        options={{
+          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
+          lerp: 0.05,
+          syncTouch: true,
+        }}
+      >
         <div className="mt-40 container m-auto">
             {hebergements.map((hebergement) => (
                 <TextParallaxContent
@@ -45,6 +56,7 @@ const HebergementsPage = () => {
                 </TextParallaxContent>
             ))}
         </div>
+        </ReactLenis>
     )
 }
 

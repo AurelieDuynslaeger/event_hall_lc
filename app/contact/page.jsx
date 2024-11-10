@@ -10,8 +10,7 @@ import ThankYouBlock from "@/components/ContactPage/ThankYouBlock"
 const ContactPage = () => {
 
     return (
-        <div className="min-h-screen px-4 text-zinc-50 mt-8">
-           
+        <div className="h-[90vh] flex flex-col items-center justify-center text-zinc-50">
             <motion.div
                 initial="initial"
                 animate="animate"

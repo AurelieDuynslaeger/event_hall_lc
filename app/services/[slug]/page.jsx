@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { motion, useSpring } from "framer-motion";
-// import SliderServices from "@/components/SliderServices/SliderServices"
 import ServicesGallery from "@/components/ServicesGallery/ServicesGallery"
 import ServicesDescription from '@/components/ServicesDescription/ServicesDescription'
 
@@ -236,7 +235,7 @@ const ShuffleGrid = () => {
     };
   
     return (
-      <div className="grid grid-cols-4 grid-rows-4 h-[650px] gap-1">
+      <div className="grid grid-cols-5 grid-rows-3 h-[450px] gap-1">
         {squares.map((sq) => sq)}
       </div>
     );

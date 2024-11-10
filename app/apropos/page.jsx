@@ -27,8 +27,8 @@ const data = [
       speed: 0.9
   },
   {
-      title: "NETWORKS",
-      description: "Nous sommes présents sur Linkedin, Instagram et Facebook, pour nous suivre c'est par ici",
+      title: "Ils sont venus",
+      description: "Découvrez les avis de ceux qui ont déjà séjourné chez nous et partagé leurs expériences du Domaine Lassalle Saint-Créac.",
       speed: 0.9
   },
 

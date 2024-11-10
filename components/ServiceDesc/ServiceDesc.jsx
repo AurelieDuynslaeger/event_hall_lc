@@ -15,7 +15,7 @@ const ServiceDesc = ({paragraph}) => {
     <>
         <p 
             ref={container}         
-            className="flex text-4xl leading-[4rem] p-8 max-w-[1280px] text-black flex-wrap"
+            className="flex text-4xl leading-[4rem] p-8 max-w-[1280px] text-black flex-wrap m-auto"
             >
                {
                 words.map( (word, i) => {
