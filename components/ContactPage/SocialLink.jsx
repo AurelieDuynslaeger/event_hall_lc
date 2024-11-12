@@ -12,7 +12,7 @@ const SocialLink = ({ icon, color, url }) => {
     }}
     className={twMerge("col-span-6 md:col-span-3 rounded-lg p-6", color)}
   >
-   <a href={url} className="grid h-full place-content-center text-3xl text-white">
+   <a href={url} className="grid h-full place-content-center text-3xl text-background">
             {icon}
         </a>
   </Block>

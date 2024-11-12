@@ -13,11 +13,11 @@ const AboutDesc = ({data, selectedProject}) => {
                     return (
                     <div 
                         key={i} 
-                        className="bg-[#efc4b2] flex justify-between items-center px-[10%] clip-[inset(50%_0_50%)] transition-[clip-path_.4s]"
+                        className="bg-secondary flex justify-between items-center px-[10%] clip-[inset(50%_0_50%)] transition-[clip-path_.4s]"
                         style={{clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%"}}
                     >
-                        <p className="text-[#efc4b2] uppercase font-bold text-[4vw] leading-[5vw] m-0 relative z-10">{crop(title, 9)}</p>
-                        <p className="w-[40%] text-[0.7vw] font-bold text-[black]">{description}</p>
+                        <p className="text-secondary uppercase font-bold text-[4vw] leading-[5vw] m-0 relative z-10">{crop(title, 9)}</p>
+                        <p className="w-[40%] text-[0.7vw] font-bold text-primary">{description}</p>
                     </div>
                     )
                 })

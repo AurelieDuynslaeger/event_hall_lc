@@ -60,8 +60,8 @@ const Modal = ({modal, projects}) => {
             }
             </div>
         </motion.div>
-        <motion.div ref={cursor} className="absolute z-20 flex items-center justify-center w-[80px] h-[80px] rounded-full bg-[#efc4b2] text-black text-[14px] font-bold pointer-events-none" variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-        <motion.div ref={cursorLabel} className="absolute z-20 flex items-center justify-center w-[80px] h-[80px] rounded-full bg-[#efc4b2] text-black text-[14px] font-bold pointer-events-none bg-transparent" variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>Voir</motion.div>
+        <motion.div ref={cursor} className="absolute z-20 flex items-center justify-center w-[80px] h-[80px] rounded-full bg-secondary text-background text-[14px] font-bold pointer-events-none" variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
+        <motion.div ref={cursorLabel} className="absolute z-20 flex items-center justify-center w-[80px] h-[80px] rounded-full bg-secondary text-background text-[14px] font-bold pointer-events-none bg-transparent" variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>Voir</motion.div>
     </>
 
   )

@@ -5,6 +5,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { ReactLenis } from "lenis/dist/lenis-react"
 import { cinzel } from "../font";
+import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
+import { PiHeartStraightThin } from "react-icons/pi";
 
 
 
@@ -163,7 +165,12 @@ const ExampleContent = ({ desc, appeal, plus, slug }) => {
                 <p className="mb-8 text-xl md:text-2xl">
                     {plus}
                 </p>
-                <button className="w-full rounded bg-accent px-9 py-4 text-xl text-primary transition-colors hover:bg-background hover:border-accent hover:border-1 hover:text-accent hover:font-bold md:w-fit"
+                {/* <DrawOutlineButton href="/hebergements" className="w-1/5 m-auto"> 
+                    <PiHeartStraightThin className="mr-2 h-8 w-8"/>
+                    <FiArrowUpRight className="inline" />
+                    <p>Découvrir</p>
+                </DrawOutlineButton> */}
+                <button className="w-full rounded bg-secondary px-9 py-4 text-xl text-background transition-colors hover:bg-background hover:border-secondary hover:border-1 hover:text-secondary hover:font-bold md:w-fit"
                     onClick={handleNavigate}
                 >
                     Découvrir <FiArrowUpRight className="inline" />

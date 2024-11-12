@@ -38,7 +38,7 @@ const AboutPage = () => {
   const [selectedProject, setSelectedProject] = useState(null)
   return (
     <SmoothScroll>
-            <main className='h-[50vw] mt-[30vh] bg-inherit  relative flex items-center justify-center'>
+            <main className='h-[50vw] mt-[30vh] bg-inherit relative flex items-center justify-center'>
                 <div className="absolute z-0 w-full">
                     <AboutTitles data={data} setSelectedProject={setSelectedProject} />
                     <AboutDesc data={data} selectedProject={selectedProject} />

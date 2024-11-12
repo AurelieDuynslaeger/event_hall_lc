@@ -14,8 +14,7 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import logoLassalle from "@/app/assets/LogoLassalleOrigin.svg";
-import { PiArrowDown, PiArrowRightThin, PiMapPinLight } from "react-icons/pi";
-import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
+import { PiArrowDown, PiMapPinLight } from "react-icons/pi";
 import Link from "next/link";
 import { cinzel } from "@/app/font";
 
@@ -30,6 +29,7 @@ const menuItems = [
     ],
   },
   { title: "Exclusivité", href: "/privatisation" },
+  { title: "Gallerie", href: "/gallerie" },
   { title: "A Propos", href: "/apropos" },
   // {
   //   title: "À propos",
@@ -40,7 +40,6 @@ const menuItems = [
   //   ],
   // },
   { title: "Contact", href: "/contact" },
-  { title: "Gallerie", href: "/gallerie" },
 ];
 
 const CustomNav = () => {
@@ -107,10 +106,10 @@ const CustomNav = () => {
       </NavbarContent>
 
       {/* Bouton de demande */}
-      <DrawOutlineButton href="/reservation"> 
+      {/* <DrawOutlineButton href="/reservation"> 
         <p className="text-base">Une demande particulière</p>
         <PiArrowRightThin className="ml-2 h-4 w-4" />
-      </DrawOutlineButton>
+      </DrawOutlineButton> */}
     </Navbar>
   );
 }

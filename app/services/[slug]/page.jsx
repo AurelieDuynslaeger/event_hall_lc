@@ -188,7 +188,7 @@ const ServicePage = () => {
                         {service.links && service.links.length > 0 && service.links.map((link) => (
                             <button 
                                 key={link.name} 
-                                className="bg-[#d6815d] text-black font-medium py-2 px-4 rounded transition-all hover:bg-[#a25433] hover:text-white active:scale-95" 
+                                className="bg-secondary  text-background font-medium py-2 px-4 rounded transition-all hover:bg-background hover:text-secondary hover:border-1 hover:border-secondary hover:font-bold active:scale-95" 
                                 onClick={() => router.push(link.href)}
                             >
                                 {link.name}

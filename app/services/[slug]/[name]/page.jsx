@@ -87,7 +87,7 @@ export default function RoomPage() {
         }}
       >
         <div className=' py-8 mt-20 h-[400vh]'>
-            <div className='h-[300vh] relative ' ref={container}>
+            <div className='h-[300vh] relative' ref={container}>
                 <ServiceLanding scaleValues={scaleValues} roomName={name}/>
             </div>
             <ServiceDesc paragraph={roomDetails.description} />
