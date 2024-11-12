@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
 import { PiArrowRightThin, PiPhoneCallThin } from "react-icons/pi";
+import { cinzel } from "../font";
 
 const content = [
     {
@@ -299,7 +300,7 @@ const PrivatisationPage = ({ contentClassName }) => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="text-2xl font-bold text-black"
+                className={`${cinzel.className} text-2xl font-bold text-primary`}
               >
                 {item.title}
               </motion.h2>

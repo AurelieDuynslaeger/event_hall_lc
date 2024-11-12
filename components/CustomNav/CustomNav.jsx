@@ -17,6 +17,7 @@ import logoLassalle from "@/app/assets/LogoLassalleOrigin.svg";
 import { PiArrowDown, PiArrowRightThin, PiMapPinLight } from "react-icons/pi";
 import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
 import Link from "next/link";
+import { cinzel } from "@/app/font";
 
 const menuItems = [
   { title: "Nos Hébergements", href: "/hebergements" },
@@ -51,7 +52,7 @@ const CustomNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar className="w-full z-50 flex items-center p-4" shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className={`${cinzel.className} w-full z-50 flex items-center p-4`} shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
       {/* Logo */}
       
       <NavbarContent>

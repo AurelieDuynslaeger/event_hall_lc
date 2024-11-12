@@ -3,7 +3,6 @@ import React from 'react'
 import { useParams } from "next/navigation";
 import RoomDetails from '@/components/RoomDetails/RoomDetails';
 
-
 const hebergementData = {
   manoir: {
       title: "Le Manoir",

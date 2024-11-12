@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
-import { poiret } from '@/app/font'
+import { cinzel } from '@/app/font'
 import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton'
 import { PiHeartStraightThin } from 'react-icons/pi'
 
@@ -14,9 +14,9 @@ const PrezDom = () => {
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-3xl text-center m-10"
+        className="mb-20 text-3xl text-center m-10 leading-10"
       >
-        Olivier et Didier ont le plaisir de vous accueillir au domaine <span className={`${poiret.className} mb-16 text-8xl font-bold text-center`}>Lassalle Saint Créac</span>.
+        Olivier et Didier ont le plaisir de vous accueillir au domaine <span className={`${cinzel.className} mb-16 text-7xl font-bold text-center`}>Lassalle Saint Créac</span>.
       </motion.h1>
     
       <motion.p 

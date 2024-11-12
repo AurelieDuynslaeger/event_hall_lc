@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useRef } from 'react'
 import { useParams } from "next/navigation";
-import { poiret } from '@/app/font';
+import { cinzel } from '@/app/font';
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
 
@@ -191,7 +191,7 @@ const HebergementPage = () => {
 
     return (
         <div ref={roomsRef} className='container mx-auto my-auto'>
-            <h1  className={`${poiret.className} text-9xl font-bold text-left m-10`}>{hebergement.title}</h1>
+            <h1  className={`${cinzel.className} text-9xl font-bold text-left m-10`}>{hebergement.title}</h1>
             {hebergement.rooms?.map((room, index) => (
                 <HebergementsLink 
                     key={index} 

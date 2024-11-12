@@ -15,7 +15,12 @@ const config = {
 	],
 	theme: {
 		extend: {
-
+			colors: {
+				primary: "#2C1A1A",       // Police body (dark text color)
+				background: "#F5EDE2",    // Background color
+				secondary: "#9E5D5D",     // Secondary color
+				accent: "#5E807F"         // Accent color
+			}
 		},
 	},
 	plugins: [nextui(), addVariablesForColors],

@@ -4,6 +4,7 @@ import { useRouter, useParams } from "next/navigation";
 import { motion, useSpring } from "framer-motion";
 import ServicesGallery from "@/components/ServicesGallery/ServicesGallery"
 import ServicesDescription from '@/components/ServicesDescription/ServicesDescription'
+import { cinzel } from "@/app/font";
 
 const serviceData = {
     receptions: {
@@ -177,7 +178,7 @@ const ServicePage = () => {
         {slug === "receptions" ? (
             <section className="w-full h-[90vh] p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl mx-auto my-auto">
                 <div>
-                    <h1 className="text-4xl md:text-6xl font-semibold">
+                    <h1 className={`${cinzel.className} text-4xl md:text-6xl font-semibold`}>
                         {service.title}
                     </h1>
                     <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">

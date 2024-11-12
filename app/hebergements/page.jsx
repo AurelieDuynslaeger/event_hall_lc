@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { ReactLenis } from "lenis/dist/lenis-react"
+import { cinzel } from "../font";
 
 
 
@@ -132,12 +133,12 @@ const OverlayCopy = ({ subheading, heading }) => {
                 opacity,
             }}
             ref={targetRef}
-            className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
+            className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-background"
         >
             <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
                 {subheading}
             </p>
-            <p className="text-center text-4xl font-bold md:text-9xl">{heading}</p>
+            <p className={`${cinzel.className} text-center text-4xl font-bold md:text-9xl`}>{heading}</p>
         </motion.div>
     );
 };
@@ -151,18 +152,18 @@ const ExampleContent = ({ desc, appeal, plus, slug }) => {
     };
 
     return (
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
-            <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 text-primary ">
+            <h2 className="col-span-1 text-3xl text-primary font-bold md:col-span-4">
                 {desc}
             </h2>
             <div className="col-span-1 md:col-span-8">
-                <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
+                <p className="mb-4 text-xl md:text-2xl">
                     {appeal}
                 </p>
-                <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
+                <p className="mb-8 text-xl md:text-2xl">
                     {plus}
                 </p>
-                <button className="w-full rounded bg-[#d6815d] px-9 py-4 text-xl text-black transition-colors hover:bg-[#efc4b2] md:w-fit"
+                <button className="w-full rounded bg-accent px-9 py-4 text-xl text-primary transition-colors hover:bg-background hover:border-accent hover:border-1 hover:text-accent hover:font-bold md:w-fit"
                     onClick={handleNavigate}
                 >
                     Découvrir <FiArrowUpRight className="inline" />

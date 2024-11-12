@@ -1,11 +1,11 @@
-import { Poppins, Poiret_One } from 'next/font/google'
+import { Cinzel_Decorative, Montserrat } from 'next/font/google'
 
-export const poppins = Poppins({
-    weight: ['300', '400', '500', '700'],
+export const cinzel = Cinzel_Decorative({
+    weight: ['700', '900'],
     subsets: ['latin'],
 })
 
-export const poiret = Poiret_One({
-    weight: ['400'],
+export const montserrat = Montserrat({
+    weight: ['300', '600'],
     subsets: ['latin']
 })

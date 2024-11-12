@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 
 const RoomDesc = ({roomDescArray}) => {
   return (
-    <div className="relative text-black text-3xl mt-[20vw] ml-[10vw] leading-loose" >
+    <div className="relative text-primary text-3xl mt-[20vw] ml-[10vw] leading-loose" >
         {
             roomDescArray.map( (phrase, index) => {
                 return <AnimatedText key={index}>{phrase}</AnimatedText>
