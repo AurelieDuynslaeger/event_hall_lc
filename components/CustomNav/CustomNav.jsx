@@ -5,16 +5,11 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-  Button, 
   NavbarMenuToggle,
 } from "@nextui-org/react";
+import StaggerDropDown from "./StaggerDropDown"
 import Image from "next/image";
 import logoLassalle from "@/app/assets/LogoLassalleOrigin.svg";
-import { PiArrowDown, PiMapPinLight } from "react-icons/pi";
 import Link from "next/link";
 import { cinzel } from "@/app/font";
 
@@ -43,11 +38,6 @@ const menuItems = [
 ];
 
 const CustomNav = () => {
-  const icons = {
-    chevron: <PiArrowDown fill="currentColor" size={16} />,
-    mapPin: <PiMapPinLight size={16} />,
-  };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -74,28 +64,8 @@ const CustomNav = () => {
         {menuItems.map((item) => (
           item.subItems ? (
             // Dropdown pour les items avec sous-menu
-            <Dropdown key={item.title}>
-              <NavbarItem>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                    endContent={icons.chevron}
-                    radius="sm"
-                    variant="light"
-                  >
-                    {item.title}
-                  </Button>
-                </DropdownTrigger>
-              </NavbarItem>
-              <DropdownMenu aria-label={item.title} className="w-[340px]" itemClasses={{ base: "gap-4" }}>
-                {item.subItems.map((subItem) => (
-                  <DropdownItem key={subItem.title} startContent={subItem.icon}>
-                    <Link href={subItem.href}>{subItem.title}</Link>
-                  </DropdownItem>
-                ))}
-              </DropdownMenu>
-            </Dropdown>
+         
+            <StaggerDropDown key={item.id} tabTitle={item.title}/>
           ) : (
             // Simple NavbarItem pour les items sans sous-menu
             <NavbarItem key={item.title}>
