@@ -61,14 +61,14 @@ const CustomNav = () => {
           <Image src={logoLassalle} alt="lassale-saint-creac logo" width={120} height={120} />
         </Link>
       </NavbarBrand> */}
-        {menuItems.map((item) => (
+        {menuItems.map((item, i) => (
           item.subItems ? (
             // Dropdown pour les items avec sous-menu
          
-            <StaggerDropDown key={item.id} tabTitle={item.title}/>
+            <StaggerDropDown key={i} tabTitle={item.title}/>
           ) : (
             // Simple NavbarItem pour les items sans sous-menu
-            <NavbarItem key={item.title}>
+            <NavbarItem key={i}>
               <Link href={item.href}>{item.title}</Link>
             </NavbarItem>
           )

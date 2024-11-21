@@ -13,10 +13,10 @@ const content = [
         title : "Privatiser le Domaine",
         desc : "Nous avons conçu ce lieu comme une maison de famille, dans laquelle vous recevrez vos proches et amis le temps d’un week-end ou plus.Pour cela, nous vous proposons la réservation exclusive du Domaine, du samedi 9 heures au dimanche 18 heures. Nous nous engageons à vous réserver l'exclusivité du Domaine sur la période de votre choix à la demande. Vous bénéficiez d’un usage exclusif des équipements (piscine, balnéo, sauna, hammam, jacuzzi) des 13 hectares de prairies, étang et bois pour les photos, balades, organisation de jeux , etc.",
         content: (
-            <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+            <div className="h-full w-full flex items-center justify-cente">
                 <Image
                     src="/privatisation/mariés.jpg"
-                    alt="Privatisation image"
+                    alt="Couple de jeune mariés, Domaine Lassalle Saint Créac, Cérémonie"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg"
@@ -32,9 +32,10 @@ const content = [
                 <Image
                     src="/privatisation/plandemasse.png"
                     alt="Privatisation image"
-                    layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-lg h-auto"
+                    width={1300}
+                    height={0}
                 />
                 </div>
         )
@@ -65,15 +66,23 @@ const content = [
         title: "Equipements et Services",
         desc: "Prestation hôtelière incluse: linge de lit et de toilette. LA PISCINE : Entièrement fermée et ouvrable en totalité sur les terrasses et pelouses, bassin de 5m sur 10m avec volet de sécurité, Espace balnéothérapie (4 buses allongé, 4 buses assis), 2 canons à eau (massage des épaules). La piscine est totalement close et non accessible pendant la réception. LE SAUNA-HAMMAM (début 2025). Logé dans le bâtiment annexe du parvis du Manoir, vous profiterez de ce lieu magique avec une vue à 180° sur la vallée. Une totale intimité dans un univers bucolique et reposant. Sauna 4 personnes - Hammam 4 personnes. Douche à disposition ainsi que le linge de toilette et peignoirs. LE SPA-JACUZZI (début 2025). Dans le prolongement de la terrasse piscine, profitez d’un moment de relaxation, seul ou entre amis. Spa professionnel thérapeutique BALBOA de 5 personnes. Aromathérapie, chromothérapie, Musicothérapie Bluetooth.",
         content: (
-            <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-                <Image
-                    src="/privatisation/plandemasse.png"
-                    alt="Privatisation image"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                />
-                </div>
+
+            <div class="w-full flex flex-wrap items-center justify-center bg-background gap-2">
+        <div>
+        <Image src="/spabienetre/view_1/background.jpg" width={300} height={0} class="h-auto max-w-full" alt="Photo de la chambre Mansaut, Domaine Lassale Saint Créac, Réceptions, Mariage"/>
+        </div>
+        <div>
+        <Image src="/domaine/about3.jpg" width={300} height={0} class="h-auto max-w-full" alt="Photo de la chambre Mansaut, Domaine Lassale Saint Créac, Réceptions, Mariage"/>
+        </div>
+        <div>
+        <Image src="/spabienetre/view_6/1.jpg" width={300} height={0} class="h-auto max-w-full" alt="Photo de la chambre Mansaut, Domaine Lassale Saint Créac, Réceptions, Mariage"/>
+       
+        </div>
+        <div>
+        <Image src="/spabienetre/view_6/background.jpg" width={300} height={0} class="h-auto max-w-full" alt="Photo de la chambre Mansaut, Domaine Lassale Saint Créac, Réceptions, Mariage"/>
+        </div>
+    </div>
+            
         )
     },
     {

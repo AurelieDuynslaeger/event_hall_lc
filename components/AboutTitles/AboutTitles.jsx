@@ -37,7 +37,7 @@ function Title({data, setSelectedProject}){
                 onMouseOver={() => {setSelectedProject(i)}}
                 onMouseLeave={() => {setSelectedProject(null)}}
             >
-                <motion.p style={{clipPath: clip}} className="inline-block text-background uppercase font-bold text-[4vw] leading-[5vw] m-0 relative z-10">
+                <motion.p style={{clipPath: clip}} className="inline-block text-primary uppercase font-bold text-[4vw] leading-[5vw] m-0 relative z-10">
                     {title}
                 </motion.p>
             </div>
