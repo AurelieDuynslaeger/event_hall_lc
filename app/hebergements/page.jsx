@@ -1,30 +1,29 @@
 "use client"
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
-import { useRouter } from "next/navigation";
 import { ReactLenis } from "lenis/dist/lenis-react"
-import { cinzel } from "../font";
+import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
+import { PiArrowUpRightThin } from "react-icons/pi";
 
 const hebergements = [
     {
         id: 1,
         img: "/view_12.avif",
-        slug: "manoir",
+        slug: "cloudline",
         heading: "Cloudline Hub",
         subheading: "Charme et Authenticité",
-        appeal: "Poutres centenaires, murs en pierre et cheminée XVIème siècle classée, découvrez votre prochain cocon pour une escapade dans le Gers : nos suites et chambres d'exception, offrant vue sur la vallée, terrasse privative, pour un week-end hors du temps !",
-        desc: "Un lieu prestigieux et accueillant",
+        appeal: "Perched between earth and sky, Cloudline Hub invites you to work in the calm and creative heights. Its large bay windows offer breathtaking views of the surrounding mountains, while its cozy interior, blending raw wood and modern touches, fuels productivity in a soothing atmosphere.",
+        desc: "An inspiring coworking space nestled in the heart of the mountains, perfect for those seeking to combine serenity and efficiency.",
         plus: ""
     },
     {
         id: 2,
         img: "/view_4.avif",
-        slug: "etable",
+        slug: "bayside",
         heading: "Bayside Hub",
         subheading: "Charpente centenaire et volige en peuplier",
-        appeal: "Occupant tout le premier étage de l’ancienne étable sur près de 250m², vous y accédez par la cour et son escalier en pierre. Sous sa charpente centenaire et sa volige en peuplier, ce sont 15 couchages qui sont à votre disposition ! (4 chambres dont 2 en mezzanine sur la pièce de vie)",
-        desc: "Pour une expérience en famille ou entre amis",
+        appeal: "Set along the shores of a shimmering lake, Bayside Hub is a true haven for creative minds. Connect with nature while working in a modern space where every window frames a living masterpiece: reflections on the water, soaring birds, and the enchanting calm of the lakeside.",
+        desc: "A tranquil lakeside retreat, providing the perfect environment to collaborate, innovate, and recharge.",
     }
 ];
 
@@ -113,8 +112,8 @@ const StickyImage = ({ imgUrl }) => {
         </motion.div>
     );
 };
-
-const OverlayCopy = ({ subheading, heading }) => {
+// subheading, 
+const OverlayCopy = ({ heading }) => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -133,9 +132,9 @@ const OverlayCopy = ({ subheading, heading }) => {
             ref={targetRef}
             className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-primary"
         >
-            <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
+            {/* <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
                 {subheading}
-            </p>
+            </p> */}
             <p className="font-stretch text-center text-4xl font-bold md:text-9xl">{heading}</p>
         </motion.div>
     );
@@ -143,29 +142,22 @@ const OverlayCopy = ({ subheading, heading }) => {
 
 const ExampleContent = ({ desc, appeal, plus, slug }) => {
 
-    const router = useRouter();
-
-    const handleNavigate = () => {
-        router.push(`/hebergements/${slug}`);
-    };
-
     return (
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12 text-primary ">
-            <h2 className="col-span-1 text-3xl text-primary font-bold md:col-span-4">
+            <h2 className="font-stretch col-span-1 text-xl text-primary font-bold md:col-span-4">
                 {desc}
             </h2>
             <div className="col-span-1 md:col-span-8">
-                <p className="mb-4 text-xl md:text-2xl">
+                <p className="mb-4 text-xl md:text-xl">
                     {appeal}
                 </p>
                 <p className="mb-8 text-xl md:text-2xl">
                     {plus}
                 </p>
-                <button className="w-full rounded bg-secondary px-9 py-4 text-xl text-background transition-colors hover:bg-background hover:border-secondary hover:border-1 hover:text-secondary hover:font-bold md:w-fit"
-                    onClick={handleNavigate}
-                >
-                    Découvrir <FiArrowUpRight className="inline" />
-                </button>
+                <DrawOutlineButton href={`/hebergements/${slug}`} className="w-1/2 mt-auto mb-8"> 
+                    <p>Let&apos;s See</p>
+                    <PiArrowUpRightThin className="ml-2 h-8 w-8"/>
+                </DrawOutlineButton>
             </div>
         </div>
     )

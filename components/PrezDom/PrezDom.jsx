@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton'
-import { PiHeartStraightThin, PiArrowUpRightThin } from 'react-icons/pi'
+import { PiArrowUpRightThin } from 'react-icons/pi'
 import {Highlight} from "@/components/Home/hero-highlight"
 
 const PrezDom = () => {
@@ -40,7 +40,6 @@ const PrezDom = () => {
       <DrawOutlineButton href="/hebergements" className="w-1/5 mt-auto mb-8"> 
             <p>Discover</p>
             <PiArrowUpRightThin className="ml-2 h-8 w-8"/>
-
           </DrawOutlineButton>
 
     </div>
