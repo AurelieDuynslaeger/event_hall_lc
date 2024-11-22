@@ -13,10 +13,10 @@ const Checkbox = ({ label }) => {
       scale: 1.1,
     }}
       onClick={handleClick}
-      className={`cursor-pointer inline-block text-center mb-2 rounded-full px-4 py-2 border transition-colors duration-200 text-[10px] ${
+      className={`cursor-pointer inline-block text-center mb-2 rounded-full px-4 py-2 border transition-colors duration-200 text-sm ${
         isChecked
           ? "bg-red-600 text-white border-red-600"
-          : "bg-gray-200 text-gray-700 border-gray-300"
+          : "bg-background text-primary border-secondary"
       }`}
     >
       {label}

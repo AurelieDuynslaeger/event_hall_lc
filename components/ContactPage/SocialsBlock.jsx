@@ -6,10 +6,10 @@ import SocialLink from './SocialLink'
 const SocialsBlock = () => {
   return (
     <>
-    <SocialLink icon={<SiLinkedin />} color="bg-secondary" url="https://fr.linkedin.com/in/domaine-lassalle-1b0a58303" />
-    <SocialLink icon={<SiInstagram />} color="bg-secondary" url="https://instagram.com/lassallestcreac/" />
-    <SocialLink icon={<SiFacebook />} color="bg-secondary" url="https://facebook.com/domaine.lassalle.st.creac" />
-    <SocialLink icon={<FiMail />} color="bg-secondary" url="mailto:contact@domaine-lassalle.fr" />
+    <SocialLink icon={<SiLinkedin />} color="bg-background border-2 border-primary" url="https://fr.linkedin.com/in/domaine-lassalle-1b0a58303" />
+    <SocialLink icon={<SiInstagram />} color="bg-background border-2 border-primary" url="https://instagram.com/lassallestcreac/" />
+    <SocialLink icon={<SiFacebook />} color="bg-background border-2 border-primary" url="https://facebook.com/domaine.lassalle.st.creac" />
+    <SocialLink icon={<FiMail />} color="bg-background border-2 border-primary" url="mailto:contact@domaine-lassalle.fr" />
 </>
   )
 }

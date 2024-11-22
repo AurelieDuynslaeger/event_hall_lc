@@ -44,18 +44,6 @@ const hebergementData = {
                     "Vous avez un accès direct à la bibliothèque et l'espace salon du 1er étage, à disposition de nos hôtes."
                 ],
             },
-            {
-                roomName: "The Snowcap Chalet",
-                key: "snowcap",
-                src:"/view_17.jpeg",
-                color: "#e39c7e",
-                desc: [
-                    "Situées au rez-de-chaussée du Manoir, vous y accédez directement par le hall d'accueil.", 
-                    "Charme et authenticité sont au rendez-vous, avec ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 35 m², d'une chambre avec une literie de 160*200 haute qualité (possibilité de séparer en 2 lits de 80 à la demande).", 
-                    "une vaste salle d'eau ( vasque, grande douche à l'italienne, WC privatif) et d'un dressing,  le tout donnant sur votre terrasse privative avec vue sur la vallée.", 
-                    "Vous avez un accès direct à la bibliothèque et l'espace salon du 1er étage, à disposition de nos hôtes."
-                ],
-            },
         ]
     },
     bayside: {

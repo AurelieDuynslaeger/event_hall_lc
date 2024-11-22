@@ -1,11 +1,11 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
-import { motion, useSpring } from "framer-motion";
+import React from "react";
+import { useParams } from "next/navigation";
+import { useSpring } from "framer-motion";
 import ServicesGallery from "@/components/ServicesGallery/ServicesGallery"
 import ServicesDescription from '@/components/ServicesDescription/ServicesDescription'
-import { cinzel } from "@/app/font";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll"
+import RoomPage from "./[name]/page";
 
 const serviceData = {
     receptions: {
@@ -41,107 +41,107 @@ const serviceData = {
     },
 };
 
-const shuffle = (array) => {
-    let currentIndex = array.length,
-      randomIndex;
+// const shuffle = (array) => {
+//     let currentIndex = array.length,
+//       randomIndex;
   
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+//     while (currentIndex != 0) {
+//       randomIndex = Math.floor(Math.random() * currentIndex);
+//       currentIndex--;
   
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
-    }
+//       [array[currentIndex], array[randomIndex]] = [
+//         array[randomIndex],
+//         array[currentIndex],
+//       ];
+//     }
   
-    return array;
-  };
+//     return array;
+//   };
 
-  const squareData = [
-    {
-      id: 1,
-      src: "/orangerie/orangerie_1_vue.jpg",
-    },
-    {
-      id: 2,
-      src: "/orangerie/orangerie_3_presta.jpg",
-    },
-    {
-      id: 3,
-      src: "/saintloup/parvisbis.jpg",
-    },
-    {
-      id: 4,
-      src: "/saintloup/config20p.jpg",
-    },
-    {
-      id: 5,
-      src: "/orangerie/orangerie_4_terrasse.jpg",
-    },
-    {
-      id: 6,
-      src: "/orangerie/orangerie_11_traiteur.jpg",
-    },
-    {
-      id: 7,
-      src: "/saintloup/config20pbis.jpg",
-    },
-    {
-      id: 8,
-      src: "/saintloup/salle50m.jpg",
-    },
-    {
-      id: 9,
-      src: "/orangerie/orangerie_12_open.jpg",
-    },
-    {
-      id: 10,
-      src: "/orangerie/orangerie_7_empty.jpg",
-    },
-    {
-      id: 11,
-      src: "/orangerie/orangerie_14_table.jpg",
-    },
-    {
-      id: 12,
-      src: "/orangerie/orangerie_8_office.jpg",
-    },
-    {
-      id: 13,
-      src: "/orangerie/orangerie_6_terrasse.jpg",
-    },
-    {
-      id: 14,
-      src: "/orangerie/orangerie_13_coucher.jpg",
-    },
-    {
-      id: 15,
-      src: "/orangerie/orangerie_9_cuisine.jpg",
-    },
-    {
-      id: 16,
-      src: "/orangerie/orangerie_5_terrasse.jpg",
-    },
-  ];
+  // const squareData = [
+  //   {
+  //     id: 1,
+  //     src: "/orangerie/orangerie_1_vue.jpg",
+  //   },
+  //   {
+  //     id: 2,
+  //     src: "/orangerie/orangerie_3_presta.jpg",
+  //   },
+  //   {
+  //     id: 3,
+  //     src: "/saintloup/parvisbis.jpg",
+  //   },
+  //   {
+  //     id: 4,
+  //     src: "/saintloup/config20p.jpg",
+  //   },
+  //   {
+  //     id: 5,
+  //     src: "/orangerie/orangerie_4_terrasse.jpg",
+  //   },
+  //   {
+  //     id: 6,
+  //     src: "/orangerie/orangerie_11_traiteur.jpg",
+  //   },
+  //   {
+  //     id: 7,
+  //     src: "/saintloup/config20pbis.jpg",
+  //   },
+  //   {
+  //     id: 8,
+  //     src: "/saintloup/salle50m.jpg",
+  //   },
+  //   {
+  //     id: 9,
+  //     src: "/orangerie/orangerie_12_open.jpg",
+  //   },
+  //   {
+  //     id: 10,
+  //     src: "/orangerie/orangerie_7_empty.jpg",
+  //   },
+  //   {
+  //     id: 11,
+  //     src: "/orangerie/orangerie_14_table.jpg",
+  //   },
+  //   {
+  //     id: 12,
+  //     src: "/orangerie/orangerie_8_office.jpg",
+  //   },
+  //   {
+  //     id: 13,
+  //     src: "/orangerie/orangerie_6_terrasse.jpg",
+  //   },
+  //   {
+  //     id: 14,
+  //     src: "/orangerie/orangerie_13_coucher.jpg",
+  //   },
+  //   {
+  //     id: 15,
+  //     src: "/orangerie/orangerie_9_cuisine.jpg",
+  //   },
+  //   {
+  //     id: 16,
+  //     src: "/orangerie/orangerie_5_terrasse.jpg",
+  //   },
+  // ];
   
-  const generateSquares = () => {
-    return shuffle(squareData).map((sq) => (
-      <motion.div
-        key={sq.id}
-        layout
-        transition={{ duration: 1.5, type: "spring" }}
-        className="w-full h-full"
-        style={{
-          backgroundImage: `url(${sq.src})`,
-          backgroundSize: "cover",
-        }}
-      ></motion.div>
-    ));
-  };
+  // const generateSquares = () => {
+  //   return shuffle(squareData).map((sq) => (
+  //     <motion.div
+  //       key={sq.id}
+  //       layout
+  //       transition={{ duration: 1.5, type: "spring" }}
+  //       className="w-full h-full"
+  //       style={{
+  //         backgroundImage: `url(${sq.src})`,
+  //         backgroundSize: "cover",
+  //       }}
+  //     ></motion.div>
+  //   ));
+  // };
 
 const ServicePage = () => {
-    const router = useRouter();
+    // const router = useRouter();
     const { slug } = useParams();
     const spring = {
       stiffness: 150,
@@ -172,7 +172,8 @@ const ServicePage = () => {
     return (
       <>
         {slug === "receptions" ? (
-            <section className="w-full h-[90vh] p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl mx-auto my-auto">
+          <>
+            {/* <section className="w-full h-[90vh] p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl mx-auto my-auto">
                 <div>
                     <h1 className={`${cinzel.className} text-4xl md:text-6xl font-semibold`}>
                         {service.title}
@@ -193,7 +194,9 @@ const ServicePage = () => {
                     </div>
                 </div>
                 <ShuffleGrid />
-            </section>
+            </section> */}
+            <RoomPage />
+            </>
         ) : (slug === "tablehote" || slug === "spabienetre") ? (
             // <SliderServices images={service.img}/>
             <SmoothScroll>
@@ -217,27 +220,27 @@ const ServicePage = () => {
 
 export default ServicePage
 
-const ShuffleGrid = () => {
-    const timeoutRef = useRef(null);
-    const [squares, setSquares] = useState(generateSquares());
+// const ShuffleGrid = () => {
+//     const timeoutRef = useRef(null);
+//     const [squares, setSquares] = useState(generateSquares());
   
-    useEffect(() => {
-      shuffleSquares();
+//     useEffect(() => {
+//       shuffleSquares();
   
-      return () => clearTimeout(timeoutRef.current);
-    }, []);
+//       return () => clearTimeout(timeoutRef.current);
+//     }, []);
   
-    const shuffleSquares = () => {
-      setSquares(generateSquares());
+//     const shuffleSquares = () => {
+//       setSquares(generateSquares());
   
-      timeoutRef.current = setTimeout(shuffleSquares, 3000);
-    };
+//       timeoutRef.current = setTimeout(shuffleSquares, 3000);
+//     };
   
-    return (
-      <div className="grid grid-cols-5 grid-rows-3 h-[450px] gap-1">
-        {squares.map((sq) => sq)}
-      </div>
-    );
-  };
+//     return (
+//       <div className="grid grid-cols-5 grid-rows-3 h-[450px] gap-1">
+//         {squares.map((sq) => sq)}
+//       </div>
+//     );
+//   };
 
 

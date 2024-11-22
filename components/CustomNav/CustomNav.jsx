@@ -16,16 +16,15 @@ const menuItems = [
   {
     title: "Spaces",
     subItems: [
-      { title: "Meeting Rooms", href: "/services/receptions" },
-      { title: "Outdoor Spaces", href: "/services/tablehote" },
-      { title: "Wellness & Spa", href: "/services/spabienetre" }
+      { title: "Meeting Rooms", href: "/services/receptions/orangerie" },
+      { title: "Team Building", href: "/services/receptions/saintloup" }
     ],
   },
   { title: "Rooms", href: "/hebergements" },
-  { title: "Services", href: "/services/tablehote" },
+  { title: "Dining Service", href: "/services/tablehote" },
   { title: "About Us", href: "/apropos" },
+  { title: "Reviews", href: "/avis" },
   { title: "Contact", href: "/contact" },
-  { title: "Exclusivité", href: "/privatisation" },
 ];
 
 const CustomNav = () => {
@@ -46,7 +45,7 @@ const CustomNav = () => {
       </NavbarContent>
 
       {/* Menu principal */}
-      <NavbarContent className="hidden sm:flex gap-4 w-full justify-evenly">
+      <NavbarContent className="hidden sm:flex gap-8 w-full justify-end">
       {/* <NavbarBrand>
         <Link href="/">
           <Image src={logoLassalle} alt="lassale-saint-creac logo" width={120} height={120} />

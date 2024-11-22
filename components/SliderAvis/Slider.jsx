@@ -94,16 +94,16 @@ const Slider = ({ avis }) => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[#dfe1c8]">
+    <div className="relative w-screen h-screen overflow-hidden bg-background">
       <div
         ref={sliderRef}
-        className="absolute top-[15vh] w-screen h-screen overflow-hidden perspective-[200px] perspective-origin-[50%_100%] cursor-pointer"
+        className="absolute top-[10vh] w-screen h-screen overflow-hidden perspective-[200px] perspective-origin-[50%_100%] cursor-pointer"
       >
         {avis.map((a, i) => (
           <div
             key={i}
             ref={(el) => (cardsRef.current[i] = el)} // Ajouter chaque carte dans le tableau de refs
-            className="card absolute top-1/2 left-1/2 w-1/2 h-[300px] md:h-[500px] rounded-lg transform -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-black"
+            className="card absolute top-1/2 left-1/2 w-1/2 h-[300px] md:h-[500px] rounded-lg transform -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-black border-primary border-2"
           >
             <Image
               src={a.imgSrc}
@@ -112,7 +112,7 @@ const Slider = ({ avis }) => {
               width={500}
               height={0}
             />
-            <div className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+            <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
               <p
                 className={`${montserrat.className} relative text-center text-[3vw] font-light tracking-[-0.05em] text-[#dfe1c8]`}
               >

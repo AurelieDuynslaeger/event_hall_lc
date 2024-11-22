@@ -33,7 +33,7 @@ const ServicesGallery = ({name, slug, handle, mousePosition}) => {
                 opacity: 1, // Déclencher l'animation quand 'trigger' est true
                 y: 0,  // Déclencher l'animation vers le haut
               }}
-              className='font-stretch uppercase absolute bottom-1 right-1 text-white p-1 rounded-lg'
+              className='font-stretch uppercase absolute bottom-1 right-1 text-white text-3xl p-1 rounded-lg'
             >
               {name}
             </motion.p>

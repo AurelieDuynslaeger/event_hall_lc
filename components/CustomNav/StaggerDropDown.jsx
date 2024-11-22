@@ -49,9 +49,8 @@ const wrapperVariants = {
             style={{ originY: "top", translateX: "-50%" }}
             className="flex flex-col gap-2 p-2 rounded-lg  absolute top-[120%] left-[50%] w-48 overflow-hidden"
           >
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Meeting Rooms" href="/services/receptions"/>
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Outdoor Spaces" href="/services/tablehote"/>
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Wellness & Spa" href="/services/spabienetre"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Meeting Rooms" href="/services/receptions/orangerie"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Team Building" href="/services/receptions/saintloup"/>
           </motion.ul>
         </motion.div>
       </div>

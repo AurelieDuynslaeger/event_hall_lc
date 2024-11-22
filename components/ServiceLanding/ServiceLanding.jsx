@@ -7,31 +7,32 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
         orangerie : {
             img : [
               {
-                  src: "/orangerie/orangerie_1_vue.jpg",
+                src: "/orangerie/view_3.webp",
                   scale: scaleValues[0]
               },
               {
-                  src: "/orangerie/orangerie_3_presta.jpg",
+                  src: "/orangerie/view_2.avif",
                   scale: scaleValues[2]
               },
                 {
-                    src: "/orangerie/1.jpg",
+                    src: "/orangerie/view_3.avif",
                     scale: scaleValues[2]
                 },
                 {
-                    src: "/orangerie/orangerie_11_traiteur.jpg",
+                    
+                    src: "/orangerie/view_1.avif",
                     scale: scaleValues[4]
                 },
                 {
-                    src: "/orangerie/orangerie_12_open.jpg",
+                    src: "/orangerie/view_4.webp",
                     scale: scaleValues[0]
                 },
                 {
-                  src: "/orangerie/orangerie_3_presta.jpg",
+                  src: "/orangerie/view_5.webp",
                   scale: scaleValues[1]
               },
               {
-                src: "/orangerie/orangerie_4_terrasse.jpg",
+                src: "/orangerie/view_6.webp",
                 scale: scaleValues[4]
             },
             ]
@@ -40,21 +41,29 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
         saintloup : {
             img : [
                 {
-                    src: "/saintloup/parvisbis.jpg",
+                  src: "/saintloup/view_2.avif",
                     scale: scaleValues[0]
                 },
                 {
-                    src: "/saintloup/config20p.jpg",
+                    src: "/saintloup/view_1.webp",
                     scale: scaleValues[1]
                 },
                 {
-                    src: "/saintloup/config20pbis.jpg",
+                    src: "/saintloup/view_3.avif",
                     scale: scaleValues[2]
                 },
                 {
-                    src: "/saintloup/salle50m.jpg",
+                    src: "/saintloup/view_4.avif",
                     scale: scaleValues[4]
                 },
+                {
+                  src: "/saintloup/view_6.jpg",
+                  scale: scaleValues[4]
+              },
+              {
+                src: "/saintloup/view_5.webp",
+                scale: scaleValues[4]
+            },
             ]
         
         }

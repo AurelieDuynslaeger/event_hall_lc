@@ -6,17 +6,19 @@ import ServiceDesc from "@/components/ServiceDesc/ServiceDesc"
 import Lenis from 'lenis';
 import { useScroll, useTransform } from 'framer-motion';
 import { ReactLenis } from "lenis/dist/lenis-react"
+import DrawOutlineButton from '@/components/DrawOutlineButton/DrawOutlineButton';
+import { PiArrowUpRightThin } from 'react-icons/pi';
 
 const roomData = {
     receptions: {
         orangerie: {
             title: "L'Orangerie",
-            description: "Une surface totale de 360 m² dont 235m² exclusivement réservés à la salle de réception, avec une capacité d'accueil de 200 personnes debout et 190 assises. Les terrasses suspendues de plus de 300m², vous offre vue panoramique sur le Manoir, la vallée et l'étang, face au coucher de soleil à couper le souffle ! L'Orangerie dispose également de 90 places de parking végétalisé (possibilité de places supplémentaires dans la prairie). La salle bénéficie d'un espace traiteur de plus de 50m² avec parking privé, sanitaires et douches séparés.",
+            description: "Nestled between serene lakes and majestic mountains, Gather and Grow offers the perfect blend of work and relaxation for teams looking to spark innovation and collaboration. Whether you’re planning a weekend retreat or a focused team-building experience, our spaces are designed to inspire. Enjoy rustic, yet stylish interiors featuring natural wood, large windows, and cozy corners. Choose from formal meeting rooms for strategy sessions or more informal spaces that foster open discussions and creativity. Take advantage of our expansive outdoor terraces and lounge areas, where you can step outside to refresh your mind during well-deserved breaks. Our coworking environment is equipped with all the amenities you need to stay productive, while the surrounding natural beauty provides the ideal backdrop to unwind and reconnect with nature.",
             
         },
         saintloup: {
             title: "Salle Saint Loup",
-            description: "Exclusivement réservée pour les petits séminaires ou réunions de travail (maximum de 25 personnes) la salle Saint-Loup vous offre 50m² d'intimité au rez-de-chaussée de l'Etable, en toute autonomie. Avec son accès de plein pied donnant sur le parvis de la cour centrale, vous bénéficiez d'un espace que vous pouvez configurer à votre convenance, avec la possibilité de l'ouvrir totalement sur l'extérieur grâce à sa baie vitrée de 5 mètres en accordéon. En complément, nous proposons le service restauration sur place, pause collations, diner, uniquement sur réservation.",
+            description: "At Gather and Grow, we believe that team building goes beyond the boardroom. Set against the backdrop of stunning lakes, towering mountains, and vast hiking trails, our outdoor spaces offer the perfect environment for companies to come together, strengthen relationships, and build trust in a natural and inspiring setting. Whether your team is embarking on a group hike, participating in a lakeside challenge, or enjoying outdoor activities that promote collaboration and communication, every experience is designed to foster unity and innovation. Our team-building activities are tailored to suit a range of professional goals, from strategic problem-solving challenges to creative workshops in the great outdoors. The breathtaking landscapes of the surrounding mountains provide an energizing atmosphere, while the serene waters of nearby lakes offer a peaceful retreat for reflection and connection.",
         },
     },
     tablehote: {
@@ -86,11 +88,15 @@ export default function RoomPage() {
           syncTouch: true,
         }}
       >
-        <div className=' py-8 mt-20 h-[400vh]'>
+        <div className=' py-8 mt-20 h-[500vh]'>
             <div className='h-[300vh] relative' ref={container}>
                 <ServiceLanding scaleValues={scaleValues} roomName={name}/>
             </div>
             <ServiceDesc paragraph={roomDetails.description} />
+            <DrawOutlineButton href="/contact" className="w-1/5 m-auto mb-8"> 
+            <p>Get Infos</p>
+            <PiArrowUpRightThin className="ml-2 h-8 w-8"/>
+          </DrawOutlineButton>
         </div>
         </ReactLenis>
     );

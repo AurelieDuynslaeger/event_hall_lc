@@ -4,7 +4,7 @@ import Block from './Block'
 const ThankYouBlock = () => {
   return (
     <Block className=" text-primary text-md col-span-12 text-center flex items-center justify-center md:col-span-9">
-        <p>Merci pour votre visite du Domaine Lassalle Saint Créac et à très bientôt !</p>
+        <p>We appreciate you reaching out to us. Our team will review your submission and get back to you as soon as possible. We look forward to assisting you!</p>
     </Block>
   )
 }

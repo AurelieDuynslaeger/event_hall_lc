@@ -31,7 +31,7 @@ const Option = ({ text, Icon, setOpen, href
       <motion.li
         variants={itemVariants}
         onClick={() => setOpen(false)}
-        className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-secondary text-primary hover:text-background transition-colors cursor-pointer"
+        className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-secondary text-primary transition-colors cursor-pointer"
       >
         <Link href={href} className='flex items-center gap-2'>
         <motion.span variants={actionIconVariants}>

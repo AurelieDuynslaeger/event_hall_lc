@@ -14,7 +14,7 @@ const ServicesDescription = ({mousePosition, service, slug }) => {
                 service.map( ({ name }, i) => {
                   console.log(i);
                   
-                    return <p onMouseOver={() => {setIndex(i)}} key={`p${i}`} className='text-5xl cursor-default m-0 uppercase text-primary'>
+                    return <p onMouseOver={() => {setIndex(i)}} key={`p${i}`} className='text-4xl font-stretch cursor-default m-0 uppercase text-primary'>
                         {name}
                     </p>
                 })
@@ -31,6 +31,7 @@ const ServicesDescription = ({mousePosition, service, slug }) => {
             className='w-full object-cover opacity-70'
           />
         </motion.div>
+        
     </div>
   )
 }

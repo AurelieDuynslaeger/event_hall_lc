@@ -2,35 +2,33 @@ import React from 'react'
 import Input from './Input'
 import Checkbox from './Checkbox'
 import Block from './Block'
+import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton'
+import { BsSend } from "react-icons/bs";
 
 
 const ContactFormBlock = () => {
   return (
     <Block className="col-span-12 text-xl leading-snug">
         <form className="space-y-2">
-          <div className='flex'>
-            <Checkbox label="Demande de disponibilité" />
-            <Checkbox label="Réserver une suite ou une chambre" />
-            <Checkbox label="Réserver un Gîte (l'étable ou le studio)" />
-            <Checkbox label="Réserver l'Orangerie / salle Saint-Loup" />
-            <Checkbox label="Autre demande d'information" />
+          <div className='flex justify-around'>
+            <Checkbox label="Request Availability for Private Booking" />
+            <Checkbox label="Book Suites or Rooms for Exclusive Use" />
+            <Checkbox label="Inquire About Exclusive Group Services" />
+            <Checkbox label="Other Information Request" />
 
           </div>
 
             <div className='flex justify-around'>
-            <Input label="Nom & Prénom *" type="text" />
+            <Input label="Name & Lastname *" type="text" />
             <Input label="E-mail *" type="email" />
-            <Input label="Téléphone *" type="tel" />
+            <Input label="Phone *" type="tel" />
               
             </div>
-            <Input label="Message *" type="textarea" rows="5" />
-
-            <button
-                type="submit"
-                className="w-1/3 m-auto mt-4 flex items-center justify-center gap-2 rounded-xl bg-secondary px-3 py-2 text-lg font-medium text-white hover:bg-background hover:border-2 hover:text-secondary hover:border-secondary hover:font-bold"
-            >
-                Envoyer
-            </button>
+            <Input label="Your Message *" type="textarea" rows="5" />
+            <DrawOutlineButton href="/hebergements" className="w-2/5 m-auto mb-8"> 
+            <p>Send</p>
+            <BsSend className="ml-2 h-8 w-8"/>
+          </DrawOutlineButton>
         </form>
     </Block>
   )
