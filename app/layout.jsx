@@ -14,7 +14,7 @@ const stretch = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} ${stretch.variable} bg-background overflow-hidden min-h-screen text-primary scrollbar-custom`}>
+      <body className={`${montserrat.className} ${stretch.variable} bg-background overflow-x-hidden min-h-screen text-primary scrollbar-custom`}>
         <NextUIProvider>
           <CustomNav/>
           {/* Contenu de la page */}

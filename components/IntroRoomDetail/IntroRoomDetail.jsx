@@ -2,7 +2,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { cinzel } from '@/app/font';
 
 const IntroRoomDetail = ({ mainImg, roomName }) => {
     const background = useRef(null);
@@ -31,7 +30,7 @@ const IntroRoomDetail = ({ mainImg, roomName }) => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-                    className={`${cinzel.className} text-primary text-8xl font-bold z-3 text-center whitespace-nowrap backdrop-blur-lg p-4 rounded-xl`}
+                    className="text-primary font-stretch text-8xl font-bold z-3 text-center whitespace-nowrap backdrop-blur-lg p-4 rounded-xl"
                 >
                     {roomName}
                 </motion.h1>

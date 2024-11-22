@@ -14,36 +14,36 @@ import { MdOutlineElectricCar } from 'react-icons/md';
 import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
 
 const roomViews = {
-    saint_creac: {
+    overlook_cabin: {
         prestationIcons: [
-            { icon: <PiResizeThin className="h-8 w-8 text-secondary"/>, desc: "50m²" },
-            { icon: <PiPersonLight className="h-8 w-8 text-secondary"/>, desc: "1 à 4 pers. maximum" },
-            { icon: <PiCigaretteSlashThin className="h-8 w-8 text-secondary"/>, desc: "Non fumeur" },
-            { icon: <PiWheelchairThin className="h-8 w-8 text-secondary"/>, desc: "Non PMR" },
-            { icon: <PiWifiHighThin className="h-8 w-8 text-secondary"/>, desc: "Wifi Inclus" },
-            { icon: <TbAirConditioning className="h-8 w-8 text-secondary"/>, desc: "Climatisation réversible" },
-            { icon: <PiBathtubThin className="h-8 w-8 text-secondary"/>, desc: "Baignoire balnéothérapie" },
-            { icon: <PiBedThin className="h-8 w-8 text-secondary"/>, desc: "Literie de haute qualité 180*200" },
-            { icon: <PiTowelThin className="h-8 w-8 text-secondary"/>, desc: "Linge de lit et de toilette inclus" },
-            { icon: <PiHairDryerThin className="h-8 w-8 text-secondary"/>, desc: "Sèche cheveux" },
-            { icon: <PiCoffeeThin className="h-8 w-8 text-secondary"/>, desc: "Petit déjeuner continental inclus" },
-            { icon: <PiSwimmingPoolThin className="h-8 w-8 text-secondary"/>, desc: "Accès piscine et spa" },
-            { icon: <GiVacuumCleaner className="h-8 w-8 text-secondary"/>, desc: "Ménage inclus" },
-            { icon: <PiThermometerHotThin className="h-8 w-8 text-secondary"/>, desc: "Accès Hamman et sauna sur réservation" }
+            { icon: <PiResizeThin className="h-8 w-8 text-primary"/>, desc: "50m²" },
+            { icon: <PiPersonLight className="h-8 w-8 text-primary"/>, desc: "1 to 4 people maximum" },
+            { icon: <PiCigaretteSlashThin className="h-8 w-8 text-primary"/>, desc: "Non-smoking" },
+            { icon: <PiWheelchairThin className="h-8 w-8 text-primary"/>, desc: "Not accessible for disabled guests" },
+            { icon: <PiWifiHighThin className="h-8 w-8 text-primary"/>, desc: "Wifi included" },
+            { icon: <TbAirConditioning className="h-8 w-8 text-primary"/>, desc: "Reversible air conditioning" },
+            { icon: <PiBathtubThin className="h-8 w-8 text-primary"/>, desc: "Balneotherapy bathtub" },
+            { icon: <PiBedThin className="h-8 w-8 text-primary"/>, desc: "High-quality bedding 180*200" },
+            { icon: <PiTowelThin className="h-8 w-8 text-primary"/>, desc: "Bed and bath linen included" },
+            { icon: <PiHairDryerThin className="h-8 w-8 text-primary"/>, desc: "Hairdryer" },
+            { icon: <PiCoffeeThin className="h-8 w-8 text-primary"/>, desc: "Breakfast included" },
+            { icon: <PiSwimmingPoolThin className="h-8 w-8 text-primary"/>, desc: "Access to pool and spa" },
+            { icon: <GiVacuumCleaner className="h-8 w-8 text-primary"/>, desc: "Cleaning included" },
+            { icon: <PiThermometerHotThin className="h-8 w-8 text-primary"/>, desc: "Access to Hammam and sauna upon reservation" }
             ],
         views : [
             {
-                title: "Vue d'ensemble",
-                src: "/manoir_suitecreac/view_9_chambre15em.jpg"
+                title: "Overview",
+                src: "/view_12.avif"
             },
             {
                 title: "Inspiration XVème siècle",
-                src: "/manoir_suitecreac/view_3.jpg"
+                src: "/view_2.avif"
         
             },
             {
                 title: "Salon",
-                src: "/manoir_suitecreac/view_7.jpg"
+                src: "/view_11.avif"
             },
             {
                 title: "Suite Salon",
@@ -441,13 +441,7 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle, selectedRoom })
         <div ref={roomDescRef}>
             <RoomDesc roomDescArray={roomDescription}/>
         </div>
-        <RoomGallery selectedRoomViews={selectedRoomData.views} prestationsIcons={selectedRoomData.prestationIcons}/>
-
-    
-        <DrawOutlineButton  href={`/reservation?subject=${selectedRoom}`}  className="w-1/4 m-auto -mt-20"> 
-            <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
-            <p>Je réserve !</p>
-        </DrawOutlineButton>
+        <RoomGallery selectedRoomViews={selectedRoomData.views} prestationsIcons={selectedRoomData.prestationIcons} selectedRoom={selectedRoomData}/>
     </div>
   )
 }

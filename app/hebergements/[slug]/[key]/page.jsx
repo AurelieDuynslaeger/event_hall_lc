@@ -13,10 +13,11 @@ const hebergementData = {
               src:"/view_6.avif",
               color: "#e39c7e",
               desc: [
-                  "Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale!", 
-                  "Charme et authenticité sont au rendez-vous, avec sa cheminée du XVième siècle classée, ses murs en pierre, ses portes en chêne et ses poutres centenaires.",
-                  "Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande), d'une vaste salle d'eau (double vasques, baignoire balnéothérapie, WC privatif)", 
-                  "Un superbe espace salon avec vue sur la vallée (canapé convertible, literie pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire)"],
+                "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+                "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+                "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+                "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+            ]
           },
           {
               roomName: "The Pine Suite",
