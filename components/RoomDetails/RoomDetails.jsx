@@ -6,12 +6,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import IntroRoomDetail from '../IntroRoomDetail/IntroRoomDetail';
 import RoomDesc from '../RoomDesc/RoomDesc';
 import RoomGallery from '../RoomGallery/RoomGallery';
-import { PiArrowUpRightThin, PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiCookingPotThin, PiFarmThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
+import {PiBathtubThin, PiBedThin, PiCigaretteSlashThin, PiCoffeeThin, PiCookingPotThin, PiFarmThin, PiHairDryerThin, PiPersonLight, PiResizeThin, PiSwimmingPoolThin, PiThermometerHotThin, PiTowelThin, PiWheelchairThin, PiWifiHighThin } from "react-icons/pi";
 import { TbAirConditioning} from 'react-icons/tb';
 import { GiVacuumCleaner } from 'react-icons/gi';
 import { CiParking1 } from 'react-icons/ci';
 import { MdOutlineElectricCar } from 'react-icons/md';
-import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
 
 const roomViews = {
     overlook_cabin: {

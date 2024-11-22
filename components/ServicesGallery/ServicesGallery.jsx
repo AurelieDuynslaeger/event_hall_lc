@@ -21,7 +21,7 @@ const ServicesGallery = ({name, slug, handle, mousePosition}) => {
         <motion.div className="fixed top-0 overflow-hidden h-1/2 w-1/4 rounded-xl"
         style={{x, y}}>
           <Image 
-            src={`/${slug}/${handle}/1.jpg`}
+            src={`/${slug}/${handle}/1.webp`}
             alt="image"
             fill
              className='w-full object-cover'
@@ -33,7 +33,7 @@ const ServicesGallery = ({name, slug, handle, mousePosition}) => {
                 opacity: 1, // Déclencher l'animation quand 'trigger' est true
                 y: 0,  // Déclencher l'animation vers le haut
               }}
-              className='absolute bottom-1 right-1 text-white bg-black/50 p-1 rounded-lg'
+              className='font-stretch uppercase absolute bottom-1 right-1 text-white p-1 rounded-lg'
             >
               {name}
             </motion.p>

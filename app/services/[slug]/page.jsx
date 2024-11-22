@@ -5,6 +5,7 @@ import { motion, useSpring } from "framer-motion";
 import ServicesGallery from "@/components/ServicesGallery/ServicesGallery"
 import ServicesDescription from '@/components/ServicesDescription/ServicesDescription'
 import { cinzel } from "@/app/font";
+import SmoothScroll from "@/components/SmoothScroll/SmoothScroll"
 
 const serviceData = {
     receptions: {
@@ -20,15 +21,10 @@ const serviceData = {
         title: "Table d'hôte",
         description: "Exclusivement pour le diner, Olivier vous prépare des repas du terroir ou à thème, selon la saison, ses envies et celles de nos Hôtes. Une cuisine simple, sans chi-chi, familiale, pour un plaisir partagé. (Merci à nos hôtes de nous prévenir de leurs éventuels régimes ou allergies, ainsi que leur préférences alimentaires - Végé. etc.) Le repas du diner par personne : 25.00€ TTC. (Compris apéritif, boissons et café ou infusion)",
         img:[
-          {name: "chauffée à 27° toute l'année", handle: "view_1"},
-          {name: "s'ouvre entièrement sur les terrasses", handle: "view_2"},
-          {name: "vous relaxer en pleine nature", handle: "view_3"},
-          {name: "ombrière en toile de lin", handle: "view_4"},
-          {name: "Vue Piscine", handle: "view_5"},
-          {name: "Vue Piscine", handle: "view_6"},
-          {name: "Vue Piscine", handle: "view_7"},
-          {name: "Vue Piscine", handle: "view_8"},
-          {name: "Vue Piscine", handle: "view_9"},
+          {name: "Step into a warm and welcoming space", handle: "view_1"},
+          {name: "Experience dishes crafted from local produce", handle: "view_2"},
+          {name: "Enjoy moments of connection around the table", handle: "view_3"},
+          {name: "Leave nourished and inspired for your next step.", handle: "view_4"},
         ]
     },
     spabienetre: {
@@ -200,6 +196,7 @@ const ServicePage = () => {
             </section>
         ) : (slug === "tablehote" || slug === "spabienetre") ? (
             // <SliderServices images={service.img}/>
+            <SmoothScroll>
             <section onMouseMove={mouseMove} className="w-4/5 m-auto mt-28">
             {service.img.map(({ handle, name }, i) => (
               <>
@@ -211,6 +208,7 @@ const ServicePage = () => {
                 <p>Aucune description disponible</p> // Message de secours pour la description
               )}
               </section>
+              </SmoothScroll>
       
         ) : null} {/* Ajoutez une valeur par défaut si nécessaire */}
     </>

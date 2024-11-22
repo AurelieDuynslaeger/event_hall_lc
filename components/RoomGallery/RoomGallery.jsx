@@ -75,7 +75,7 @@ const RoomGallery = ({ selectedRoom, selectedRoomViews, prestationsIcons }) => {
                     </div>
                     <DrawOutlineButton  href={`/reservation?subject=${selectedRoom}`}  className="w-2/3 m-auto mt-20"> 
                         <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
-                        <p>I want to book</p>
+                        <p>boook</p>
                     </DrawOutlineButton>
                     
                 </div>

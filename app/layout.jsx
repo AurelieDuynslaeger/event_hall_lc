@@ -4,6 +4,7 @@ import CustomNav from "@/components/CustomNav/CustomNav"
 import { montserrat} from "./font"
 import "./globals.css";
 import localFont from "next/font/local";
+import Footer from "@/components/Footer/Footer"
 
 const stretch = localFont({
   src: "./fonts/stretch-pro.regular-webfont.woff",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
           <CustomNav/>
           {/* Contenu de la page */}
           <main  className="bg-background text-primary">{children}</main>
+          <Footer/>
         </NextUIProvider>
       </body>
     </html>

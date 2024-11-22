@@ -14,7 +14,7 @@ const ServicesDescription = ({mousePosition, service, slug }) => {
                 service.map( ({ name }, i) => {
                   console.log(i);
                   
-                    return <p onMouseOver={() => {setIndex(i)}} key={`p${i}`} className='text-5xl cursor-default m-0 uppercase text-black'>
+                    return <p onMouseOver={() => {setIndex(i)}} key={`p${i}`} className='text-5xl cursor-default m-0 uppercase text-primary'>
                         {name}
                     </p>
                 })
@@ -25,7 +25,7 @@ const ServicesDescription = ({mousePosition, service, slug }) => {
          style={{x, y}}
          >
           <Image 
-            src={`/${slug}/${service[index].handle}/1.jpg`}
+            src={`/${slug}/${service[index].handle}/1.webp`}
             alt="image"
             fill
             className='w-full object-cover opacity-70'
