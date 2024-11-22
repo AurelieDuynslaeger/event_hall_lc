@@ -4,25 +4,25 @@ import { CustomEase } from "gsap/all";
 import Image from "next/image";
 import { cinzel, montserrat } from "@/app/font";
 
-gsap.registerPlugin(CustomEase)
+gsap.registerPlugin(CustomEase);
 CustomEase.create("cubic", "0.83, 0, 0.17, 1");
 
 const Slider = ({ avis }) => {
+  const [splitText, setSplitText] = useState([]);
   const [isAnimating, setIsAnimating] = useState(false);
   const sliderRef = useRef(null); // Référence pour le slider
   const cardsRef = useRef([]); // Référence pour toutes les cartes
   const h1SpansRef = useRef([]); // Référence pour les <span> des h1
 
   // Fonction pour découper le texte en <span> pour chaque caractère
-  const splitTextIntoSpans = () => {
-    h1SpansRef.current.forEach((element) => {
-      let text = element.innerText;
-      let splitText = text
-        .split("")
-        .map((char) => `<span className="relative inline-block">${char === " " ? "&nbsp;&nbsp;" : char}</span>`)
-        .join("");
-      element.innerHTML = splitText;
-    });
+  const splitTextIntoSpans = (text) => {
+    return text
+      .split("")
+      .map((char, index) => (
+        <span key={index} className="relative inline-block">
+          {char === " " ? "\u00A0\u00A0" : char}
+        </span>
+      ));
   };
 
   // Fonction pour initialiser les cartes avec l'animation GSAP
@@ -40,7 +40,6 @@ const Slider = ({ avis }) => {
 
   // Initialiser les cartes après le premier rendu
   useEffect(() => {
-    splitTextIntoSpans();
     initializeCards();
 
     gsap.set("h1 span", { y: -200 });
@@ -129,7 +128,7 @@ const Slider = ({ avis }) => {
                 className={`${cinzel.className} relative text-center text-4xl font-light tracking-[-0.05em] uppercase text-[#dfe1c8]`}
                 ref={(el) => (h1SpansRef.current[i] = el)} // Ajouter la référence de chaque <h1>
               >
-                {a.title}
+                {splitTextIntoSpans(a.title)} {/* Applique la découpe du texte ici */}
               </h1>
               <p
                 className={`${montserrat.className} relative text-center text-md font-light tracking-[-0.05em] text-[#dfe1c8]`}

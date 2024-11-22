@@ -16,10 +16,13 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#2C1A1A",       // Police body (dark text color)
-				background: "#F5EDE2",    // Background color
-				secondary: "#9E5D5D",     // Secondary color
+				primary: "#F1FFFA",       // Police body (dark text color)
+				background: "#0D0A0B",    // Background color
+				secondary: "#e79959",     // Secondary color
 				accent: "#5E807F"         // Accent color
+			},
+			fontFamily: {
+				stretch: ['var(--font-stretch)'],
 			}
 		},
 	},

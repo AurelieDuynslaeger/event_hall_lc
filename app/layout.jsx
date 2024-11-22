@@ -3,11 +3,18 @@ import { NextUIProvider } from '@nextui-org/react';
 import CustomNav from "@/components/CustomNav/CustomNav"
 import { montserrat} from "./font"
 import "./globals.css";
+import localFont from "next/font/local";
+
+const stretch = localFont({
+  src: "./fonts/stretch-pro.regular-webfont.woff",
+  variable: "--font-stretch",
+});
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${montserrat.className} bg-background text-primary scrollbar-custom`}>
+      <body className={`${montserrat.className} ${stretch.variable} bg-background text-primary scrollbar-custom`}>
         <NextUIProvider>
           <CustomNav/>
           {/* Contenu de la page */}

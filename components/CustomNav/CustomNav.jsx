@@ -9,39 +9,31 @@ import {
 } from "@nextui-org/react";
 import StaggerDropDown from "./StaggerDropDown"
 import Image from "next/image";
-import logoLassalle from "@/app/assets/LogoLassalleOrigin.svg";
+import { montserrat } from "@/app/font";
+
 import Link from "next/link";
-import { cinzel } from "@/app/font";
 
 const menuItems = [
-  { title: "Nos Hébergements", href: "/hebergements" },
   {
-    title: "Nos Services",
+    title: "Nos Espaces",
     subItems: [
-      { title: "Réceptions", href: "/services/receptions" },
-      { title: "Table d'Hôte", href: "/services/tablehote" },
+      { title: "Espaces collabortifs", href: "/services/receptions" },
+      { title: "Profitez de la nature", href: "/services/tablehote" },
       { title: "Spa - Bien-Être", href: "/services/spabienetre" }
     ],
   },
-  { title: "Exclusivité", href: "/privatisation" },
-  { title: "Gallerie", href: "/gallerie" },
+  { title: "Nos Chambres", href: "/hebergements" },
+  { title: "Notre Service", href: "/services/tablehote" },
   { title: "A Propos", href: "/apropos" },
-  // {
-  //   title: "À propos",
-  //   subItems: [
-  //     { title: "Remerciements", href: "/apropos/remerciements" },
-  //     { title: "Ils sont venus", href: "/apropos/avis" },
-  //     { title: "Où nous Trouver", href: "/apropos/adresse", icon: <PiMapPinLight /> },
-  //   ],
-  // },
   { title: "Contact", href: "/contact" },
+  { title: "Exclusivité", href: "/privatisation" },
 ];
 
 const CustomNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar className={`${cinzel.className} w-full z-50 flex items-center p-4`} shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className="w-full z-50 flex items-center p-4" shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
       {/* Logo */}
       
       <NavbarContent>
@@ -49,7 +41,7 @@ const CustomNav = () => {
           className="sm:hidden"/>
           <NavbarBrand>
         <Link href="/">
-          <Image src={logoLassalle} alt="lassale-saint-creac logo" width={120} height={120} />
+          <Image src="/logoMinGG.svg" alt="lassale-saint-creac logo" width={120} height={120} />
         </Link>
       </NavbarBrand>
       </NavbarContent>
