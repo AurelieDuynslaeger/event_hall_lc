@@ -2,6 +2,7 @@
 import { ReactLenis } from "lenis/dist/lenis-react"
 import Hero from "@/components/Hero/Hero"
 import PrezDom from "@/components/PrezDom/PrezDom"
+import Header from "@/components/Home/Header"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           syncTouch: true,
         }}
       >
+        <Header />
         <Hero />
         <PrezDom/>
       </ReactLenis>

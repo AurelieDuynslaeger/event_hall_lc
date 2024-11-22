@@ -102,15 +102,30 @@ body {
 }
 
 .scrollbar-custom::-webkit-scrollbar {
-  width: 14px;
+  width: 8px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
-  background: #F5EDE2;
+  background: #0D0A0B;
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #2C1A1A;
-  border-radius: 1px;
-  height: 15px;
+  background-color: #F1FFFA;
+  border-radius: 15px;
+  height: 8px;
+}
+
+
+.overlay-clippath, .header-clippath{
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.hero-clippath{
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.header h1 span {
+  position: relative;
+  display: inline-block;
+  transform: translateY(500px);
 }

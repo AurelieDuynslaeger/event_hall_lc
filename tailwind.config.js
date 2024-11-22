@@ -18,7 +18,7 @@ const config = {
 			colors: {
 				primary: "#F1FFFA",       // Police body (dark text color)
 				background: "#0D0A0B",    // Background color
-				secondary: "#e79959",     // Secondary color
+				secondary: "#68462B",     // Secondary color
 				accent: "#5E807F"         // Accent color
 			},
 			fontFamily: {

@@ -37,7 +37,7 @@ const wrapperVariants = {
             onClick={() => setOpen((pv) => !pv)}
             className="flex items-center gap-2 px-3 py-2 rounded-md"
           >
-            <span className="font-medium text-md">{tabTitle}</span>
+            <span className="font-medium text-xl">{tabTitle}</span>
             <motion.span variants={iconVariants}>
             <HiChevronDown />
             </motion.span>
@@ -49,9 +49,9 @@ const wrapperVariants = {
             style={{ originY: "top", translateX: "-50%" }}
             className="flex flex-col gap-2 p-2 rounded-lg  absolute top-[120%] left-[50%] w-48 overflow-hidden"
           >
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Réceptions" href="/services/receptions"/>
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Table d'hôte" href="/services/tablehote"/>
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Spa | Bien-être" href="/services/spabienetre"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Meeting Rooms" href="/services/receptions"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Outdoor Spaces" href="/services/tablehote"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Wellness & Spa" href="/services/spabienetre"/>
           </motion.ul>
         </motion.div>
       </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 const DrawOutlineButton = ({ children, href, className = "", ...rest }) => {
   return (
-    <Link href={href} className={`flex items-center justify-center ${className}`} passHref>
+    <Link href={href} className={`flex items-center justify-center font-stretch ${className}`} passHref>
     <button
       {...rest}
       className="w-full group relative px-4 py-2 font-medium text-primary transition-colors duration-[400ms]  hover:text-secondary"

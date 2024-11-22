@@ -9,9 +9,9 @@ import { cinzel } from "../font";
 const hebergements = [
     {
         id: 1,
-        img: "/domaine/manoir_3.jpg",
+        img: "/view_12.avif",
         slug: "manoir",
-        heading: "Le Manoir",
+        heading: "Cloudline Hub",
         subheading: "Charme et Authenticité",
         appeal: "Poutres centenaires, murs en pierre et cheminée XVIème siècle classée, découvrez votre prochain cocon pour une escapade dans le Gers : nos suites et chambres d'exception, offrant vue sur la vallée, terrasse privative, pour un week-end hors du temps !",
         desc: "Un lieu prestigieux et accueillant",
@@ -19,9 +19,9 @@ const hebergements = [
     },
     {
         id: 2,
-        img: "/domaine/etable_7.jpeg",
+        img: "/view_4.avif",
         slug: "etable",
-        heading: "L'Étable",
+        heading: "Bayside Hub",
         subheading: "Charpente centenaire et volige en peuplier",
         appeal: "Occupant tout le premier étage de l’ancienne étable sur près de 250m², vous y accédez par la cour et son escalier en pierre. Sous sa charpente centenaire et sa volige en peuplier, ce sont 15 couchages qui sont à votre disposition ! (4 chambres dont 2 en mezzanine sur la pièce de vie)",
         desc: "Pour une expérience en famille ou entre amis",
@@ -131,12 +131,12 @@ const OverlayCopy = ({ subheading, heading }) => {
                 opacity,
             }}
             ref={targetRef}
-            className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-background"
+            className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-primary"
         >
             <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">
                 {subheading}
             </p>
-            <p className={`${cinzel.className} text-center text-4xl font-bold md:text-9xl`}>{heading}</p>
+            <p className="font-stretch text-center text-4xl font-bold md:text-9xl">{heading}</p>
         </motion.div>
     );
 };
