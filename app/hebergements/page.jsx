@@ -8,7 +8,7 @@ import { PiArrowUpRightThin } from "react-icons/pi";
 const hebergements = [
     {
         id: 1,
-        img: "/view_12.avif",
+        img: "/bedroom_detail.jpeg",
         slug: "cloudline",
         heading: "Cloudline Hub",
         subheading: "Charme et Authenticité",

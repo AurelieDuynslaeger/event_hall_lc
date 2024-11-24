@@ -10,12 +10,10 @@ CustomEase.create(
   );
 
 
-
 const Header = () => {
     const h1ref = useRef();
     const heroRef = useRef();
     const overlayRef = useRef();
-    const heroImg = useRef()
     const [textArray, setTextArray] = useState([]);
 
     useEffect(() => {
@@ -45,13 +43,6 @@ const Header = () => {
                 duration: 2,
                 delay: 0.5,
                 ease: 'hop',
-              });
-    
-              gsap.to(heroImg.current, {
-                transform: 'scale(1)',
-                duration: 2.25,
-                ease: 'power3.inOut',
-                delay: 0.25,
               });
     
               gsap.to('.header h1 span', {

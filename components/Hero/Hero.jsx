@@ -88,7 +88,7 @@ return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
     <ParallaxImg
         // src={parallax1}
-        src="/view_6.avif"
+        src="/bedroom_view.webp"
         alt="Gather and Grow Spaces"
         start={550}
         end={-200}

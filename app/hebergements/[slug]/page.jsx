@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react'
 import { useParams } from "next/navigation";
 import Modal from '@/components/Modal/Modal';
 import HebergementsLink from "@/components/HebergementsLink/HebergementsLink"
-
+import { fetchRoomsByHub } from "@/lib/sanity/roomsService";
 
 const hebergementData = {
     cloudline: {
@@ -12,7 +12,7 @@ const hebergementData = {
             {
                 roomName: "The Overlook Cabin",
                 key: "overlook_cabin",
-                src:"/view_6.avif",
+                src:"/bedroom_detail.jpeg",
                 color: "#e39c7e",
                 desc: [
                     "Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon, ou directement par l'escalier de la tour, Une indépendance totale!", 
