@@ -6,7 +6,7 @@ import { PiArrowUpRightThin } from 'react-icons/pi';
 
 
 
-const RoomGallery = ({ selectedRoom, selectedRoomViews, prestationsIcons }) => {
+const RoomGallery = ({ selectedRoomViews, prestationsIcons }) => {
     const [selectedView, setSelectedView] = useState(0);
     const imageContainer = useRef(null);
     const ref = useRef(null);
@@ -73,7 +73,8 @@ const RoomGallery = ({ selectedRoom, selectedRoomViews, prestationsIcons }) => {
                             ))
                         }
                     </div>
-                    <DrawOutlineButton  href={`/reservation?subject=${selectedRoom}`}  className="w-2/3 m-auto mt-20"> 
+                    {/* <DrawOutlineButton  href={`/reservation?subject=${selectedRoom}`}  className="w-2/3 m-auto mt-20">  */}
+                    <DrawOutlineButton  href="/contact"  className="w-2/3 m-auto mt-20">
                         <PiArrowUpRightThin className="mr-2 h-6 w-6"/>
                         <p>boook</p>
                     </DrawOutlineButton>

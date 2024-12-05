@@ -4,7 +4,7 @@ import {motion} from "framer-motion"
 const ServiceLanding = ( {scaleValues, roomName}) => {
 
     const serviceImages = {
-        orangerie : {
+        meeting : {
             img : [
               {
                 src: "/orangerie/view_3.webp",
@@ -38,7 +38,7 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
             ]
         
         },
-        saintloup : {
+        teamb : {
             img : [
                 {
                   src: "/saintloup/view_2.avif",
@@ -142,9 +142,8 @@ const ServiceLanding = ( {scaleValues, roomName}) => {
                                 srcSet={`${src}?w=800&h=600 1x, ${src}?w=1600&h=1200 2x, ${src}?w=2400&h=1800 3x`}
                                 fill 
                                 sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw" 
-                                quality={90} // Qualité d'image élevée
+                                quality={90}
                                 alt="image"
-                                // placeholder='blur'
                                 className='object-contain'
                             />
                         </div>

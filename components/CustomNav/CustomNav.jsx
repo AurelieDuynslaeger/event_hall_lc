@@ -16,14 +16,14 @@ const menuItems = [
   {
     title: "Spaces",
     subItems: [
-      { title: "Meeting Rooms", href: "/services/receptions/orangerie" },
-      { title: "Team Building", href: "/services/receptions/saintloup" }
+      { title: "Meeting Rooms", href: "/services/receptions/meeting" },
+      { title: "Team Building", href: "/services/receptions/teamb" }
     ],
   },
   { title: "Rooms", href: "/hebergements" },
   { title: "Dining Service", href: "/services/tablehote" },
-  { title: "About Us", href: "/apropos" },
-  { title: "Reviews", href: "/avis" },
+  // { title: "About Us", href: "/apropos" },
+  // { title: "Reviews", href: "/avis" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -53,23 +53,14 @@ const CustomNav = () => {
       </NavbarBrand> */}
         {menuItems.map((item, i) => (
           item.subItems ? (
-            // Dropdown pour les items avec sous-menu
-         
             <StaggerDropDown key={i} tabTitle={item.title}/>
           ) : (
-            // Simple NavbarItem pour les items sans sous-menu
             <NavbarItem key={i}>
               <Link href={item.href}>{item.title}</Link>
             </NavbarItem>
           )
         ))}
       </NavbarContent>
-
-      {/* Bouton de demande */}
-      {/* <DrawOutlineButton href="/reservation"> 
-        <p className="text-base">Une demande particulière</p>
-        <PiArrowRightThin className="ml-2 h-4 w-4" />
-      </DrawOutlineButton> */}
     </Navbar>
   );
 }

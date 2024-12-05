@@ -11,7 +11,6 @@ const serviceData = {
     receptions: {
         title: "Nos salles de réceptions",
         description: "Séminaire, Réunion de famille, Mariage : un lieu d'exception pour magnifier cette célébration! Vous pourrez apprécier l'Orangerie et ses terrasses avec vue panoramique sur la vallée et le Domaine,ou la salle Saint-Loup (petit espace réception de 50m², 30 personnes assises).",
-        // description: "Séminaire, Réunion de famille, Mariage : un lieu d'exception pour magnifier cette célébration! Vous pourrez apprécier l' Orangerie et ses terrasses avec vue panoramique sur la vallée et le Domaine. Une salle de réception de 235m² (190 personnes assises, 200 debout), entièrement vitrée, plus de 30 mètres d'ouvertures accordéon ouvrant sur les terrasses de plus de 300m², c'est plus de 500m² d'espace de réception dans un cadre exceptionnel! Entièrement normée PMR, espaces sanitaires de qualité de plus de 50m², cuisine et office traiteur de 50m² avec parking privatif - Parking pour 90 véhicules. Le Domaine vous propose aussi une solution hébergements pouvant aller jusqu'à 44 couchages. Possibilité de louer l'Orangerie à la journée en semaine du lundi au jeudi. Vous pourrez aussi apprécier la salle Saint-Loup (petit espace réception de 50m², 30 personnes assises)",
         links: [
             { name: "L'Orangerie", href: "/services/receptions/orangerie" },
             { name: "La salle Saint-Loup", href: "/services/receptions/saintloup" },
@@ -41,107 +40,8 @@ const serviceData = {
     },
 };
 
-// const shuffle = (array) => {
-//     let currentIndex = array.length,
-//       randomIndex;
-  
-//     while (currentIndex != 0) {
-//       randomIndex = Math.floor(Math.random() * currentIndex);
-//       currentIndex--;
-  
-//       [array[currentIndex], array[randomIndex]] = [
-//         array[randomIndex],
-//         array[currentIndex],
-//       ];
-//     }
-  
-//     return array;
-//   };
-
-  // const squareData = [
-  //   {
-  //     id: 1,
-  //     src: "/orangerie/orangerie_1_vue.jpg",
-  //   },
-  //   {
-  //     id: 2,
-  //     src: "/orangerie/orangerie_3_presta.jpg",
-  //   },
-  //   {
-  //     id: 3,
-  //     src: "/saintloup/parvisbis.jpg",
-  //   },
-  //   {
-  //     id: 4,
-  //     src: "/saintloup/config20p.jpg",
-  //   },
-  //   {
-  //     id: 5,
-  //     src: "/orangerie/orangerie_4_terrasse.jpg",
-  //   },
-  //   {
-  //     id: 6,
-  //     src: "/orangerie/orangerie_11_traiteur.jpg",
-  //   },
-  //   {
-  //     id: 7,
-  //     src: "/saintloup/config20pbis.jpg",
-  //   },
-  //   {
-  //     id: 8,
-  //     src: "/saintloup/salle50m.jpg",
-  //   },
-  //   {
-  //     id: 9,
-  //     src: "/orangerie/orangerie_12_open.jpg",
-  //   },
-  //   {
-  //     id: 10,
-  //     src: "/orangerie/orangerie_7_empty.jpg",
-  //   },
-  //   {
-  //     id: 11,
-  //     src: "/orangerie/orangerie_14_table.jpg",
-  //   },
-  //   {
-  //     id: 12,
-  //     src: "/orangerie/orangerie_8_office.jpg",
-  //   },
-  //   {
-  //     id: 13,
-  //     src: "/orangerie/orangerie_6_terrasse.jpg",
-  //   },
-  //   {
-  //     id: 14,
-  //     src: "/orangerie/orangerie_13_coucher.jpg",
-  //   },
-  //   {
-  //     id: 15,
-  //     src: "/orangerie/orangerie_9_cuisine.jpg",
-  //   },
-  //   {
-  //     id: 16,
-  //     src: "/orangerie/orangerie_5_terrasse.jpg",
-  //   },
-  // ];
-  
-  // const generateSquares = () => {
-  //   return shuffle(squareData).map((sq) => (
-  //     <motion.div
-  //       key={sq.id}
-  //       layout
-  //       transition={{ duration: 1.5, type: "spring" }}
-  //       className="w-full h-full"
-  //       style={{
-  //         backgroundImage: `url(${sq.src})`,
-  //         backgroundSize: "cover",
-  //       }}
-  //     ></motion.div>
-  //   ));
-  // };
 
 const ServicePage = () => {
-    // const router = useRouter();
     const { slug } = useParams();
     const spring = {
       stiffness: 150,
@@ -162,7 +62,6 @@ const ServicePage = () => {
       mousePosition.y.set(targetY);
     }
 
-    // Récupère les données en fonction du slug
     const service = serviceData[slug];
 
     if (!service) {
@@ -173,32 +72,9 @@ const ServicePage = () => {
       <>
         {slug === "receptions" ? (
           <>
-            {/* <section className="w-full h-[90vh] p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl mx-auto my-auto">
-                <div>
-                    <h1 className={`${cinzel.className} text-4xl md:text-6xl font-semibold`}>
-                        {service.title}
-                    </h1>
-                    <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-                        {service.description}
-                    </p>
-                    <div className="flex justify-evenly">
-                        {service.links && service.links.length > 0 && service.links.map((link) => (
-                            <button 
-                                key={link.name} 
-                                className="bg-secondary  text-background font-medium py-2 px-4 rounded transition-all hover:bg-background hover:text-secondary hover:border-1 hover:border-secondary hover:font-bold active:scale-95" 
-                                onClick={() => router.push(link.href)}
-                            >
-                                {link.name}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-                <ShuffleGrid />
-            </section> */}
             <RoomPage />
             </>
         ) : (slug === "tablehote" || slug === "spabienetre") ? (
-            // <SliderServices images={service.img}/>
             <SmoothScroll>
             <section onMouseMove={mouseMove} className="w-4/5 m-auto mt-28">
             {service.img.map(({ handle, name }, i) => (
@@ -208,39 +84,15 @@ const ServicePage = () => {
               ))}
                {service.img && service.img.length > 0 ? (
               <ServicesDescription mousePosition={mousePosition} service={service.img} slug={slug}/>): (
-                <p>Aucune description disponible</p> // Message de secours pour la description
+                <p>Aucune description disponible</p>
               )}
               </section>
               </SmoothScroll>
       
-        ) : null} {/* Ajoutez une valeur par défaut si nécessaire */}
+        ) : null}
     </>
     )
 }
 
 export default ServicePage
-
-// const ShuffleGrid = () => {
-//     const timeoutRef = useRef(null);
-//     const [squares, setSquares] = useState(generateSquares());
-  
-//     useEffect(() => {
-//       shuffleSquares();
-  
-//       return () => clearTimeout(timeoutRef.current);
-//     }, []);
-  
-//     const shuffleSquares = () => {
-//       setSquares(generateSquares());
-  
-//       timeoutRef.current = setTimeout(shuffleSquares, 3000);
-//     };
-  
-//     return (
-//       <div className="grid grid-cols-5 grid-rows-3 h-[450px] gap-1">
-//         {squares.map((sq) => sq)}
-//       </div>
-//     );
-//   };
-
 

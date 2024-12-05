@@ -21,7 +21,7 @@ const Header = () => {
         const letters = text.split('').map((char, index) => {
           return <span key={index}>{char === ' ' ? '\u00A0' : char}</span>;
         });
-        setTextArray(letters); // Met à jour l'état avec les lettres sous forme de span
+        setTextArray(letters);
       }, []);
 
       useEffect(() => {

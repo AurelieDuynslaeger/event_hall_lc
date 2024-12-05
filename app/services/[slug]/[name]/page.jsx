@@ -11,12 +11,12 @@ import { PiArrowUpRightThin } from 'react-icons/pi';
 
 const roomData = {
     receptions: {
-        orangerie: {
-            title: "L'Orangerie",
+        meeting: {
+            title: "Our Meeting Rooms",
             description: "Nestled between serene lakes and majestic mountains, Gather and Grow offers the perfect blend of work and relaxation for teams looking to spark innovation and collaboration. Whether you’re planning a weekend retreat or a focused team-building experience, our spaces are designed to inspire. Enjoy rustic, yet stylish interiors featuring natural wood, large windows, and cozy corners. Choose from formal meeting rooms for strategy sessions or more informal spaces that foster open discussions and creativity. Take advantage of our expansive outdoor terraces and lounge areas, where you can step outside to refresh your mind during well-deserved breaks. Our coworking environment is equipped with all the amenities you need to stay productive, while the surrounding natural beauty provides the ideal backdrop to unwind and reconnect with nature.",
             
         },
-        saintloup: {
+        teamb: {
             title: "Salle Saint Loup",
             description: "At Gather and Grow, we believe that team building goes beyond the boardroom. Set against the backdrop of stunning lakes, towering mountains, and vast hiking trails, our outdoor spaces offer the perfect environment for companies to come together, strengthen relationships, and build trust in a natural and inspiring setting. Whether your team is embarking on a group hike, participating in a lakeside challenge, or enjoying outdoor activities that promote collaboration and communication, every experience is designed to foster unity and innovation. Our team-building activities are tailored to suit a range of professional goals, from strategic problem-solving challenges to creative workshops in the great outdoors. The breathtaking landscapes of the surrounding mountains provide an energizing atmosphere, while the serene waters of nearby lakes offer a peaceful retreat for reflection and connection.",
         },
@@ -62,7 +62,6 @@ export default function RoomPage() {
     const params = useParams();
     const { slug, name } = params;
 
-    // Récupère les données pour la salle en fonction du slug et du name
     const roomDetails = roomData[slug]?.[name];
 
     useEffect(()=> {
@@ -76,14 +75,13 @@ export default function RoomPage() {
 
 
     if (!roomDetails) {
-        return <h1>Room not found</h1>; // Gérer les erreurs si nécessaire
+        return <h1>Room not found</h1>;
     }
 
     return (
         <ReactLenis
         root
         options={{
-          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
           lerp: 0.05,
           syncTouch: true,
         }}

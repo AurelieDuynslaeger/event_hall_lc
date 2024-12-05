@@ -7,12 +7,6 @@ import {
   } from "framer-motion";
   import { useRef } from "react";
 
-
-// import parallax1 from "app/assets/domaine/manoir_3.jpg"
-// import parallax2 from "app/assets/domaine/parvis_2.jpg"
-// import parallax3 from "app/assets/domaine/terrasse_1.jpg"
-// import parallax4 from "app/assets/domaine/cour_4.jpg"
-
 const SECTION_HEIGHT = 1200;
 
 const Hero = () => {
@@ -84,66 +78,62 @@ export default Hero;
 // };
   
 const ParallaxImages = () => {
-return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-    <ParallaxImg
-        // src={parallax1}
-        src="/bedroom_view.webp"
-        alt="Gather and Grow Spaces"
-        start={550}
-        end={-200}
-        className="w-1/3 opacity-50"
-    />
-    <ParallaxImg
-        // src={parallax2}
-        src="/view_13.avif"
-        alt="Gather and Grow Spaces"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3 opacity-50"
-    />
-    <ParallaxImg
-        // src={parallax3}
-        src="/view_14.avif"
-        alt="Gather and Grow Spaces"
-        start={-200}
-        end={100}
-        className="ml-auto w-1/3 opacity-50"
-    />
-    <ParallaxImg
-        // src={parallax4}
-        src="/view_9.avif"
-        alt="Cour du domaine Lassalle Saint Créac"
-        start={0}
-        end={-500}
-        className="ml-24 w-5/12 opacity-50"
-    />
-    </div>
-);
+  return (
+      <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+      <ParallaxImg
+          src="/bedroom_view.webp"
+          alt="Gather and Grow Spaces"
+          start={550}
+          end={-200}
+          className="w-1/3 opacity-50"
+      />
+      <ParallaxImg
+          src="/view_13.avif"
+          alt="Gather and Grow Spaces"
+          start={200}
+          end={-250}
+          className="mx-auto w-2/3 opacity-50"
+      />
+      <ParallaxImg
+          src="/view_14.avif"
+          alt="Gather and Grow Spaces"
+          start={-200}
+          end={100}
+          className="ml-auto w-1/3 opacity-50"
+      />
+      <ParallaxImg
+          src="/view_9.avif"
+          alt="Cour du domaine Lassalle Saint Créac"
+          start={0}
+          end={-500}
+          className="ml-24 w-5/12 opacity-50"
+      />
+      </div>
+  );
 };
   
 const ParallaxImg = ({ className, alt, src, start, end }) => {
-const ref = useRef(null);
+  const ref = useRef(null);
 
-const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
-});
+  const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: [`${start}px end`, `end ${end * -1}px`],
+  });
 
-const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
-const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
+  const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
 
-const y = useTransform(scrollYProgress, [0, 1], [start, end]);
-const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
+  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
+  const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
 
-return (
-    <motion.img
-    src={src}
-    alt={alt}
-    className={className}
-    ref={ref}
-    style={{ transform, opacity, borderRadius: "25px" }}
-    />
-);
+  return (
+      <motion.img
+      src={src}
+      alt={alt}
+      className={className}
+      ref={ref}
+      style={{ transform, opacity, borderRadius: "25px" }}
+      />
+  );
 };
   

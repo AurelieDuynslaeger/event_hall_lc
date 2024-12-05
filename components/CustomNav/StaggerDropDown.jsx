@@ -47,10 +47,10 @@ const wrapperVariants = {
             initial={wrapperVariants.closed}
             variants={wrapperVariants}
             style={{ originY: "top", translateX: "-50%" }}
-            className="flex flex-col gap-2 p-2 rounded-lg  absolute top-[120%] left-[50%] w-48 overflow-hidden"
+            className="flex flex-col gap-2 p-2 rounded-lg  absolute top-[120%] left-[50%] w-48 overflow-hidden bg-background"
           >
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Meeting Rooms" href="/services/receptions/orangerie"/>
-            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Team Building" href="/services/receptions/saintloup"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Meeting Rooms" href="/services/receptions/meeting"/>
+            <Option setOpen={setOpen} Icon={PiDotOutlineLight} text="Team Building" href="/services/receptions/teamb"/>
           </motion.ul>
         </motion.div>
       </div>

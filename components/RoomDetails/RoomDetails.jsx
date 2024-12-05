@@ -62,6 +62,7 @@ const RoomDetails = ( {ref, mainImg, roomDescription, roomTitle, selectedRoom })
 
     const roomDescRef = useRef(null);
     const selectedRoomData = roomViews[selectedRoom];
+    console.log("Selected Room:", selectedRoom);
 
    useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

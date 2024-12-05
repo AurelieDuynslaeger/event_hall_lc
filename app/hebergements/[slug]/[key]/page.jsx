@@ -1,186 +1,99 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "next/navigation";
 import RoomDetails from '@/components/RoomDetails/RoomDetails';
-import { fetchRoomsByHub } from "@/lib/sanity/roomsService";
 
-// const hebergementData = {
-//   cloudline: {
-//       title: "Cloudline Hub",
-//       rooms: [
-//           {
-//               roomName: "The Overlook Cabin",
-//               key: "overlook_cabin",
-//               src:"/bedroom_detail.jpeg",
-//               color: "#e39c7e",
-//               desc: [
-//                 "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
-//                 "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
-//                 "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
-//                 "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
-//             ]
-//           },
-//           {
-//               roomName: "The Pine Suite",
-//               key: "pine_suit",
-//               src:"/view_3.avif",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Situées au rez-de-chaussée du Manoir, vous y accédez directement par la cour principale, le hall d'accueil ou par la tour, Une indépendance totale!", 
-//                   "Charme et authenticité sont au rendez-vous, avec ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 50 m², d'une chambre principale avec une literie de 180*200 haute qualité (possibilité de séparer en 2 lits de 90 à la demande)", 
-//                   "Une vaste salle d'eau (double vasques, grande douche à l'italienne, WC privatif) et d'un espace salon en contre-bas  (canapé convertible, literie de pouvant accueillir 2 personnes complémentaires - voir tarif supplémentaire).", 
-//                   "Le tout donnant sur votre terrasse privative avec vue sur la vallée."
-//               ],
-//           },
-//           {
-//               roomName: "La Chambre Saint-Loup",
-//               key: "saint_loup",
-//               src:"/manoir_chsaintloup/overwiew_saintloup.jpg",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Situées au 1er étage du Manoir, vous y accédez par le hall d'accueil puis l'escalier du salon.", 
-//                   "Charme et authenticité sont au rendez-vous, avec ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 35 m², d'une chambre avec une literie de 160*200 haute qualité (possibilité de séparer en 2 lits de 80 à la demande).", 
-//                   "Une vaste salle d'eau (vasque, grande douche à l'italienne, WC privatif) et d'un dressing avec vue sur la vallée.", 
-//                   "Vous avez un accès direct à la bibliothèque et l'espace salon du 1er étage, à disposition de nos hôtes."
-//               ],
-//           },
-//           {
-//               roomName: "La Chambre Mansaut",
-//               key: "mansaut",
-//               src:"/manoir_chmansaut/overview_mansaut.jpg",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Situées au rez-de-chaussée du Manoir, vous y accédez directement par le hall d'accueil.", 
-//                   "Charme et authenticité sont au rendez-vous, avec ses murs en pierre, ses portes en chêne et ses poutres centenaires. Vous disposez sur plus de 35 m², d'une chambre avec une literie de 160*200 haute qualité (possibilité de séparer en 2 lits de 80 à la demande).", 
-//                   "une vaste salle d'eau ( vasque, grande douche à l'italienne, WC privatif) et d'un dressing,  le tout donnant sur votre terrasse privative avec vue sur la vallée.", 
-//                   "Vous avez un accès direct à la bibliothèque et l'espace salon du 1er étage, à disposition de nos hôtes."
-//               ],
-//           },
-//           {
-//               roomName: "Dortoir le Perchoir",
-//               key: "perchoir",
-//               src:"/dortoir_perchoir/view_1.jpg",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Lieu magique et vue panoramique situé au second étage et totalement indépendant, vous y accédez exclusivement par l’escalier de la Tour.", 
-//                   "Avec ses murs en pierre, son parquet et sa charpente sous volige, vous profiterez de ce lieu magique et d'une vue panoramique depuis sa terrasse privative de plus de 20 m². Idéal pour les randonneurs, les groupes (Compostelle, Randonneur, rallye auto, moto etc.).",
-//                   "Surface totale du Perchoir-Dortoir: 130m² - 12 lits de 90 avec rangement individuel + 1 lit double de 160 en alcôve fermée par un rideau (14 personnes au total) - 2 salles d’eau dont une double (3 douches) - 2 WC.", 
-//                   "Espace détente et salon - Terrasse privative de 24m² - Grande tablée et kitchenette pour les petits déjeuners ou les collations (réfrigérateur, micro-ondes réchauffage, cafetière, bouilloire, pas de cuisson possible)",
-//                   "Idéal pour les groupes et les randonneurs !"
-//               ],
-//           }
-//       ]
-//   },
-//   bayside: {
-//       title: "L'Étable",
-//       description: "Charpente centenaire et volige en peuplier",
-//       rooms: [
-//           {
-//               roomName: "Gîte Loft",
-//               key: "loft",
-//               src: "/gite_etable/overview_loft.jpeg",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Il occupe tout le premier étage de l’ancienne étable sur près de 250m². Vous y accédez par la cour et son escalier en pierre.", 
-//                   "Sous sa charpente centenaire et sa volige en peuplier, vous pourrez vous y retrouver en famille ou entre amis. Avec ses 4 chambres (dont 2 en mezzanine sur la pièce de vie) c'est 15 couchages qui sont à votre disposition.",
-//                   "L'Etable Gîte-Loft est entièrement climatisé et sécurisé sous alarme.", 
-//                   "La salle de vie de plus de 80m² (séjour, salon, cuisine entièrement équipée) avec terrasse ouverte sur la cour à un accès direct à la piscine et au Spa (partagés avec les chambres d'hôtes et le dortoir).",
-//                   "Deux suites de plus de 50m² vous proposent un espace salon détente, un espace nuit avec couchage de 180 (dédoublable en 2 X 90), une vaste Salle d'eau double et un WC privatif. En mezzanine 3 couchages de 80 (ou 1 couchage 160 +1 couchage 80).",
-//                   "Deux Chambres en mezzanine ouvertes sur la salle de vie façon loft se ferment par des rideaux occultants, et vous proposent 3 couchages de 80 par chambre. Une salle d'eau et un WC au R.D.C sont dédiés pour ces 2 chambres."
-//                   ],
-//               pay: "Tarif TTC la nuitée pour 2 personnes, taxe de séjour en sus",
-//               off: "Remise de 15% à partir de 3 nuités",
-//               tarifs: [
-//                   {
-//                       juinaout24: "165.00€",
-//                       avrmaiseptoct24: "145.00€",
-//                       novtomars: "125.00€"
-//                   }
-//               ],
-//               plus:[
-//                   {
-//                       addNight: "30.00€ TTC/pers",
-//                       englshB: "5.00€",
-//                       hamam: "7.50€ les 30min de sauna/hammam",
-//                       navette: "Service Vip Aéroport"
-//                   }
-//               ],
-//           },
-//           {
-//               roomName: "Gîte Studio",
-//               key: "studio",
-//               src:"/gite_studio/view_5.jpg",
-//               color: "#e39c7e",
-//               desc: [
-//                   "Situé au rez-de-chaussée de l'étable, plein ouest, Le Studio est idéal pour une personne seule ou un couple, c'est l'intimité et la tranquillité assurée!", 
-//                   "Climatisé, avec terrasse privative de 50m² dans le prolongement de la piscine et du Spa (partagée avec les gîtes et le dortoir)", 
-//                   "Pièce de vie de 26 m² avec son lit escamotable (sommier et matelas de 160), coin cuisine équipée (induction 2 feux, micro-onde, réfrigérateur), salle de douche à l'italienne et WC privatif.", 
-//                   "Accès au Sauna et au Hammam sur réservation pour plus d'intimité."
-//               ],
-//               pay: "Tarif TTC la nuitée pour 2 personnes, taxe de séjour en sus",
-//               off: "Remise de 15% à partir de 3 nuités",
-//               tarifs: [
-//                   {
-//                       juinaout24: "165.00€",
-//                       avrmaiseptoct24: "145.00€",
-//                       novtomars: "125.00€"
-//                   }
-//               ],
-//               plus:[
-//                   {
-//                       addNight: "30.00€ TTC/pers",
-//                       englshB: "5.00€",
-//                       hamam: "7.50€ les 30min de sauna/hammam",
-//                       navette: "Service Vip Aéroport"
-//                   }
-//               ],
 
-//           },
-//       ]
-//   },
-// };
+const hebergementData = {
+  cloudline: {
+      title: "Cloudline Hub",
+      rooms: [
+          {
+              roomName: "The Overlook Cabin",
+              key: "overlook_cabin",
+              src:"/bedroom_detail.jpeg",
+              color: "#e39c7e",
+              desc: [
+                "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+                "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+                "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+                "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+            ]
+          },
+          {
+              roomName: "The Pine Suite",
+              key: "pine_suit",
+              src:"/view_3.avif",
+              color: "#e39c7e",
+              desc: [
+                "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+                "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+                "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+                "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+            ]
+          },
+          {
+            roomName: "The Eagle Nest",
+            key: "eagle_nest",
+            src:"/view_3.avif",
+            color: "#e39c7e",
+            desc: [
+              "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+              "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+              "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+              "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+          ]
+        },
+      ]
+  },
+  bayside: {
+    title: "Cloudline Hub",
+    rooms: [
+        {
+            roomName: "The Overlook Cabin",
+            key: "overlook_cabin",
+            src:"/bedroom_detail.jpeg",
+            color: "#e39c7e",
+            desc: [
+              "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+              "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+              "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+              "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+          ]
+        },
+        {
+            roomName: "The Pine Suite",
+            key: "pine_suit",
+            src:"/view_3.avif",
+            color: "#e39c7e",
+            desc: [
+              "Situated on the upper level of the cabin, you enter through the private entrance, offering total independence and seclusion.",
+              "The cabin boasts rustic charm with its wood-paneled walls, vaulted ceiling beams, and large windows offering panoramic views of the surrounding mountains and lake.",
+              "Covering over 45 m², it features a cozy master bedroom with high-quality 180*200 bedding (can be separated into two 90 cm beds upon request), a spacious bathroom with double sinks, a luxurious spa bathtub, and a private WC.",
+              "A charming living area invites relaxation with breathtaking views of the forest and mountains, featuring a convertible sofa bed that can accommodate two additional guests (additional charges apply)."
+          ]
+        },
+    ]
+  },
+};
 
 const RoomDetailsPage = () => {
     const { slug, key } = useParams();
-    const [ rooms, setRooms] = useState([]); // État pour stocker la liste des chambres
-    const [selectedRoom, setSelectedRoom] = useState(null); // État pour stocker la chambre sélectionnée
-    const [loading, setLoading] = useState(true); // État pour suivre l'état de chargement
-    const [error, setError] = useState(null); // État pour gérer les erreurs
+    
+    const hebergement = hebergementData[slug];
+    const selectedRoom = hebergement?.rooms.find((room) => room.key === key);
 
-   // Effectuer le fetch des données de chambres au chargement de la page
-   useEffect(() => {
-    const loadRooms = async () => {
-      try {
-        const roomsData = await fetchRoomsByHub(); // Appelez la fonction fetchRooms
-        setRooms(roomsData); // Mettez à jour l'état avec les données
-        const room = roomsData.find((room) => room._id === key); // Trouvez la chambre sélectionnée par son ID
-        setSelectedRoom(room);
-      } catch (error) {
-        console.error("Erreur lors du chargement des chambres", error);
-        setError("Erreur lors du chargement des chambres.");
-      } finally {
-        setLoading(false); // Marquez le chargement comme terminé
-      }
-    };
+    if (!hebergement) {
+        return <p>Établissement non trouvé.</p>;
+    }
 
-    loadRooms();
-  }, [key]); // Relancer le fetch si le `key` change
-
-  if (loading) {
-    return <p>Chargement des chambres...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  if (!selectedRoom) {
-    return <p>Chambre non trouvée.</p>;
-  }
+    if (!selectedRoom) {
+        return <p>Chambre non trouvée.</p>;
+    }
 
   return (
     <div className='mt-28'>
-      <RoomDetails  mainImg={selectedRoom.images?.[0]?.url} roomDescription={selectedRoom.description} roomTitle={selectedRoom.title} selectedRoom={selectedRoom._id}/>
+      <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName} selectedRoom={selectedRoom.key}/>
 
       {/* Bouton retour aux chambres */}
             {/* <motion.button 
