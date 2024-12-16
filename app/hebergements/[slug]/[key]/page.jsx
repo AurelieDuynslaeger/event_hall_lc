@@ -94,21 +94,6 @@ const RoomDetailsPage = () => {
   return (
     <div className='mt-28'>
       <RoomDetails  mainImg={selectedRoom.src} roomDescription={selectedRoom.desc} roomTitle={selectedRoom.roomName} selectedRoom={selectedRoom.key}/>
-
-      {/* Bouton retour aux chambres */}
-            {/* <motion.button 
-                onClick={scrollToRooms} 
-                className="flex gap-1 text-xs items-center" 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                exit={{ opacity: 0 }} 
-                transition={{ duration: 0.5 }}
-                style={{ position: 'fixed', bottom: '20px', left: '20px' }}
-            >
-                <PiArrowUpThin className="h-6 w-6 text-[#87482d]"/> Retour aux chambres
-            </motion.button> */}
-            {/* </div>
-            )} */}
     </div>
   )
 }

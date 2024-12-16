@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.className} ${stretch.variable} bg-background overflow-x-hidden min-h-screen text-primary scrollbar-custom`}>
         <NextUIProvider>
           <CustomNav/>
-          {/* Contenu de la page */}
           <main  className="bg-background text-primary">{children}</main>
           <Footer/>
         </NextUIProvider>
