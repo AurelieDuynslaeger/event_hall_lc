@@ -3,8 +3,8 @@ import Block from './Block'
 
 const ThankYouBlock = () => {
   return (
-    <Block className=" text-primary text-md col-span-12 text-center flex items-center justify-center md:col-span-9">
-        <p>We appreciate you reaching out to us. Our team will review your submission and get back to you as soon as possible. We look forward to assisting you!</p>
+    <Block className=" text-background text-md col-span-12 text-center flex items-center justify-center md:col-span-9">
+        <p>Nous vous remercions de nous avoir contactés. Notre équipe examinera votre demande et vous répondra dans les plus brefs délais. Nous avons hâte de vous aider !</p>
     </Block>
   )
 }

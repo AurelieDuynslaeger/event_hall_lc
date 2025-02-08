@@ -26,7 +26,7 @@ const PrezDom = () => {
        whileInView={{ y: 0, opacity: 1 }}
        transition={{ ease: "easeInOut", duration: 0.75 }}
         className='text-4xl font-sail my-6 max-w-5xl m-auto text-center leading-loose'>
-        Célébrer toutes les occasions <Highlight className="text-5xl">uniques,</Highlight>
+        Célébrez chaque instant<Highlight className="text-5xl">unique,</Highlight>
       </motion.h2>
 
       <motion.p 
@@ -34,8 +34,8 @@ const PrezDom = () => {
        whileInView={{ y: 0, opacity: 1 }}
        transition={{ ease: "easeInOut", duration: 0.75 }}
         className='text-4xl font-sail my-6 max-w-5xl m-auto text-center leading-loose'>
-          dans un lieu, aux multiples facettes, pour marquer l&apos;évenement <br/>
-      <Highlight className="text-5xl">d&apos;une vie.</Highlight>
+          dans un lieu, aux multiples facettes, conçu pour marquer les événements les plus précieux de
+      <Highlight className="text-5xl">votre vie.</Highlight>
       </motion.p>
       <DrawOutlineButton href="/hebergements" className="w-1/3 mt-auto mb-8"> 
             <p>Projetez-vous</p>

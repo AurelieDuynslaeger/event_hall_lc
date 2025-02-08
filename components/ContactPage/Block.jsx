@@ -1,5 +1,5 @@
 import React from 'react'
-import {motion} from "motiion/react"
+import {motion} from "motion/react"
 import { twMerge } from 'tailwind-merge'
 
 const Block = ({ className, ...rest }) => {
@@ -24,7 +24,7 @@ const Block = ({ className, ...rest }) => {
             damping: 50,
         }}
         className={twMerge(
-            "col-span-4 rounded-lg  bg-background p-6",
+            "col-span-4 rounded-lg  bg-primary p-6 border border-background",
             className
         )}
         {...rest}
