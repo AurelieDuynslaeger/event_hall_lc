@@ -16,7 +16,7 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#F1FFFA",      
+				primary: "#F5E6E8",      
 				background: "#0D0A0B",   
 				secondary: "#68462B",     
 				accent: "#5E807F"     
