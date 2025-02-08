@@ -6,16 +6,17 @@ import {
     useTransform,
   } from "motion/react";
   import { useRef } from "react";
+import { PiArrowDownThin } from "react-icons/pi";
 
 const SECTION_HEIGHT = 1200;
 
 const Hero = () => {
     return (
       <div
-        style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
+        style={{ height: `calc(${SECTION_HEIGHT}px + 80vh)` }}
         className="relative w-full"
       >
-        {/* <CenterImage /> */}
+        <CenterImage />
   
         <ParallaxImages />
   
@@ -26,56 +27,56 @@ const Hero = () => {
 
 export default Hero;
 
-// const CenterImage = () => {
-// const { scrollY } = useScroll();
+const CenterImage = () => {
+const { scrollY } = useScroll();
 
-// const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
-// const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
+const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
+const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
 
-// const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
+const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
-// const backgroundSize = useTransform(
-//     scrollY,
-//     [0, SECTION_HEIGHT + 500],
-//     ["70%", "100%"]
-// );
-// const opacity = useTransform(
-//     scrollY,
-//     [SECTION_HEIGHT, SECTION_HEIGHT + 500],
-//     [0.7, 0]
-// );
+const backgroundSize = useTransform(
+    scrollY,
+    [0, SECTION_HEIGHT + 500],
+    ["70%", "100%"]
+);
+const opacity = useTransform(
+    scrollY,
+    [SECTION_HEIGHT, SECTION_HEIGHT + 500],
+    [0.7, 0]
+);
 
-// return (
-//     <motion.div
-//     className="sticky top-0 h-screen w-full rounded-xl"
-//     style={{
-//         clipPath,
-//         backgroundSize,
-//         opacity,
-//         backgroundImage:
-//         "url(/view_4.avif)",
-//         backgroundPosition: "cover",
-//         backgroundRepeat: "no-repeat",
-//     }}
-//     >
-//         <motion.div
-//         initial={{ opacity: 0, y: 20 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1.2 }}
-//         className="w-1/4 flex flex-col items-center justify-center gap-2 absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2"
-//         >
-//             <p
-//                     className="text-primary font-stretch text-2xl"
-//                 >
-//                     Enter...
+return (
+    <motion.div
+    className="sticky top-0 h-screen w-full rounded-3xl"
+    style={{
+        clipPath,
+        backgroundSize,
+        opacity,
+        backgroundImage:
+        "url(/hall_4.jpg)",
+        backgroundPosition: "cover",
+        backgroundRepeat: "no-repeat",
+    }}
+    >
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
+        className="w-1/4 flex flex-col items-center justify-center gap-2 absolute top-1/2 left-[35%] transform -translate-x-1/2 -translate-y-1/2"
+        >
+            <p
+                    className="text-background font-sail text-2xl"
+                >
+                    Entrez...
 
-//                 </p>
-//             <PiArrowDownThin className="text-primary w-14 h-14"/>
-//         </motion.div>
+                </p>
+            <PiArrowDownThin className="text-background w-14 h-14"/>
+        </motion.div>
 
-//     </motion.div>
-// );
-// };
+    </motion.div>
+);
+};
   
 const ParallaxImages = () => {
   return (
