@@ -25,9 +25,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montserrat.className} ${sail.variable} bg-primary overflow-x-hidden min-h-screen text-background scrollbar-custom`}>
+        
         <NextUIProvider>
           <CustomNav/>
-          <main className="bg-primary text-background">{children}</main>
+          <main className="bg-primary text-background">
+          
+            {children}</main>
           <Footer/>
         </NextUIProvider>
       </body>

@@ -13,29 +13,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 const menuItems = [
-  {
-    title: "Notre Salle de Réception", href: "/salle-de-reception",
-  },
-  { title: "Rooms", href: "/hebergements" },
-  { title: "Dining Service", href: "/services/tablehote" },
-  // { title: "About Us", href: "/apropos" },
-  // { title: "Reviews", href: "/avis" },
-  { title: "Contact", href: "/contact" },
+  {title: "Notre Salle de Réception", href: "/salle-de-reception",},
+  { title: "Nos Services", href: "/nos-services" },
+  { title: "Gallerie", href: "/gallerie" },
+  { title: "Nous Contacter", href: "/contact" },
 ];
 
 const CustomNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar className="w-full z-50 flex items-center p-4 font-sail text-2xl" onMenuOpenChange={setIsMenuOpen}>
-      {/* Logo */}
-      
+    <Navbar className="max-w-7xl mx-auto z-50 flex items-center p-4 font-sail text-2xl" onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-hidden
           className="sm:hidden"/>
           <NavbarBrand>
         <Link href="/">
-          <Image src="/lc_logo_black.png" alt="logo de la croustadine" width={200} height={120} />
+          <Image src="/lc_logo_black.png" alt="logo de la croustadine" width={150} height={150} />
         </Link>
       </NavbarBrand>
       </NavbarContent>

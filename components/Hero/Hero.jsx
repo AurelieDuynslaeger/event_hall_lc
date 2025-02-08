@@ -81,32 +81,32 @@ const ParallaxImages = () => {
   return (
       <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-          src="/bedroom_view.webp"
-          alt="Gather and Grow Spaces"
+          src="/hall_7.jpg"
+          alt="aperçu de l'espace au sein de la croustadine"
           start={550}
           end={-200}
-          className="w-1/3 opacity-50"
+          className="w-1/2 opacity-50"
       />
       <ParallaxImg
-          src="/view_13.avif"
-          alt="Gather and Grow Spaces"
+          src="/hall_8.jpg"
+          alt="aperçu de la carcasse avec décoration personnalisée à la croustadine"
           start={200}
           end={-250}
           className="mx-auto w-2/3 opacity-50"
       />
       <ParallaxImg
-          src="/view_14.avif"
-          alt="Gather and Grow Spaces"
+          src="/party_1.jpg"
+          alt="Evenement au sein de la salle avec dj"
           start={-200}
           end={100}
-          className="ml-auto w-1/3 opacity-50"
+          className="ml-auto w-1/2 opacity-50"
       />
       <ParallaxImg
-          src="/view_9.avif"
-          alt="Cour du domaine Lassalle Saint Créac"
+          src="/food_2.jpg"
+          alt="apercu de buffet et pièce montée pour un mariage"
           start={0}
           end={-500}
-          className="ml-24 w-5/12 opacity-50"
+          className="ml-24 w-7/12 opacity-50"
       />
       </div>
   );
