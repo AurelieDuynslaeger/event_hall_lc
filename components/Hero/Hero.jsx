@@ -4,7 +4,7 @@ import {
     useMotionTemplate,
     useScroll,
     useTransform,
-  } from "framer-motion";
+  } from "motion/react";
   import { useRef } from "react";
 
 const SECTION_HEIGHT = 1200;

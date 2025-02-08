@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import Image from 'next/image';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import DrawOutlineButton from '../DrawOutlineButton/DrawOutlineButton';
 import { PiArrowUpRightThin } from 'react-icons/pi';
 

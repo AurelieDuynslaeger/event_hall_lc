@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
+import { useScroll, motion, useTransform, useMotionTemplate } from 'motion/react';
 
 
 const AboutTitles = ({data, setSelectedProject}) => {

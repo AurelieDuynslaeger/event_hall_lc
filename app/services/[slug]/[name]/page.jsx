@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import ServiceLanding from "@/components/ServiceLanding/ServiceLanding"
 import ServiceDesc from "@/components/ServiceDesc/ServiceDesc"
 import Lenis from 'lenis';
-import { useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'motion/react';
 import { ReactLenis } from "lenis/dist/lenis-react"
 import DrawOutlineButton from '@/components/DrawOutlineButton/DrawOutlineButton';
 import { PiArrowUpRightThin } from 'react-icons/pi';

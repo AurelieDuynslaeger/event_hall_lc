@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'motion/react';
 import Image from 'next/image';
 
 const IntroRoomDetail = ({ mainImg, roomName }) => {

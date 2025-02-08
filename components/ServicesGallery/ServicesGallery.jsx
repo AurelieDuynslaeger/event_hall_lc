@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { motion} from 'framer-motion';
+import { motion} from 'motion/react';
 
 const ServicesGallery = ({name, slug, handle, mousePosition}) => {
     const { x, y } = mousePosition;

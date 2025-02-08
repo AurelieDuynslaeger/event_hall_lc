@@ -43,7 +43,7 @@ Pour enrichir l'expérience utilisateur, GSAP et Framer Motion ont été intégr
 
 1. Clonez le repository de l'application
    ```sh
-   git clone https://github.com/AurelieDuynslaeger/gatherandgrow.git
+   git clone https://github.com/AurelieDuynslaeger/lacroustadine.git
    ```
 
 2. Installez les dépendances

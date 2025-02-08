@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Header from "@/components/ContactPage/Header"
 import SocialsBlock from "@/components/ContactPage/SocialsBlock"
 import ContactFormBlock from "@/components/ContactPage/ContactFormBlock"

@@ -16,14 +16,15 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#F1FFFA",       // Police body (dark text color)
-				background: "#0D0A0B",    // Background color
-				secondary: "#68462B",     // Secondary color
-				accent: "#5E807F"         // Accent color
+				primary: "#F1FFFA",      
+				background: "#0D0A0B",   
+				secondary: "#68462B",     
+				accent: "#5E807F"     
 			},
 			fontFamily: {
-				stretch: ['var(--font-stretch)'],
-			}
+				sail: ['var(--font-sail)', 'sans-serif'], // Polices Sail
+				montserrat: ['var(--font-montserrat)', 'sans-serif'], // Polices Montserrat
+			  },
 		},
 	},
 	plugins: [nextui(), addVariablesForColors],

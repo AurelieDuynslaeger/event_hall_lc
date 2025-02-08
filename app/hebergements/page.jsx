@@ -1,6 +1,6 @@
 "use client"
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { ReactLenis } from "lenis/dist/lenis-react"
 import DrawOutlineButton from "@/components/DrawOutlineButton/DrawOutlineButton";
 import { PiArrowUpRightThin } from "react-icons/pi";

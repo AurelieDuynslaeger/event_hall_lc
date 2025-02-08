@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { useParams } from "next/navigation";
-import { useSpring } from "framer-motion";
+import { useSpring } from "motion/react";
 import ServicesGallery from "@/components/ServicesGallery/ServicesGallery"
 import ServicesDescription from '@/components/ServicesDescription/ServicesDescription'
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll"

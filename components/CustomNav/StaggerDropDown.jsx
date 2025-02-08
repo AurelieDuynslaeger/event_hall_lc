@@ -1,5 +1,5 @@
 import { PiDotOutlineLight } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Option from "./Option";
 import { useState } from "react";
 import { HiChevronDown } from "react-icons/hi";

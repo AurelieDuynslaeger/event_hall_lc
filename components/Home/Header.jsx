@@ -17,7 +17,7 @@ const Header = () => {
     const [textArray, setTextArray] = useState([]);
 
     useEffect(() => {
-        const text = "Gather & Grow";
+        const text = "La Croustadine";
         const letters = text.split('').map((char, index) => {
           return <span key={index}>{char === ' ' ? '\u00A0' : char}</span>;
         });
@@ -63,11 +63,11 @@ const Header = () => {
     <section ref={heroRef} 
     className="hero-clippath absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[0.7] w-screen h-screen will-change-transform z-10">
         <div 
-            className='overlay-clippath absolute top-0 left-0 w-full h-full bg-background z-20' 
+            className='overlay-clippath absolute top-0 left-0 w-full h-full bg-primary z-20' 
             ref={overlayRef}></div>
         <div className='header header-clippath absolute w-full top-[25%] left-0 z-10'>
             <h1 
-                className='font-stretch text-[16vw] font-thin text-center m-0 p-0 leading-[100%]' 
+                className='font-sail text-[10vw] font-thin text-center m-0 p-0 leading-[100%]' 
                 ref={h1ref}>{textArray}</h1>
         </div>
     </section>
